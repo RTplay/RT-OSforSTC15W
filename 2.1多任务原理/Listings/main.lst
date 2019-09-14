@@ -1,0 +1,232 @@
+C51 COMPILER V9.59.0.0   MAIN                                                              09/01/2019 00:31:22 PAGE 1   
+
+
+C51 COMPILER V9.59.0.0, COMPILATION OF MODULE MAIN
+OBJECT MODULE PLACED IN .\Objects\main.obj
+COMPILER INVOKED BY: D:\Keil_v5\C51\BIN\C51.EXE main.c LARGE OPTIMIZE(0,SPEED) BROWSE INCDIR(.\bsp) DEBUG OBJECTEXTEND C
+                    -ODE PRINT(.\Listings\main.lst) OBJECT(.\Objects\main.obj)
+
+line level    source
+
+   1          
+   2          /*------------------------------------------------------------------*/
+   3          /* --- STC MCU International Limited -------------------------------*/
+   4          /* --- STC 1T Series MCU RC Demo -----------------------------------*/
+   5          /* --- Mobile: (86)13922805190 -------------------------------------*/
+   6          /* --- Fax: 86-0513-55012956,55012947,55012969 ---------------------*/
+   7          /* --- Tel: 86-0513-55012928,55012929,55012966 ---------------------*/
+   8          /* --- Web: www.GXWMCU.com -----------------------------------------*/
+   9          /* --- QQ:  800003751 ----------------------------------------------*/
+  10          /* If you want to use the program or the program referenced in the  */
+  11          /* article, please specify in which data and procedures from STC    */
+  12          /*------------------------------------------------------------------*/
+  13          
+  14          
+  15          #include        "config.h"
+  16          #include        "GPIO.h"
+  17          #include        "delay.h"
+  18          
+  19          /*************  功能说明        **************/
+  20          
+  21          void test1()
+  22          {
+  23   1          u8 a[8] = {1,2,3,4,5,6,7,8};
+  24   1          a[7] = a[1]+a[2]+a[3]+a[4]+a[5]+a[6]+a[0];
+  25   1      }
+  26          
+  27          void test2()
+  28          {
+  29   1          u8 a[8] = {1,2,3,4,5,6,7,8};
+  30   1          test1();
+  31   1          a[7] = a[1]+a[2]+a[3]+a[4]+a[5]+a[6]+a[0];
+  32   1      }
+  33          
+  34          /******************** 主函数 **************************/
+  35          void main(void)
+  36          {
+  37   1              while(1)
+  38   1              {
+  39   2              //test1();
+  40   2              test2();
+  41   2              }
+  42   1      }
+  43          
+  44          
+  45          
+  46          
+C51 COMPILER V9.59.0.0   MAIN                                                              09/01/2019 00:31:22 PAGE 2   
+
+ASSEMBLY LISTING OF GENERATED OBJECT CODE
+
+
+             ; FUNCTION test1 (BEGIN)
+                                           ; SOURCE LINE # 21
+                                           ; SOURCE LINE # 22
+                                           ; SOURCE LINE # 23
+0000 7BFF              MOV     R3,#0FFH
+0002 7A00        R     MOV     R2,#HIGH _?ix1000
+0004 7900        R     MOV     R1,#LOW _?ix1000
+0006 C003              PUSH    AR3
+0008 C002              PUSH    AR2
+000A C001              PUSH    AR1
+000C 7B01              MOV     R3,#01H
+000E 7A00        R     MOV     R2,#HIGH a
+0010 7900        R     MOV     R1,#LOW a
+0012 A801              MOV     R0,AR1
+0014 AC02              MOV     R4,AR2
+0016 AD03              MOV     R5,AR3
+0018 D001              POP     AR1
+001A D002              POP     AR2
+001C D003              POP     AR3
+001E 7E00              MOV     R6,#00H
+0020 7F08              MOV     R7,#08H
+0022 120000      E     LCALL   ?C?COPY
+                                           ; SOURCE LINE # 24
+0025 900000      R     MOV     DPTR,#a+02H
+0028 E0                MOVX    A,@DPTR
+0029 FF                MOV     R7,A
+002A 900000      R     MOV     DPTR,#a+01H
+002D E0                MOVX    A,@DPTR
+002E FE                MOV     R6,A
+002F EE                MOV     A,R6
+0030 2F                ADD     A,R7
+0031 FF                MOV     R7,A
+0032 900000      R     MOV     DPTR,#a+03H
+0035 E0                MOVX    A,@DPTR
+0036 FE                MOV     R6,A
+0037 EF                MOV     A,R7
+0038 2E                ADD     A,R6
+0039 FF                MOV     R7,A
+003A 900000      R     MOV     DPTR,#a+04H
+003D E0                MOVX    A,@DPTR
+003E FE                MOV     R6,A
+003F EF                MOV     A,R7
+0040 2E                ADD     A,R6
+0041 FF                MOV     R7,A
+0042 900000      R     MOV     DPTR,#a+05H
+0045 E0                MOVX    A,@DPTR
+0046 FE                MOV     R6,A
+0047 EF                MOV     A,R7
+0048 2E                ADD     A,R6
+0049 FF                MOV     R7,A
+004A 900000      R     MOV     DPTR,#a+06H
+004D E0                MOVX    A,@DPTR
+004E FE                MOV     R6,A
+004F EF                MOV     A,R7
+0050 2E                ADD     A,R6
+0051 FF                MOV     R7,A
+0052 900000      R     MOV     DPTR,#a
+0055 E0                MOVX    A,@DPTR
+0056 FE                MOV     R6,A
+C51 COMPILER V9.59.0.0   MAIN                                                              09/01/2019 00:31:22 PAGE 3   
+
+0057 EF                MOV     A,R7
+0058 2E                ADD     A,R6
+0059 FF                MOV     R7,A
+005A 900000      R     MOV     DPTR,#a+07H
+005D EF                MOV     A,R7
+005E F0                MOVX    @DPTR,A
+                                           ; SOURCE LINE # 25
+005F 22                RET     
+             ; FUNCTION test1 (END)
+
+             ; FUNCTION test2 (BEGIN)
+                                           ; SOURCE LINE # 27
+                                           ; SOURCE LINE # 28
+                                           ; SOURCE LINE # 29
+0000 7BFF              MOV     R3,#0FFH
+0002 7A00        R     MOV     R2,#HIGH _?ix1001
+0004 7900        R     MOV     R1,#LOW _?ix1001
+0006 C003              PUSH    AR3
+0008 C002              PUSH    AR2
+000A C001              PUSH    AR1
+000C 7B01              MOV     R3,#01H
+000E 7A00        R     MOV     R2,#HIGH a
+0010 7900        R     MOV     R1,#LOW a
+0012 A801              MOV     R0,AR1
+0014 AC02              MOV     R4,AR2
+0016 AD03              MOV     R5,AR3
+0018 D001              POP     AR1
+001A D002              POP     AR2
+001C D003              POP     AR3
+001E 7E00              MOV     R6,#00H
+0020 7F08              MOV     R7,#08H
+0022 120000      E     LCALL   ?C?COPY
+                                           ; SOURCE LINE # 30
+0025 120000      R     LCALL   test1
+                                           ; SOURCE LINE # 31
+0028 900000      R     MOV     DPTR,#a+02H
+002B E0                MOVX    A,@DPTR
+002C FF                MOV     R7,A
+002D 900000      R     MOV     DPTR,#a+01H
+0030 E0                MOVX    A,@DPTR
+0031 FE                MOV     R6,A
+0032 EE                MOV     A,R6
+0033 2F                ADD     A,R7
+0034 FF                MOV     R7,A
+0035 900000      R     MOV     DPTR,#a+03H
+0038 E0                MOVX    A,@DPTR
+0039 FE                MOV     R6,A
+003A EF                MOV     A,R7
+003B 2E                ADD     A,R6
+003C FF                MOV     R7,A
+003D 900000      R     MOV     DPTR,#a+04H
+0040 E0                MOVX    A,@DPTR
+0041 FE                MOV     R6,A
+0042 EF                MOV     A,R7
+0043 2E                ADD     A,R6
+0044 FF                MOV     R7,A
+0045 900000      R     MOV     DPTR,#a+05H
+0048 E0                MOVX    A,@DPTR
+0049 FE                MOV     R6,A
+004A EF                MOV     A,R7
+004B 2E                ADD     A,R6
+004C FF                MOV     R7,A
+C51 COMPILER V9.59.0.0   MAIN                                                              09/01/2019 00:31:22 PAGE 4   
+
+004D 900000      R     MOV     DPTR,#a+06H
+0050 E0                MOVX    A,@DPTR
+0051 FE                MOV     R6,A
+0052 EF                MOV     A,R7
+0053 2E                ADD     A,R6
+0054 FF                MOV     R7,A
+0055 900000      R     MOV     DPTR,#a
+0058 E0                MOVX    A,@DPTR
+0059 FE                MOV     R6,A
+005A EF                MOV     A,R7
+005B 2E                ADD     A,R6
+005C FF                MOV     R7,A
+005D 900000      R     MOV     DPTR,#a+07H
+0060 EF                MOV     A,R7
+0061 F0                MOVX    @DPTR,A
+                                           ; SOURCE LINE # 32
+0062 22                RET     
+             ; FUNCTION test2 (END)
+
+             ; FUNCTION main (BEGIN)
+                                           ; SOURCE LINE # 35
+                                           ; SOURCE LINE # 36
+0000         ?C0003:
+                                           ; SOURCE LINE # 37
+                                           ; SOURCE LINE # 38
+                                           ; SOURCE LINE # 40
+0000 120000      R     LCALL   test2
+                                           ; SOURCE LINE # 41
+0003 80FB              SJMP    ?C0003
+0005 22                RET     
+             ; FUNCTION main (END)
+
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    201    ----
+   CONSTANT SIZE    =     16    ----
+   XDATA SIZE       =     16    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

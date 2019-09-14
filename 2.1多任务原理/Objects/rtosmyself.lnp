@@ -1,0 +1,6 @@
+".\Objects\main.obj" 
+TO ".\Objects\rtosmyself" 
+PRINT(".\Listings\rtosmyself.m51") RAMSIZE(256) 
+DISABLEWARNING (16) 
+CODE( 0X0000-0XEFF8 )
+XDATA( 0X0000-0X0EFF )

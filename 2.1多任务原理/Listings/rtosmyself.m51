@@ -1,0 +1,132 @@
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                    09/01/2019  00:31:22  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22.2.0, INVOKED BY:
+D:\KEIL_V5\C51\BIN\BL51.EXE .\Objects\main.obj TO .\Objects\rtosmyself PRINT (.\Listings\rtosmyself.m51) RAMSIZE (256) D
+>> ISABLEWARNING (16) CODE (0X0000-0XEFF8) XDATA (0X0000-0X0EFF)
+
+
+MEMORY MODEL: LARGE
+
+
+INPUT MODULES INCLUDED:
+  .\Objects\main.obj (MAIN)
+  D:\KEIL_V5\C51\LIB\C51L.LIB (?C_STARTUP)
+  D:\KEIL_V5\C51\LIB\C51L.LIB (?C?COPY)
+
+
+LINK MAP OF MODULE:  .\Objects\rtosmyself (MAIN)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            IDATA   0008H     0001H     UNIT         ?STACK
+
+            * * * * * * *  X D A T A   M E M O R Y  * * * * * * *
+            XDATA   0000H     0008H     UNIT         ?XD?TEST1?MAIN
+            XDATA   0008H     0008H     UNIT         ?XD?TEST2?MAIN
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+            CODE    0003H     00F6H     UNIT         ?C?LIB_CODE
+            CODE    00F9H     0063H     UNIT         ?PR?TEST2?MAIN
+            CODE    015CH     0060H     UNIT         ?PR?TEST1?MAIN
+            CODE    01BCH     0010H     UNIT         ?CO?MAIN
+            CODE    01CCH     000CH     UNIT         ?C_C51STARTUP
+            CODE    01D8H     0006H     UNIT         ?PR?MAIN?MAIN
+
+
+
+OVERLAY MAP OF MODULE:   .\Objects\rtosmyself (MAIN)
+
+
+SEGMENT
+  +--> CALLED SEGMENT
+---------------------
+?C_C51STARTUP
+  +--> ?PR?MAIN?MAIN
+
+?PR?MAIN?MAIN
+  +--> ?PR?TEST2?MAIN
+
+?PR?TEST2?MAIN
+  +--> ?CO?MAIN
+  +--> ?PR?TEST1?MAIN
+
+?PR?TEST1?MAIN
+  +--> ?CO?MAIN
+
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  09/01/2019  00:31:22  PAGE 2
+
+
+
+
+SYMBOL TABLE OF MODULE:  .\Objects\rtosmyself (MAIN)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        MAIN
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0080H         PUBLIC        P0
+  D:0090H         PUBLIC        P1
+  D:00A0H         PUBLIC        P2
+  D:00B0H         PUBLIC        P3
+  D:00C0H         PUBLIC        P4
+  D:00C8H         PUBLIC        P5
+  D:00A8H         PUBLIC        IE
+  D:00B8H         PUBLIC        IP
+  D:00D8H         PUBLIC        CCON
+  C:01D8H         PUBLIC        main
+  D:0098H         PUBLIC        SCON
+  D:0088H         PUBLIC        TCON
+  D:00F0H         PUBLIC        B
+  C:01BCH         SYMBOL        _?ix1000
+  C:01C4H         SYMBOL        _?ix1001
+  D:00E0H         PUBLIC        ACC
+  C:015CH         PUBLIC        test1
+  C:00F9H         PUBLIC        test2
+  D:00D0H         PUBLIC        PSW
+  -------         PROC          TEST1
+  -------         DO            
+  X:0000H         SYMBOL        a
+  -------         ENDDO         
+  C:015CH         LINE#         21
+  C:015CH         LINE#         22
+  C:015CH         LINE#         23
+  C:0181H         LINE#         24
+  C:01BBH         LINE#         25
+  -------         ENDPROC       TEST1
+  -------         PROC          TEST2
+  -------         DO            
+  X:0008H         SYMBOL        a
+  -------         ENDDO         
+  C:00F9H         LINE#         27
+  C:00F9H         LINE#         28
+  C:00F9H         LINE#         29
+  C:011EH         LINE#         30
+  C:0121H         LINE#         31
+  C:015BH         LINE#         32
+  -------         ENDPROC       TEST2
+  -------         PROC          MAIN
+  C:01D8H         LINE#         35
+  C:01D8H         LINE#         36
+  C:01D8H         LINE#         37
+  C:01D8H         LINE#         38
+  C:01D8H         LINE#         40
+  C:01DBH         LINE#         41
+  -------         ENDPROC       MAIN
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  09/01/2019  00:31:22  PAGE 3
+
+
+  -------         ENDMOD        MAIN
+
+  -------         MODULE        ?C?COPY
+  C:00D3H         PUBLIC        ?C?COPY
+  -------         ENDMOD        ?C?COPY
+
+Program Size: data=9.0 xdata=16 code=478
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

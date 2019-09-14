@@ -1,0 +1,1881 @@
+A51 MACRO ASSEMBLER  RT_OS_ASM                                                            09/11/2019 18:57:20 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.2.7.0
+OBJECT MODULE PLACED IN .\Objects\rt_os_asm.OBJ
+ASSEMBLER INVOKED BY: D:\Keil_v5\C51\BIN\A51.EXE .\Objects\rt_os_asm.src PR(.\Listings\rt_os_asm.ls1) EP DEBUG
+
+LOC  OBJ            LINE     SOURCE
+
+                       1     ; .\Objects\rt_os_asm.SRC generated from: RT_OS\rt_os_asm.c
+                       2     ; COMPILER INVOKED BY:
+                       3     ;        D:\Keil_v5\C51\BIN\C51.EXE RT_OS\rt_os_asm.c LARGE OPTIMIZE(9,SPEED) BROWSE INCDIR
+                             (.\bsp;.\RT_OS;.\driver) DEFINE(xSTACK_DETECT_MODE,DEBUG_ENABLE) DEBUG OBJECTEXTEND CODE PR
+                             INT(.\Listings\rt_os_asm.lst) SRC(.\Objects\rt_os_asm.SRC)
+                       4     
+                       5     $nomod51 
+                       6     
+                       7     NAME    RT_OS_ASM
+                       8     
+  00DA                 9     CCF2    BIT     0D8H.2
+  00E7                10     ACC7    BIT     0E0H.7
+  0093                11     P0M1    DATA    093H
+  0092                12     P1M0    DATA    092H
+  0096                13     P2M0    DATA    096H
+  0091                14     P1M1    DATA    091H
+  0080                15     P0      DATA    080H
+  00B2                16     P3M0    DATA    0B2H
+  0095                17     P2M1    DATA    095H
+  0090                18     P1      DATA    090H
+  00B4                19     P4M0    DATA    0B4H
+  00B1                20     P3M1    DATA    0B1H
+  00A0                21     P2      DATA    0A0H
+  00CA                22     P5M0    DATA    0CAH
+  00B3                23     P4M1    DATA    0B3H
+  00B0                24     P3      DATA    0B0H
+  00AB                25     WKTCH   DATA    0ABH
+  00B4                26     T0      BIT     0B0H.4
+  00D6                27     AC      BIT     0D0H.6
+  00CC                28     P6M0    DATA    0CCH
+  00C9                29     P5M1    DATA    0C9H
+  00C0                30     P4      DATA    0C0H
+  00B5                31     CLKOUT0 BIT     0B0H.5
+  00B5                32     T1      BIT     0B0H.5
+  00E2                33     P7M0    DATA    0E2H
+  00CB                34     P6M1    DATA    0CBH
+  00C8                35     P5      DATA    0C8H
+  00C6                36     ISP_TRIG        DATA    0C6H
+  00AF                37     EA      BIT     0A8H.7
+  00B4                38     CLKOUT1 BIT     0B0H.4
+  00A4                39     SPI_SS_2        BIT     0A0H.4
+  00E8                40     P6      DATA    0E8H
+  00E1                41     P7M1    DATA    0E1H
+  00CC                42     SPI_SS_3        BIT     0C8H.4
+  0094                43     SPI_MISO        BIT     090H.4
+  0093                44     SPI_MOSI        BIT     090H.3
+  0091                45     CCP0    BIT     090H.1
+  00F8                46     P7      DATA    0F8H
+  00AA                47     WKTCL   DATA    0AAH
+  0090                48     CCP1    BIT     090H.0
+  00CE                49     SPCTL   DATA    0CEH
+  00DF                50     CF      BIT     0D8H.7
+  00B7                51     CCP2    BIT     0B0H.7
+  00F9                52     CH      DATA    0F9H
+  00A2                53     P_SW1   DATA    0A2H
+  00BA                54     P_SW2   DATA    0BAH
+  00AD                55     EADC    BIT     0A8H.5
+  00A1                56     SPI_SCLK_2      BIT     0A0H.1
+A51 MACRO ASSEMBLER  RT_OS_ASM                                                            09/11/2019 18:57:20 PAGE     2
+
+  00A8                57     IE      DATA    0A8H
+  00C3                58     SPI_SCLK_3      BIT     0C0H.3
+  00E9                59     CL      DATA    0E9H
+  00C5                60     IAP_CMD DATA    0C5H
+  00FA                61     CCAP0H  DATA    0FAH
+  00FB                62     CCAP1H  DATA    0FBH
+  00FC                63     CCAP2H  DATA    0FCH
+  00BD                64     ADC_RES DATA    0BDH
+  00B6                65     IPH2    DATA    0B6H
+  00DE                66     CR      BIT     0D8H.6
+  00EA                67     CCAP0L  DATA    0EAH
+  00B7                68     RD      BIT     0B0H.7
+  00EB                69     CCAP1L  DATA    0EBH
+  00DA                70     CCAPM0  DATA    0DAH
+  00EC                71     CCAP2L  DATA    0ECH
+  00DB                72     CCAPM1  DATA    0DBH
+  00AC                73     ES      BIT     0A8H.4
+  00DC                74     CCAPM2  DATA    0DCH
+  00BD                75     PADC    BIT     0B8H.5
+  00A2                76     SPI_MISO_2      BIT     0A0H.2
+  00A3                77     SPI_MOSI_2      BIT     0A0H.3
+  00B8                78     IP      DATA    0B8H
+  00C1                79     SPI_MISO_3      BIT     0C0H.1
+  00C0                80     SPI_MOSI_3      BIT     0C0H.0
+  0098                81     RI      BIT     098H.0
+  00B2                82     INT0    BIT     0B0H.2
+  00D7                83     CY      BIT     0D0H.7
+  0099                84     TI      BIT     098H.1
+  00B3                85     INT1    BIT     0B0H.3
+  0097                86     CLK_DIV DATA    097H
+  00C3                87     IAP_ADDRH       DATA    0C3H
+  0090                88     RXD2    BIT     090H.0
+  00C5                89     ISP_CMD DATA    0C5H
+  00BC                90     PS      BIT     0B8H.4
+  0091                91     TXD2    BIT     090H.1
+  0081                92     SP      DATA    081H
+  00D9                93     CMOD    DATA    0D9H
+  00D8                94     CCON    DATA    0D8H
+  00C4                95     IAP_ADDRL       DATA    0C4H
+  00BF                96     PPCA    BIT     0B8H.7
+  00D2                97     OV      BIT     0D0H.2
+  00B6                98     WR      BIT     0B0H.6
+  00AE                99     ELVD    BIT     0A8H.6
+  0080               100     P00     BIT     080H.0
+  0090               101     P10     BIT     090H.0
+  0081               102     P01     BIT     080H.1
+  00BC               103     ADC_CONTR       DATA    0BCH
+  0099               104     SBUF    DATA    099H
+  0087               105     PCON    DATA    087H
+  00A0               106     P20     BIT     0A0H.0
+  0091               107     P11     BIT     090H.1
+  0082               108     P02     BIT     080H.2
+  00C3               109     ISP_ADDRH       DATA    0C3H
+  00B0               110     P30     BIT     0B0H.0
+  00A1               111     P21     BIT     0A0H.1
+  0092               112     P12     BIT     090H.2
+  0083               113     P03     BIT     080H.3
+  00C0               114     P40     BIT     0C0H.0
+  00B1               115     P31     BIT     0B0H.1
+  00A2               116     P22     BIT     0A0H.2
+  0093               117     P13     BIT     090H.3
+  0084               118     P04     BIT     080H.4
+  0098               119     SCON    DATA    098H
+  008F               120     WAKE_CLKO       DATA    08FH
+  00C8               121     P50     BIT     0C8H.0
+  00C1               122     P41     BIT     0C0H.1
+A51 MACRO ASSEMBLER  RT_OS_ASM                                                            09/11/2019 18:57:20 PAGE     3
+
+  00B2               123     P32     BIT     0B0H.2
+  00A3               124     P23     BIT     0A0H.3
+  0094               125     P14     BIT     090H.4
+  0085               126     P05     BIT     080H.5
+  0089               127     TMOD    DATA    089H
+  0088               128     TCON    DATA    088H
+  00C9               129     P51     BIT     0C8H.1
+  00C2               130     P42     BIT     0C0H.2
+  00B3               131     P33     BIT     0B0H.3
+  00A4               132     P24     BIT     0A0H.4
+  0095               133     P15     BIT     090H.5
+  0086               134     P06     BIT     080H.6
+  00C4               135     ISP_ADDRL       DATA    0C4H
+  00BE               136     PLVD    BIT     0B8H.6
+  00CA               137     P52     BIT     0C8H.2
+  00C3               138     P43     BIT     0C0H.3
+  00B4               139     P34     BIT     0B0H.4
+  00A5               140     P25     BIT     0A0H.5
+  0096               141     P16     BIT     090H.6
+  0087               142     P07     BIT     080H.7
+  00CB               143     P53     BIT     0C8H.3
+  00C4               144     P44     BIT     0C0H.4
+  00B5               145     P35     BIT     0B0H.5
+  00A6               146     P26     BIT     0A0H.6
+  0097               147     P17     BIT     090H.7
+  00CC               148     P54     BIT     0C8H.4
+  00C5               149     P45     BIT     0C0H.5
+  00B6               150     P36     BIT     0B0H.6
+  00A7               151     P27     BIT     0A0H.7
+  00CD               152     P55     BIT     0C8H.5
+  00C6               153     P46     BIT     0C0H.6
+  00B7               154     P37     BIT     0B0H.7
+  00CE               155     P56     BIT     0C8H.6
+  00C7               156     P47     BIT     0C0H.7
+  00CF               157     P57     BIT     0C8H.7
+  0089               158     IE0     BIT     088H.1
+  00A1               159     BUS_SPEED       DATA    0A1H
+  008B               160     IE1     BIT     088H.3
+  00AF               161     IE2     DATA    0AFH
+  00F0               162     B       DATA    0F0H
+  008E               163     AUXR    DATA    08EH
+  00C7               164     IAP_CONTR       DATA    0C7H
+  00E0               165     ACC     DATA    0E0H
+  00A9               166     ET0     BIT     0A8H.1
+  00AB               167     ET1     BIT     0A8H.3
+  008D               168     TF0     BIT     088H.5
+  008F               169     TF1     BIT     088H.7
+  00B5               170     IP2     DATA    0B5H
+  008C               171     RL_TH0  DATA    08CH
+  009A               172     RB8     BIT     098H.2
+  008D               173     RL_TH1  DATA    08DH
+  008C               174     TH0     DATA    08CH
+  00A8               175     EX0     BIT     0A8H.0
+  0088               176     IT0     BIT     088H.0
+  00D6               177     RL_T2H  DATA    0D6H
+  008D               178     TH1     DATA    08DH
+  00AA               179     EX1     BIT     0A8H.2
+  009B               180     TB8     BIT     098H.3
+  008A               181     IT1     BIT     088H.2
+  00D4               182     RL_T3H  DATA    0D4H
+  00D6               183     TH2     DATA    0D6H
+  00D6               184     T2H     DATA    0D6H
+  00D0               185     P       BIT     0D0H.0
+  00D2               186     RL_T4H  DATA    0D2H
+  00D4               187     TH3     DATA    0D4H
+  00D4               188     T3H     DATA    0D4H
+A51 MACRO ASSEMBLER  RT_OS_ASM                                                            09/11/2019 18:57:20 PAGE     4
+
+  008A               189     RL_TL0  DATA    08AH
+  009F               190     SM0     BIT     098H.7
+  00D2               191     TH4     DATA    0D2H
+  00D2               192     T4H     DATA    0D2H
+  008B               193     RL_TL1  DATA    08BH
+  008A               194     TL0     DATA    08AH
+  009E               195     SM1     BIT     098H.6
+  00D7               196     RL_T2L  DATA    0D7H
+  008B               197     TL1     DATA    08BH
+  009D               198     SM2     BIT     098H.5
+  00D5               199     RL_T3L  DATA    0D5H
+  00D7               200     TL2     DATA    0D7H
+  00D7               201     T2L     DATA    0D7H
+  00D3               202     RL_T4L  DATA    0D3H
+  00D5               203     TL3     DATA    0D5H
+  00D5               204     T3L     DATA    0D5H
+  00B9               205     PT0     BIT     0B8H.1
+  00D3               206     TL4     DATA    0D3H
+  00D3               207     T4L     DATA    0D3H
+  00BB               208     PT1     BIT     0B8H.3
+  00D3               209     RS0     BIT     0D0H.3
+  00C7               210     ISP_CONTR       DATA    0C7H
+  008C               211     TR0     BIT     088H.4
+  00D4               212     RS1     BIT     0D0H.4
+  00C2               213     IAP_DATA        DATA    0C2H
+  008E               214     TR1     BIT     088H.6
+  00B8               215     PX0     BIT     0B8H.0
+  00C1               216     WDT_CONTR       DATA    0C1H
+  00BA               217     PX1     BIT     0B8H.2
+  00F2               218     PCA_PWM0        DATA    0F2H
+  00F3               219     PCA_PWM1        DATA    0F3H
+  00F4               220     PCA_PWM2        DATA    0F4H
+  009D               221     P1ASF   DATA    09DH
+  0083               222     DPH     DATA    083H
+  00D1               223     T4T3M   DATA    0D1H
+  00BE               224     ADC_RESL        DATA    0BEH
+  0082               225     DPL     DATA    082H
+  00CD               226     SPSTAT  DATA    0CDH
+  00B7               227     IPH     DATA    0B7H
+  009B               228     S2BUF   DATA    09BH
+  0097               229     PCON2   DATA    097H
+  00AD               230     S3BUF   DATA    0ADH
+  009C               231     REN     BIT     098H.4
+  0085               232     S4BUF   DATA    085H
+  009A               233     S2CON   DATA    09AH
+  00AC               234     S3CON   DATA    0ACH
+  00C2               235     ISP_DATA        DATA    0C2H
+  0084               236     S4CON   DATA    084H
+  00B9               237     SADEN   DATA    0B9H
+  00B0               238     RXD     BIT     0B0H.0
+  00A9               239     SADDR   DATA    0A9H
+  00B1               240     TXD     BIT     0B0H.1
+  00F0               241     B0      BIT     0F0H.0
+  00F1               242     B1      BIT     0F0H.1
+  00C6               243     IAP_TRIG        DATA    0C6H
+  00A2               244     AUXR1   DATA    0A2H
+  00F2               245     B2      BIT     0F0H.2
+  0092               246     SPI_SS  BIT     090H.2
+  008F               247     AUXR2   DATA    08FH
+  00F3               248     B3      BIT     0F0H.3
+  00F4               249     B4      BIT     0F0H.4
+  00D5               250     F0      BIT     0D0H.5
+  00F5               251     B5      BIT     0F0H.5
+  00D1               252     F1      BIT     0D0H.1
+  008F               253     INT_CLKO        DATA    08FH
+  00F6               254     B6      BIT     0F0H.6
+A51 MACRO ASSEMBLER  RT_OS_ASM                                                            09/11/2019 18:57:20 PAGE     5
+
+  00E0               255     ACC0    BIT     0E0H.0
+  00F7               256     B7      BIT     0F0H.7
+  00E1               257     ACC1    BIT     0E0H.1
+  00E2               258     ACC2    BIT     0E0H.2
+  00E3               259     ACC3    BIT     0E0H.3
+  00D0               260     PSW     DATA    0D0H
+  00E4               261     ACC4    BIT     0E0H.4
+  0095               262     SPI_SCLK        BIT     090H.5
+  00D8               263     CCF0    BIT     0D8H.0
+  00E5               264     ACC5    BIT     0E0H.5
+  00D9               265     CCF1    BIT     0D8H.1
+  00E6               266     ACC6    BIT     0E0H.6
+  00CF               267     SPDAT   DATA    0CFH
+  0094               268     P0M0    DATA    094H
+                     269     ?PR?OS_TASK_SW?RT_OS_ASM                 SEGMENT CODE 
+                     270     ?XD?OS_TASK_SW?RT_OS_ASM                 SEGMENT XDATA OVERLAYABLE 
+                     271     ?PR?timer0_int?RT_OS_ASM                 SEGMENT CODE 
+                     272     ?XD?timer0_int?RT_OS_ASM                 SEGMENT XDATA OVERLAYABLE 
+                     273     ?PR?RT_OS_ASM        SEGMENT CODE 
+                     274             EXTRN   XDATA (os_task_run)
+                     275             EXTRN   XDATA (os_task_running_ID)
+                     276             EXTRN   XDATA (os_tcb)
+                     277             EXTRN   CODE (?C?IILDX)
+                     278             PUBLIC  timer0_int
+                     279             PUBLIC  OS_TASK_SW
+                     280     
+----                 281             RSEG  ?XD?timer0_int?RT_OS_ASM
+0000                 282     ?timer0_int?BYTE:
+0004                 283             ORG  4
+0004                 284     temp_task_sequence?147:   DS   1
+0004                 285             ORG  4
+0004                 286         temp_id?148:   DS   1
+0005                 287             ORG  5
+0005                 288     temp_temp_id?149:   DS   1
+0000                 289             ORG  0
+0000                 290               i?150:   DS   1
+0001                 291             ORG  1
+0001                 292               j?151:   DS   1
+0002                 293             ORG  2
+0002                 294     highest_prio_id?152:   DS   1
+0003                 295             ORG  3
+0003                 296     task_sequence?153:   DS   1
+                     297     
+----                 298             RSEG  ?XD?OS_TASK_SW?RT_OS_ASM
+0000                 299     ?OS_TASK_SW?BYTE:
+0004                 300             ORG  4
+0004                 301     temp_task_sequence?040:   DS   1
+0004                 302             ORG  4
+0004                 303         temp_id?041:   DS   1
+0005                 304             ORG  5
+0005                 305     temp_temp_id?042:   DS   1
+0000                 306             ORG  0
+0000                 307               i?043:   DS   1
+0001                 308             ORG  1
+0001                 309               j?044:   DS   1
+0002                 310             ORG  2
+0002                 311     highest_prio_id?045:   DS   1
+0003                 312             ORG  3
+0003                 313     task_sequence?046:   DS   1
+                     314     ; #include "rt_os.h"
+                     315     ; #include "rt_os_private.h"
+                     316     ; 
+                     317     ; //»ŒŒÒµ˜∂»∫Ø £¨÷ªƒ‹‘⁄∑«÷–∂œ÷– π”√
+                     318     
+----                 319             RSEG  ?PR?RT_OS_ASM
+0000                 320     Com0046:
+A51 MACRO ASSEMBLER  RT_OS_ASM                                                            09/11/2019 18:57:20 PAGE     6
+
+0000                 321     L?0071:
+                     322             USING   0
+0000                 323     L?0072:
+0000 EF              324             MOV     A,R7
+0001 33              325             RLC     A
+0002 95E0            326             SUBB    A,ACC
+0004 FE              327             MOV     R6,A
+0005                 328     L?0073:
+0005 7400     F      329             MOV     A,#LOW (os_task_run)
+0007 2F              330             ADD     A,R7
+0008 F582            331             MOV     DPL,A
+000A 7400     F      332             MOV     A,#HIGH (os_task_run)
+000C 3E              333             ADDC    A,R6
+000D F583            334             MOV     DPH,A
+000F 22              335             RET     
+0010                 336     L?0074:
+                     337             USING   0
+0010 900000   F      338             MOV     DPTR,#os_task_running_ID
+0013 E0              339             MOVX    A,@DPTR
+0014 FF              340             MOV     R7,A
+0015 75F008          341             MOV     B,#08H
+0018 A4              342             MUL     AB
+0019 2400     F      343             ADD     A,#LOW (os_tcb+06H)
+001B F582            344             MOV     DPL,A
+001D E4              345             CLR     A
+001E 3400     F      346             ADDC    A,#HIGH (os_tcb+06H)
+0020 F583            347             MOV     DPH,A
+0022 E0              348             MOVX    A,@DPTR
+0023 FE              349             MOV     R6,A
+0024 EF              350             MOV     A,R7
+0025                 351     L?0075:
+0025 75F008          352             MOV     B,#08H
+0028 A4              353             MUL     AB
+0029 2400     F      354             ADD     A,#LOW (os_tcb+07H)
+002B F582            355             MOV     DPL,A
+002D E4              356             CLR     A
+002E 3400     F      357             ADDC    A,#HIGH (os_tcb+07H)
+0030 F583            358             MOV     DPH,A
+0032 22              359             RET     
+0033                 360     L?0076:
+                     361             USING   0
+0033 900000   F      362             MOV     DPTR,#os_task_running_ID
+0036 E0              363             MOVX    A,@DPTR
+0037 FF              364             MOV     R7,A
+0038 75F008          365             MOV     B,#08H
+003B A4              366             MUL     AB
+003C 2400     F      367             ADD     A,#LOW (os_tcb+03H)
+003E F582            368             MOV     DPL,A
+0040 E4              369             CLR     A
+0041 3400     F      370             ADDC    A,#HIGH (os_tcb+03H)
+0043 F583            371             MOV     DPH,A
+0045 E4              372             CLR     A
+0046 F0              373             MOVX    @DPTR,A
+0047 A3              374             INC     DPTR
+0048 04              375             INC     A
+0049 F0              376             MOVX    @DPTR,A
+004A EF              377             MOV     A,R7
+004B                 378     L?0077:
+004B 75F008          379             MOV     B,#08H
+004E A4              380             MUL     AB
+004F 2400     F      381             ADD     A,#LOW (os_tcb)
+0051 F582            382             MOV     DPL,A
+0053 E4              383             CLR     A
+0054 3400     F      384             ADDC    A,#HIGH (os_tcb)
+0056 F583            385             MOV     DPH,A
+0058 22              386             RET     
+A51 MACRO ASSEMBLER  RT_OS_ASM                                                            09/11/2019 18:57:20 PAGE     7
+
+0059                 387     L?0078:
+                     388             USING   0
+0059 900000   F      389             MOV     DPTR,#j?044
+005C                 390     L?0079:
+005C E0              391             MOVX    A,@DPTR
+005D FF              392             MOV     R7,A
+005E FD              393             MOV     R5,A
+005F 33              394             RLC     A
+0060 95E0            395             SUBB    A,ACC
+0062 FC              396             MOV     R4,A
+0063 C3              397             CLR     C
+0064 ED              398             MOV     A,R5
+0065 9408            399             SUBB    A,#08H
+0067 EC              400             MOV     A,R4
+0068 6480            401             XRL     A,#080H
+006A 9480            402             SUBB    A,#080H
+006C 22              403             RET     
+006D                 404     L?0080:
+                     405             USING   0
+006D                 406     L?0081:
+006D EF              407             MOV     A,R7
+006E 75F008          408             MOV     B,#08H
+0071 A4              409             MUL     AB
+0072 2400     F      410             ADD     A,#LOW (os_tcb+01H)
+0074 F582            411             MOV     DPL,A
+0076 E4              412             CLR     A
+0077 3400     F      413             ADDC    A,#HIGH (os_tcb+01H)
+0079 F583            414             MOV     DPH,A
+007B 22              415             RET     
+007C                 416     L?0082:
+                     417             USING   0
+007C 900000   F      418             MOV     DPTR,#i?043
+007F                 419     L?0083:
+007F E0              420             MOVX    A,@DPTR
+0080 FF              421             MOV     R7,A
+0081 33              422             RLC     A
+0082 95E0            423             SUBB    A,ACC
+0084 FE              424             MOV     R6,A
+0085 22              425             RET     
+0086                 426     L?0084:
+                     427             USING   0
+0086 7400     F      428             MOV     A,#LOW (os_tcb+05H)
+0088 2F              429             ADD     A,R7
+0089                 430     L?0085:
+0089 F582            431             MOV     DPL,A
+008B 7400     F      432             MOV     A,#HIGH (os_tcb+05H)
+008D 3E              433             ADDC    A,R6
+008E F583            434             MOV     DPH,A
+0090 E0              435             MOVX    A,@DPTR
+0091 22              436             RET     
+0092                 437     L?0086:
+                     438             USING   0
+0092 FF              439             MOV     R7,A
+0093 E0              440             MOVX    A,@DPTR
+0094 75F008          441             MOV     B,#08H
+0097 A4              442             MUL     AB
+0098 2400     F      443             ADD     A,#LOW (os_tcb+05H)
+009A F582            444             MOV     DPL,A
+009C E4              445             CLR     A
+009D 3400     F      446             ADDC    A,#HIGH (os_tcb+05H)
+009F F583            447             MOV     DPH,A
+00A1 E0              448             MOVX    A,@DPTR
+00A2 FD              449             MOV     R5,A
+00A3 EF              450             MOV     A,R7
+00A4 D3              451             SETB    C
+00A5 9D              452             SUBB    A,R5
+A51 MACRO ASSEMBLER  RT_OS_ASM                                                            09/11/2019 18:57:20 PAGE     8
+
+00A6 22              453             RET     
+00A7                 454     L?0087:
+                     455             USING   0
+00A7 EF              456             MOV     A,R7
+00A8 75F008          457             MOV     B,#08H
+00AB A4              458             MUL     AB
+00AC 2400     F      459             ADD     A,#LOW (os_tcb+03H)
+00AE F582            460             MOV     DPL,A
+00B0 E4              461             CLR     A
+00B1 3400     F      462             ADDC    A,#HIGH (os_tcb+03H)
+00B3 F583            463             MOV     DPH,A
+00B5 E4              464             CLR     A
+00B6 F0              465             MOVX    @DPTR,A
+00B7 A3              466             INC     DPTR
+00B8 7402            467             MOV     A,#02H
+00BA F0              468             MOVX    @DPTR,A
+00BB 22              469             RET     
+00BC                 470     L?0088:
+                     471             USING   0
+00BC FF              472             MOV     R7,A
+00BD 2400     F      473             ADD     A,#LOW (os_tcb+03H)
+00BF F582            474             MOV     DPL,A
+00C1 7400     F      475             MOV     A,#HIGH (os_tcb+03H)
+00C3 3E              476             ADDC    A,R6
+00C4 F583            477             MOV     DPH,A
+00C6 E0              478             MOVX    A,@DPTR
+00C7 FC              479             MOV     R4,A
+00C8 A3              480             INC     DPTR
+00C9 E0              481             MOVX    A,@DPTR
+00CA 6402            482             XRL     A,#02H
+00CC 4C              483             ORL     A,R4
+00CD 22              484             RET     
+00CE                 485     L?0089:
+                     486             USING   0
+00CE EF              487             MOV     A,R7
+00CF 33              488             RLC     A
+00D0 95E0            489             SUBB    A,ACC
+00D2 FE              490             MOV     R6,A
+00D3 7400     F      491             MOV     A,#LOW (os_task_run+0FFFFH)
+00D5 2F              492             ADD     A,R7
+00D6 F582            493             MOV     DPL,A
+00D8 7400     F      494             MOV     A,#HIGH (os_task_run+0FFFFH)
+00DA 3E              495             ADDC    A,R6
+00DB F583            496             MOV     DPH,A
+00DD E0              497             MOVX    A,@DPTR
+00DE FD              498             MOV     R5,A
+00DF 22              499             RET     
+00E0                 500     L?0090:
+                     501             USING   0
+00E0 E0              502             MOVX    A,@DPTR
+00E1 FF              503             MOV     R7,A
+00E2 FB              504             MOV     R3,A
+00E3 33              505             RLC     A
+00E4 95E0            506             SUBB    A,ACC
+00E6 FA              507             MOV     R2,A
+00E7 C3              508             CLR     C
+00E8 EB              509             MOV     A,R3
+00E9 9408            510             SUBB    A,#08H
+00EB EA              511             MOV     A,R2
+00EC 6480            512             XRL     A,#080H
+00EE 9480            513             SUBB    A,#080H
+00F0 22              514             RET     
+00F1                 515     L?0091:
+                     516             USING   0
+00F1 E0              517             MOVX    A,@DPTR
+00F2 FF              518             MOV     R7,A
+A51 MACRO ASSEMBLER  RT_OS_ASM                                                            09/11/2019 18:57:20 PAGE     9
+
+00F3 FD              519             MOV     R5,A
+00F4 33              520             RLC     A
+00F5 95E0            521             SUBB    A,ACC
+00F7 FC              522             MOV     R4,A
+00F8 D3              523             SETB    C
+00F9 ED              524             MOV     A,R5
+00FA 9400            525             SUBB    A,#00H
+00FC EC              526             MOV     A,R4
+00FD 6480            527             XRL     A,#080H
+00FF 9480            528             SUBB    A,#080H
+0101 22              529             RET     
+0102                 530     L?0092:
+                     531             USING   0
+0102 900000   F      532             MOV     DPTR,#temp_task_sequence?147
+0105 F0              533             MOVX    @DPTR,A
+0106 900000   F      534             MOV     DPTR,#j?151
+0109 22              535             RET     
+010A                 536     L?0093:
+                     537             USING   0
+010A C3              538             CLR     C
+010B EF              539             MOV     A,R7
+010C 9408            540             SUBB    A,#08H
+010E EE              541             MOV     A,R6
+010F 6480            542             XRL     A,#080H
+0111 9480            543             SUBB    A,#080H
+0113 22              544             RET     
+0114                 545     L?0094:
+                     546             USING   0
+0114 900000   F      547             MOV     DPTR,#i?043
+0117 E0              548             MOVX    A,@DPTR
+0118 900000   F      549             MOV     DPTR,#highest_prio_id?045
+011B F0              550             MOVX    @DPTR,A
+011C A3              551             INC     DPTR
+011D 22              552             RET     
+011E                 553     L?0095:
+                     554             USING   0
+011E                 555     L?0096:
+011E 900000   F      556             MOV     DPTR,#j?044
+0121 E0              557             MOVX    A,@DPTR
+0122 04              558             INC     A
+0123 F0              559             MOVX    @DPTR,A
+0124 22              560             RET     
+0125                 561     L?0097:
+                     562             USING   0
+0125 900000   F      563             MOV     DPTR,#i?150
+0128 E0              564             MOVX    A,@DPTR
+0129 900000   F      565             MOV     DPTR,#highest_prio_id?152
+012C F0              566             MOVX    @DPTR,A
+012D A3              567             INC     DPTR
+012E 22              568             RET     
+                     569     ; END OF Com0046
+                     570     
+                     571     ; void OS_TASK_SW(void)
+                     572     
+----                 573             RSEG  ?PR?OS_TASK_SW?RT_OS_ASM
+0000                 574     OS_TASK_SW:
+                     575             USING   0
+                     576                             ; SOURCE LINE # 5
+                     577     ; {
+                     578                             ; SOURCE LINE # 6
+                     579     ;     char i = 0, j = 0;
+                     580                             ; SOURCE LINE # 7
+0000 E4              581             CLR     A
+0001 900000   F      582             MOV     DPTR,#i?043
+0004 F0              583             MOVX    @DPTR,A
+0005 A3              584             INC     DPTR
+A51 MACRO ASSEMBLER  RT_OS_ASM                                                            09/11/2019 18:57:20 PAGE    10
+
+0006 F0              585             MOVX    @DPTR,A
+                     586     ;     u8 highest_prio_id = 0;
+                     587                             ; SOURCE LINE # 8
+0007 A3              588             INC     DPTR
+0008 F0              589             MOVX    @DPTR,A
+                     590     ;     u8 task_sequence = 0;//µ±«∞»ŒŒÒµƒ“—‘À––∂”¡–÷–“ª∂® «0
+                     591                             ; SOURCE LINE # 9
+0009 A3              592             INC     DPTR
+000A F0              593             MOVX    @DPTR,A
+                     594     ;     OS_ENTER_CRITICAL();
+                     595                             ; SOURCE LINE # 10
+000B C2AF            596             CLR     EA
+                     597     ; #pragma asm
+                     598     ;     PUSH     ACC
+000D C0E0            599               PUSH     ACC
+                     600     ;     PUSH     B
+000F C0F0            601               PUSH     B
+                     602     ;     PUSH     DPH
+0011 C083            603               PUSH     DPH
+                     604     ;     PUSH     DPL
+0013 C082            605               PUSH     DPL
+                     606     ;     PUSH     PSW
+0015 C0D0            607               PUSH     PSW
+                     608     ;     MOV      PSW,#00H
+0017 75D000          609               MOV      PSW,#00H
+                     610     ;     PUSH     AR0
+001A C000            611               PUSH     AR0
+                     612     ;     PUSH     AR1
+001C C001            613               PUSH     AR1
+                     614     ;     PUSH     AR2
+001E C002            615               PUSH     AR2
+                     616     ;     PUSH     AR3
+0020 C003            617               PUSH     AR3
+                     618     ;     PUSH     AR4
+0022 C004            619               PUSH     AR4
+                     620     ;     PUSH     AR5
+0024 C005            621               PUSH     AR5
+                     622     ;     PUSH     AR6
+0026 C006            623               PUSH     AR6
+                     624     ;     PUSH     AR7
+0028 C007            625               PUSH     AR7
+                     626     ; #pragma endasm
+                     627     ;     os_tcb[os_task_running_ID].OSTCBStkPtr = SP;
+                     628                             ; SOURCE LINE # 27
+002A 900000   F      629             MOV     DPTR,#os_task_running_ID
+002D E0              630             MOVX    A,@DPTR
+002E 120000   F      631             LCALL   L?0077
+0031 E581            632             MOV     A,SP
+0033 F0              633             MOVX    @DPTR,A
+                     634     ; //«–ªª»ŒŒÒ’ª
+                     635     ;     for (; i<TASK_SIZE; i++) { //’“µΩ”≈œ»º∂◊Ó∏ﬂ»ŒŒÒ£¨≤¢«“ «‘⁄“—‘À––»ŒŒÒ∂”¡–µƒ◊Ó∫Û£¨»Áπ˚“—
+                             ‘À––»ŒŒÒ∂”¡–÷–√ª”–‘Ú”≈œ»‘À––
+                     636                             ; SOURCE LINE # 29
+0034                 637     ?C0001:
+0034 120000   F      638             LCALL   L?0082
+0037 120000   F      639             LCALL   L?0093
+003A 4003            640             JC      $ + 5H
+003C 020000   F      641             LJMP    ?C0002
+                     642     ;         if (os_tcb[i].OSTCBStatus == OS_STAT_RDY) {
+                     643                             ; SOURCE LINE # 30
+003F EF              644             MOV     A,R7
+0040 7803            645             MOV     R0,#03H
+0042                 646     ?C0066:
+0042 C3              647             CLR     C
+0043 33              648             RLC     A
+0044 CE              649             XCH     A,R6
+A51 MACRO ASSEMBLER  RT_OS_ASM                                                            09/11/2019 18:57:20 PAGE    11
+
+0045 33              650             RLC     A
+0046 CE              651             XCH     A,R6
+0047 D8F9            652             DJNZ    R0,?C0066
+0049 120000   F      653             LCALL   L?0088
+004C 6003            654             JZ      $ + 5H
+004E 020000   F      655             LJMP    ?C0003
+                     656     ;             if (os_tcb[i].OSTCBPrio > os_tcb[highest_prio_id].OSTCBPrio) {
+                     657                             ; SOURCE LINE # 31
+0051 120000   F      658             LCALL   L?0084
+0054 900000   F      659             MOV     DPTR,#highest_prio_id?045
+0057 120000   F      660             LCALL   L?0086
+005A 4031            661             JC      ?C0005
+                     662     ;                 highest_prio_id = i;
+                     663                             ; SOURCE LINE # 32
+                     664     ;                 //≤È’“∏ﬂ”≈œ»º∂‘⁄“—‘À––∂”¡–÷–µƒ≈≈Œª
+                     665     ;                 task_sequence = 0xFF;//œ»ºŸ…Ë’‚∏ˆ≈≈‘⁄◊Ó◊Ó◊Ó∫Û√Ê
+                     666                             ; SOURCE LINE # 34
+005C 120000   F      667             LCALL   L?0094
+005F 74FF            668             MOV     A,#0FFH
+0061 F0              669             MOVX    @DPTR,A
+                     670     ;                 for (j=0; j<TASK_SIZE; j++) {
+                     671                             ; SOURCE LINE # 35
+0062 E4              672             CLR     A
+0063 900000   F      673             MOV     DPTR,#j?044
+0066 F0              674             MOVX    @DPTR,A
+0067                 675     ?C0006:
+0067 900000   F      676             MOV     DPTR,#j?044
+006A 120000   F      677             LCALL   L?0090
+006D 5071            678             JNC     ?C0003
+                     679     ;                     if (os_task_run[j] == i) {
+                     680                             ; SOURCE LINE # 36
+006F 120000   F      681             LCALL   L?0071
+0072 E0              682             MOVX    A,@DPTR
+0073 FF              683             MOV     R7,A
+0074 900000   F      684             MOV     DPTR,#i?043
+0077 E0              685             MOVX    A,@DPTR
+0078 B50709          686             CJNE    A,AR7,?C0009
+                     687     ;                         task_sequence = j;
+                     688                             ; SOURCE LINE # 37
+007B A3              689             INC     DPTR
+007C E0              690             MOVX    A,@DPTR
+007D 900000   F      691             MOV     DPTR,#task_sequence?046
+0080 F0              692             MOVX    @DPTR,A
+                     693     ;                         break;
+                     694                             ; SOURCE LINE # 38
+0081 020000   F      695             LJMP    ?C0003
+                     696     ;                     }
+                     697                             ; SOURCE LINE # 39
+0084                 698     ?C0009:
+                     699     ;                     if (os_task_run[j] == 0xFF)
+                     700                             ; SOURCE LINE # 40
+0084 EF              701             MOV     A,R7
+0085 F4              702             CPL     A
+0086 6058            703             JZ      ?C0003
+                     704     ;                          break;
+                     705                             ; SOURCE LINE # 41
+                     706     ;                 }
+                     707                             ; SOURCE LINE # 42
+0088 120000   F      708             LCALL   L?0095
+008B 80DA            709             SJMP    ?C0006
+                     710     ;             } else if (os_tcb[i].OSTCBPrio == os_tcb[highest_prio_id].OSTCBPrio) {
+                     711                             ; SOURCE LINE # 43
+008D                 712     ?C0005:
+008D 120000   F      713             LCALL   L?0082
+0090 EF              714             MOV     A,R7
+0091 7803            715             MOV     R0,#03H
+A51 MACRO ASSEMBLER  RT_OS_ASM                                                            09/11/2019 18:57:20 PAGE    12
+
+0093                 716     ?C0067:
+0093 C3              717             CLR     C
+0094 33              718             RLC     A
+0095 CE              719             XCH     A,R6
+0096 33              720             RLC     A
+0097 CE              721             XCH     A,R6
+0098 D8F9            722             DJNZ    R0,?C0067
+009A 2400     F      723             ADD     A,#LOW (os_tcb+05H)
+009C 120000   F      724             LCALL   L?0085
+009F 6D              725             XRL     A,R5
+00A0 703E            726             JNZ     ?C0003
+                     727     ;                 //≤È’“–¬’“µΩµƒ∏ﬂ”≈œ»º∂‘⁄“—‘À––∂”¡–÷–µƒ≈≈Œª
+                     728     ;                 u8 temp_task_sequence = 0xFF;//Õ¨”≈œ»º∂ π”√µƒ¡Ÿ ±»ŒŒÒ–Ú¡–
+                     729                             ; SOURCE LINE # 45
+00A2 900000   F      730             MOV     DPTR,#temp_task_sequence?040
+00A5 74FF            731             MOV     A,#0FFH
+00A7 F0              732             MOVX    @DPTR,A
+                     733     ;                 for (j=0; j<TASK_SIZE; j++) { //≤È’“–¬µƒÕ¨º∂»ŒŒÒ‘⁄»ŒŒÒ∂”¡–÷–µƒ≈≈Œª
+                     734                             ; SOURCE LINE # 46
+00A8 E4              735             CLR     A
+00A9 900000   F      736             MOV     DPTR,#j?044
+00AC F0              737             MOVX    @DPTR,A
+00AD                 738     ?C0013:
+00AD 120000   F      739             LCALL   L?0078
+00B0 501D            740             JNC     ?C0014
+                     741     ;                     if (os_task_run[j] == i) {
+                     742                             ; SOURCE LINE # 47
+00B2 120000   F      743             LCALL   L?0071
+00B5 E0              744             MOVX    A,@DPTR
+00B6 FF              745             MOV     R7,A
+00B7 900000   F      746             MOV     DPTR,#i?043
+00BA E0              747             MOVX    A,@DPTR
+00BB B50708          748             CJNE    A,AR7,?C0016
+                     749     ;                         temp_task_sequence = j;
+                     750                             ; SOURCE LINE # 48
+00BE A3              751             INC     DPTR
+00BF E0              752             MOVX    A,@DPTR
+00C0 900000   F      753             MOV     DPTR,#temp_task_sequence?040
+00C3 F0              754             MOVX    @DPTR,A
+                     755     ;                         break;
+                     756                             ; SOURCE LINE # 49
+00C4 8009            757             SJMP    ?C0014
+                     758     ;                     }
+                     759                             ; SOURCE LINE # 50
+00C6                 760     ?C0016:
+                     761     ;                     if (os_task_run[j] == 0xFF)
+                     762                             ; SOURCE LINE # 51
+00C6 EF              763             MOV     A,R7
+00C7 F4              764             CPL     A
+00C8 6005            765             JZ      ?C0014
+                     766     ;                          break;
+                     767                             ; SOURCE LINE # 52
+                     768     ;                 }
+                     769                             ; SOURCE LINE # 53
+00CA 120000   F      770             LCALL   L?0095
+00CD 80DE            771             SJMP    ?C0013
+00CF                 772     ?C0014:
+                     773     ;                 if (temp_task_sequence > task_sequence) { //¥À¥¶Œ“√«√ª”–øº¬«¡Ω∏ˆœ‡Õ¨”≈œ»º
+                             ∂∂º√ª‘⁄“—‘À––»ŒŒÒ∂”¡–÷–µƒ«Èøˆ£¨’‚÷÷«Èøˆœ¬‘À––µ⁄“ª∏ˆ±ª’“µΩµƒ»ŒŒÒ
+                     774                             ; SOURCE LINE # 54
+00CF 900000   F      775             MOV     DPTR,#task_sequence?046
+00D2 E0              776             MOVX    A,@DPTR
+00D3 FF              777             MOV     R7,A
+00D4 A3              778             INC     DPTR
+00D5 E0              779             MOVX    A,@DPTR
+00D6 FE              780             MOV     R6,A
+A51 MACRO ASSEMBLER  RT_OS_ASM                                                            09/11/2019 18:57:20 PAGE    13
+
+00D7 D3              781             SETB    C
+00D8 9F              782             SUBB    A,R7
+00D9 4005            783             JC      ?C0003
+                     784     ;                     highest_prio_id = i;
+                     785                             ; SOURCE LINE # 55
+                     786     ;                     task_sequence = temp_task_sequence;
+                     787                             ; SOURCE LINE # 56
+00DB 120000   F      788             LCALL   L?0094
+00DE EE              789             MOV     A,R6
+00DF F0              790             MOVX    @DPTR,A
+                     791     ;                 }
+                     792                             ; SOURCE LINE # 57
+                     793     ;             }
+                     794                             ; SOURCE LINE # 58
+                     795     ;         }
+                     796                             ; SOURCE LINE # 59
+                     797     ;     }
+                     798                             ; SOURCE LINE # 60
+00E0                 799     ?C0003:
+00E0 900000   F      800             MOV     DPTR,#i?043
+00E3 E0              801             MOVX    A,@DPTR
+00E4 04              802             INC     A
+00E5 F0              803             MOVX    @DPTR,A
+00E6 020000   F      804             LJMP    ?C0001
+00E9                 805     ?C0002:
+                     806     ;     os_task_running_ID = highest_prio_id;
+                     807                             ; SOURCE LINE # 61
+00E9 900000   F      808             MOV     DPTR,#highest_prio_id?045
+00EC E0              809             MOVX    A,@DPTR
+00ED 900000   F      810             MOV     DPTR,#os_task_running_ID
+00F0 F0              811             MOVX    @DPTR,A
+                     812     ;     //∞—µ±«∞»ŒŒÒ≤Â»Î“—‘À––»ŒŒÒ∂”¡–÷–
+                     813     ;     {
+                     814                             ; SOURCE LINE # 63
+                     815     ;         u8 temp_id = os_task_running_ID, temp_temp_id;
+                     816                             ; SOURCE LINE # 64
+00F1 900000   F      817             MOV     DPTR,#temp_id?041
+00F4 F0              818             MOVX    @DPTR,A
+                     819     ;         if (task_sequence == 0xFF) { //≤ª‘⁄»ŒŒÒ∂”¡–÷–£¨÷±Ω”Õ∑≤Â
+                     820                             ; SOURCE LINE # 65
+00F5 900000   F      821             MOV     DPTR,#task_sequence?046
+00F8 E0              822             MOVX    A,@DPTR
+00F9 F9              823             MOV     R1,A
+00FA F4              824             CPL     A
+00FB 703C            825             JNZ     ?C0019
+                     826     ;             for (j=0; j<TASK_SIZE; j++) {
+                     827                             ; SOURCE LINE # 66
+00FD 900000   F      828             MOV     DPTR,#j?044
+0100 F0              829             MOVX    @DPTR,A
+0101                 830     ?C0020:
+0101 120000   F      831             LCALL   L?0078
+0104 5058            832             JNC     ?C0024
+                     833     ;                 if (os_task_run[j] == 0xFF) {
+                     834                             ; SOURCE LINE # 67
+0106 120000   F      835             LCALL   L?0072
+0109 E0              836             MOVX    A,@DPTR
+010A FD              837             MOV     R5,A
+010B F4              838             CPL     A
+010C 700C            839             JNZ     ?C0023
+                     840     ;                     os_task_run[j] = temp_id;
+                     841                             ; SOURCE LINE # 68
+010E 900000   F      842             MOV     DPTR,#temp_id?041
+0111 E0              843             MOVX    A,@DPTR
+0112 FC              844             MOV     R4,A
+0113 120000   F      845             LCALL   L?0073
+0116 EC              846             MOV     A,R4
+A51 MACRO ASSEMBLER  RT_OS_ASM                                                            09/11/2019 18:57:20 PAGE    14
+
+0117 F0              847             MOVX    @DPTR,A
+                     848     ;                     break;
+                     849                             ; SOURCE LINE # 69
+0118 8044            850             SJMP    ?C0024
+                     851     ;                 }
+                     852                             ; SOURCE LINE # 70
+011A                 853     ?C0023:
+                     854     ;                 temp_temp_id = os_task_run[j];
+                     855                             ; SOURCE LINE # 71
+011A 900000   F      856             MOV     DPTR,#j?044
+011D 120000   F      857             LCALL   L?0083
+0120 900000   F      858             MOV     DPTR,#temp_temp_id?042
+0123 ED              859             MOV     A,R5
+0124 F0              860             MOVX    @DPTR,A
+                     861     ;                 os_task_run[j] = temp_id;
+                     862                             ; SOURCE LINE # 72
+0125 900000   F      863             MOV     DPTR,#temp_id?041
+0128 E0              864             MOVX    A,@DPTR
+0129 FC              865             MOV     R4,A
+012A 120000   F      866             LCALL   L?0073
+012D EC              867             MOV     A,R4
+012E F0              868             MOVX    @DPTR,A
+                     869     ;                 temp_id = temp_temp_id;
+                     870                             ; SOURCE LINE # 73
+012F 900000   F      871             MOV     DPTR,#temp_id?041
+0132 ED              872             MOV     A,R5
+0133 F0              873             MOVX    @DPTR,A
+                     874     ;             }
+                     875                             ; SOURCE LINE # 74
+0134 120000   F      876             LCALL   L?0096
+0137 80C8            877             SJMP    ?C0020
+                     878     ;         } else { //“—‘⁄»ŒŒÒ∂”¡–÷–£¨‘⁄À˘‘⁄Œª÷√«∞“∆
+                     879                             ; SOURCE LINE # 75
+0139                 880     ?C0019:
+                     881     ;             for (j = task_sequence; j>0; j--) {
+                     882                             ; SOURCE LINE # 76
+0139 900000   F      883             MOV     DPTR,#j?044
+013C E9              884             MOV     A,R1
+013D F0              885             MOVX    @DPTR,A
+013E                 886     ?C0025:
+013E 900000   F      887             MOV     DPTR,#j?044
+0141 120000   F      888             LCALL   L?0091
+0144 4010            889             JC      ?C0026
+                     890     ;                 os_task_run[j] = os_task_run[j-1];
+                     891                             ; SOURCE LINE # 77
+0146 120000   F      892             LCALL   L?0089
+0149 120000   F      893             LCALL   L?0073
+014C ED              894             MOV     A,R5
+014D F0              895             MOVX    @DPTR,A
+                     896     ;             }
+                     897                             ; SOURCE LINE # 78
+014E 900000   F      898             MOV     DPTR,#j?044
+0151 E0              899             MOVX    A,@DPTR
+0152 14              900             DEC     A
+0153 F0              901             MOVX    @DPTR,A
+0154 80E8            902             SJMP    ?C0025
+0156                 903     ?C0026:
+                     904     ;             os_task_run[0] = os_task_running_ID;
+                     905                             ; SOURCE LINE # 79
+0156 900000   F      906             MOV     DPTR,#os_task_running_ID
+0159 E0              907             MOVX    A,@DPTR
+015A 900000   F      908             MOV     DPTR,#os_task_run
+015D F0              909             MOVX    @DPTR,A
+                     910     ;         }
+                     911                             ; SOURCE LINE # 80
+015E                 912     ?C0024:
+A51 MACRO ASSEMBLER  RT_OS_ASM                                                            09/11/2019 18:57:20 PAGE    15
+
+                     913     ;     }
+                     914                             ; SOURCE LINE # 81
+                     915     ;     if (os_tcb[os_task_running_ID].OSTCBTimeQuantaCtr == 0)//∏¯µ±«∞‘À––µƒ ±º‰∆¨∏≥÷µ
+                     916                             ; SOURCE LINE # 82
+015E 900000   F      917             MOV     DPTR,#os_task_running_ID
+0161 E0              918             MOVX    A,@DPTR
+0162 120000   F      919             LCALL   L?0075
+0165 E0              920             MOVX    A,@DPTR
+0166 7005            921             JNZ     ?C0028
+                     922     ;         os_tcb[os_task_running_ID].OSTCBTimeQuantaCtr = os_tcb[os_task_running_ID].OSTCBT
+                             imeQuanta;
+                     923                             ; SOURCE LINE # 83
+0168 120000   F      924             LCALL   L?0074
+016B EE              925             MOV     A,R6
+016C F0              926             MOVX    @DPTR,A
+016D                 927     ?C0028:
+                     928     ;     os_tcb[os_task_running_ID].OSTCBStatus = OS_STAT_RUNNING;
+                     929                             ; SOURCE LINE # 84
+                     930     ;     SP = os_tcb[os_task_running_ID].OSTCBStkPtr;
+                     931                             ; SOURCE LINE # 85
+016D 120000   F      932             LCALL   L?0076
+0170 E0              933             MOVX    A,@DPTR
+0171 F581            934             MOV     SP,A
+                     935     ; #pragma asm
+                     936     ;     POP      AR7
+0173 D007            937               POP      AR7
+                     938     ;     POP      AR6
+0175 D006            939               POP      AR6
+                     940     ;     POP      AR5
+0177 D005            941               POP      AR5
+                     942     ;     POP      AR4
+0179 D004            943               POP      AR4
+                     944     ;     POP      AR3
+017B D003            945               POP      AR3
+                     946     ;     POP      AR2
+017D D002            947               POP      AR2
+                     948     ;     POP      AR1
+017F D001            949               POP      AR1
+                     950     ;     POP      AR0
+0181 D000            951               POP      AR0
+                     952     ;     POP      PSW
+0183 D0D0            953               POP      PSW
+                     954     ;     POP      DPL
+0185 D082            955               POP      DPL
+                     956     ;     POP      DPH
+0187 D083            957               POP      DPH
+                     958     ;     POP      B
+0189 D0F0            959               POP      B
+                     960     ;     POP      ACC
+018B D0E0            961               POP      ACC
+                     962     ; #pragma endasm
+                     963     ;     OS_EXIT_CRITICAL();
+                     964                             ; SOURCE LINE # 101
+018D D2AF            965             SETB    EA
+                     966     ; }
+                     967                             ; SOURCE LINE # 102
+018F 22              968             RET     
+                     969     ; END OF OS_TASK_SW
+                     970     
+----                 971     CSEG    AT      0000BH
+000B 020000   F      972             LJMP    timer0_int
+                     973     
+                     974     ; 
+                     975     ; /********************* Timer0÷–∂œ∫Ø ************************/
+                     976     ; void timer0_int (void) interrupt TIMER0_VECTOR {
+                     977     
+A51 MACRO ASSEMBLER  RT_OS_ASM                                                            09/11/2019 18:57:20 PAGE    16
+
+----                 978             RSEG  ?PR?timer0_int?RT_OS_ASM
+                     979             USING   0
+0000                 980     timer0_int:
+0000 C0E0            981             PUSH    ACC
+0002 C0F0            982             PUSH    B
+0004 C083            983             PUSH    DPH
+0006 C082            984             PUSH    DPL
+0008 C0D0            985             PUSH    PSW
+000A 75D000          986             MOV     PSW,#00H
+000D C000            987             PUSH    AR0
+000F C001            988             PUSH    AR1
+0011 C002            989             PUSH    AR2
+0013 C003            990             PUSH    AR3
+0015 C004            991             PUSH    AR4
+0017 C005            992             PUSH    AR5
+0019 C006            993             PUSH    AR6
+001B C007            994             PUSH    AR7
+                     995             USING   0
+                     996                             ; SOURCE LINE # 105
+                     997     ;     u8 i;
+                     998     ; #pragma asm
+                     999     ;     MOV AR1,AR1
+001D 850101         1000               MOV AR1,AR1
+                    1001     ; #pragma endasm
+                    1002     ;     for(i=0; i<TASK_SIZE; i++) { //»ŒŒÒ ±÷”
+                    1003                             ; SOURCE LINE # 110
+                    1004     ;---- Variable 'i?154' assigned to Register 'R7' ----
+0020 E4             1005             CLR     A
+0021 FF             1006             MOV     R7,A
+0022                1007     ?C0030:
+0022 EF             1008             MOV     A,R7
+0023 C3             1009             CLR     C
+0024 9408           1010             SUBB    A,#08H
+0026 7480           1011             MOV     A,#080H
+0028 9480           1012             SUBB    A,#080H
+002A 5024           1013             JNC     ?C0031
+                    1014     ;         if(os_tcb[i].OSTCBDly) {
+                    1015                             ; SOURCE LINE # 111
+002C 120000   F     1016             LCALL   L?0080
+002F E0             1017             MOVX    A,@DPTR
+0030 FC             1018             MOV     R4,A
+0031 A3             1019             INC     DPTR
+0032 E0             1020             MOVX    A,@DPTR
+0033 4C             1021             ORL     A,R4
+0034 6017           1022             JZ      ?C0032
+                    1023     ;             os_tcb[i].OSTCBDly--;
+                    1024                             ; SOURCE LINE # 112
+0036 120000   F     1025             LCALL   L?0080
+0039 74FF           1026             MOV     A,#0FFH
+003B F5F0           1027             MOV     B,A
+003D 120000   F     1028             LCALL   ?C?IILDX
+                    1029     ;             if(os_tcb[i].OSTCBDly == 0) { //µ±»ŒŒÒ ±÷”µΩ ±,±ÿ–Î «”…∂® ±∆˜ºı ±µƒ≤≈––
+                    1030                             ; SOURCE LINE # 113
+0040 120000   F     1031             LCALL   L?0081
+0043 E0             1032             MOVX    A,@DPTR
+0044 FC             1033             MOV     R4,A
+0045 A3             1034             INC     DPTR
+0046 E0             1035             MOVX    A,@DPTR
+0047 4C             1036             ORL     A,R4
+0048 7003           1037             JNZ     ?C0032
+                    1038     ;                 //os_rdy_tbl |= (0x01<<i); // π»ŒŒÒ‘⁄æÕ–˜±Ì÷–÷√Œª
+                    1039     ;                 os_tcb[i].OSTCBStatus = OS_STAT_RDY;
+                    1040                             ; SOURCE LINE # 115
+004A 120000   F     1041             LCALL   L?0087
+                    1042     ;             }
+                    1043                             ; SOURCE LINE # 116
+A51 MACRO ASSEMBLER  RT_OS_ASM                                                            09/11/2019 18:57:20 PAGE    17
+
+                    1044     ;         }
+                    1045                             ; SOURCE LINE # 117
+                    1046     ;     }
+                    1047                             ; SOURCE LINE # 118
+004D                1048     ?C0032:
+004D 0F             1049             INC     R7
+004E 80D2           1050             SJMP    ?C0030
+0050                1051     ?C0031:
+                    1052     ;     // ±º‰∆¨¬÷◊™º∆ ¬ﬂº≠
+                    1053     ;     if (os_tcb[os_task_running_ID].OSTCBTimeQuantaCtr == 0) { //µ±«∞‘À––»ŒŒÒ ±º‰∆¨∫ƒæ°£¨÷
+                             ¥––÷–∂œœ¬»ŒŒÒµ˜∂»
+                    1054                             ; SOURCE LINE # 120
+0050 900000   F     1055             MOV     DPTR,#os_task_running_ID
+0053 E0             1056             MOVX    A,@DPTR
+0054 120000   F     1057             LCALL   L?0075
+0057 E0             1058             MOVX    A,@DPTR
+0058 6003           1059             JZ      $ + 5H
+005A 020000   F     1060             LJMP    ?C0035
+                    1061     ;         char i = 0, j = 0;
+                    1062                             ; SOURCE LINE # 121
+005D 900000   F     1063             MOV     DPTR,#i?150
+0060 F0             1064             MOVX    @DPTR,A
+0061 A3             1065             INC     DPTR
+0062 F0             1066             MOVX    @DPTR,A
+                    1067     ;         u8 highest_prio_id = 0;
+                    1068                             ; SOURCE LINE # 122
+0063 A3             1069             INC     DPTR
+0064 F0             1070             MOVX    @DPTR,A
+                    1071     ;         u8 task_sequence = 0;//µ±«∞»ŒŒÒµƒ“—‘À––∂”¡–÷–“ª∂® «0
+                    1072                             ; SOURCE LINE # 123
+0065 A3             1073             INC     DPTR
+0066 F0             1074             MOVX    @DPTR,A
+                    1075     ;         //SP -= 2;
+                    1076     ;         os_tcb[os_task_running_ID].OSTCBStkPtr = SP;
+                    1077                             ; SOURCE LINE # 125
+0067 900000   F     1078             MOV     DPTR,#os_task_running_ID
+006A E0             1079             MOVX    A,@DPTR
+006B FF             1080             MOV     R7,A
+006C 120000   F     1081             LCALL   L?0077
+006F E581           1082             MOV     A,SP
+0071 F0             1083             MOVX    @DPTR,A
+                    1084     ;         os_tcb[os_task_running_ID].OSTCBStatus = OS_STAT_RDY;
+                    1085                             ; SOURCE LINE # 126
+0072 120000   F     1086             LCALL   L?0087
+                    1087     ;         //«–ªª»ŒŒÒ’ª
+                    1088     ;         for (; i<TASK_SIZE; i++) { //’“µΩ”≈œ»º∂◊Ó∏ﬂ»ŒŒÒ£¨≤¢«“ «‘⁄“—‘À––»ŒŒÒ∂”¡–µƒ◊Ó∫Û£¨»Á
+                             π˚“—‘À––»ŒŒÒ∂”¡–÷–√ª”–‘Ú”≈œ»‘À––
+                    1089                             ; SOURCE LINE # 128
+0075                1090     ?C0036:
+0075 900000   F     1091             MOV     DPTR,#i?150
+0078 120000   F     1092             LCALL   L?0083
+007B 120000   F     1093             LCALL   L?0093
+007E 4003           1094             JC      $ + 5H
+0080 020000   F     1095             LJMP    ?C0037
+                    1096     ;             if (os_tcb[i].OSTCBStatus == OS_STAT_RDY) {
+                    1097                             ; SOURCE LINE # 129
+0083 EF             1098             MOV     A,R7
+0084 7803           1099             MOV     R0,#03H
+0086                1100     ?C0068:
+0086 C3             1101             CLR     C
+0087 33             1102             RLC     A
+0088 CE             1103             XCH     A,R6
+0089 33             1104             RLC     A
+008A CE             1105             XCH     A,R6
+008B D8F9           1106             DJNZ    R0,?C0068
+008D 120000   F     1107             LCALL   L?0088
+A51 MACRO ASSEMBLER  RT_OS_ASM                                                            09/11/2019 18:57:20 PAGE    18
+
+0090 6003           1108             JZ      $ + 5H
+0092 020000   F     1109             LJMP    ?C0038
+                    1110     ;                 if (os_tcb[i].OSTCBPrio > os_tcb[highest_prio_id].OSTCBPrio) {
+                    1111                             ; SOURCE LINE # 130
+0095 120000   F     1112             LCALL   L?0084
+0098 900000   F     1113             MOV     DPTR,#highest_prio_id?152
+009B 120000   F     1114             LCALL   L?0086
+009E 4034           1115             JC      ?C0040
+                    1116     ;                     highest_prio_id = i;
+                    1117                             ; SOURCE LINE # 131
+                    1118     ;                     //≤È’“∏ﬂ”≈œ»º∂‘⁄“—‘À––∂”¡–÷–µƒ≈≈Œª
+                    1119     ;                     task_sequence = 0xFF;//œ»ºŸ…Ë’‚∏ˆ≈≈‘⁄◊Ó◊Ó◊Ó∫Û√Ê
+                    1120                             ; SOURCE LINE # 133
+00A0 120000   F     1121             LCALL   L?0097
+00A3 74FF           1122             MOV     A,#0FFH
+00A5 F0             1123             MOVX    @DPTR,A
+                    1124     ;                     for (j=0; j<TASK_SIZE; j++) {
+                    1125                             ; SOURCE LINE # 134
+00A6 900000   F     1126             MOV     DPTR,#j?151
+00A9 E4             1127             CLR     A
+00AA F0             1128             MOVX    @DPTR,A
+00AB                1129     ?C0041:
+00AB 900000   F     1130             MOV     DPTR,#j?151
+00AE 120000   F     1131             LCALL   L?0090
+00B1 5079           1132             JNC     ?C0038
+                    1133     ;                         if (os_task_run[j] == i) {
+                    1134                             ; SOURCE LINE # 135
+00B3 120000   F     1135             LCALL   L?0072
+00B6 E0             1136             MOVX    A,@DPTR
+00B7 FF             1137             MOV     R7,A
+00B8 900000   F     1138             MOV     DPTR,#i?150
+00BB E0             1139             MOVX    A,@DPTR
+00BC B50709         1140             CJNE    A,AR7,?C0044
+                    1141     ;                             task_sequence = j;
+                    1142                             ; SOURCE LINE # 136
+00BF A3             1143             INC     DPTR
+00C0 E0             1144             MOVX    A,@DPTR
+00C1 900000   F     1145             MOV     DPTR,#task_sequence?153
+00C4 F0             1146             MOVX    @DPTR,A
+                    1147     ;                             break;
+                    1148                             ; SOURCE LINE # 137
+00C5 020000   F     1149             LJMP    ?C0038
+                    1150     ;                         }
+                    1151                             ; SOURCE LINE # 138
+00C8                1152     ?C0044:
+                    1153     ;                         if (os_task_run[j] == 0xFF)
+                    1154                             ; SOURCE LINE # 139
+00C8 EF             1155             MOV     A,R7
+00C9 F4             1156             CPL     A
+00CA 6060           1157             JZ      ?C0038
+                    1158     ;                          break;
+                    1159                             ; SOURCE LINE # 140
+                    1160     ;                     }
+                    1161                             ; SOURCE LINE # 141
+00CC 900000   F     1162             MOV     DPTR,#j?151
+00CF E0             1163             MOVX    A,@DPTR
+00D0 04             1164             INC     A
+00D1 F0             1165             MOVX    @DPTR,A
+00D2 80D7           1166             SJMP    ?C0041
+                    1167     ;                 } else if (os_tcb[i].OSTCBPrio == os_tcb[highest_prio_id].OSTCBPrio) {
+                    1168                             ; SOURCE LINE # 142
+00D4                1169     ?C0040:
+00D4 900000   F     1170             MOV     DPTR,#i?150
+00D7 120000   F     1171             LCALL   L?0083
+00DA EF             1172             MOV     A,R7
+00DB 7803           1173             MOV     R0,#03H
+A51 MACRO ASSEMBLER  RT_OS_ASM                                                            09/11/2019 18:57:20 PAGE    19
+
+00DD                1174     ?C0069:
+00DD C3             1175             CLR     C
+00DE 33             1176             RLC     A
+00DF CE             1177             XCH     A,R6
+00E0 33             1178             RLC     A
+00E1 CE             1179             XCH     A,R6
+00E2 D8F9           1180             DJNZ    R0,?C0069
+00E4 2400     F     1181             ADD     A,#LOW (os_tcb+05H)
+00E6 120000   F     1182             LCALL   L?0085
+00E9 6D             1183             XRL     A,R5
+00EA 7040           1184             JNZ     ?C0038
+                    1185     ;                     //≤È’“–¬’“µΩµƒ∏ﬂ”≈œ»º∂‘⁄“—‘À––∂”¡–÷–µƒ≈≈Œª
+                    1186     ;                     u8 temp_task_sequence = 0xFF;//Õ¨”≈œ»º∂ π”√µƒ¡Ÿ ±»ŒŒÒ–Ú¡–
+                    1187                             ; SOURCE LINE # 144
+00EC 74FF           1188             MOV     A,#0FFH
+                    1189     ;                     for (j=0; j<TASK_SIZE; j++) { //≤È’“–¬µƒÕ¨º∂»ŒŒÒ‘⁄»ŒŒÒ∂”¡–÷–µƒ≈≈Œª
+                    1190                             ; SOURCE LINE # 145
+00EE 120000   F     1191             LCALL   L?0092
+00F1 E4             1192             CLR     A
+00F2 F0             1193             MOVX    @DPTR,A
+00F3                1194     ?C0048:
+00F3 900000   F     1195             MOV     DPTR,#j?151
+00F6 120000   F     1196             LCALL   L?0079
+00F9 5020           1197             JNC     ?C0049
+                    1198     ;                         if (os_task_run[j] == i) {
+                    1199                             ; SOURCE LINE # 146
+00FB 120000   F     1200             LCALL   L?0072
+00FE E0             1201             MOVX    A,@DPTR
+00FF FF             1202             MOV     R7,A
+0100 900000   F     1203             MOV     DPTR,#i?150
+0103 E0             1204             MOVX    A,@DPTR
+0104 B50708         1205             CJNE    A,AR7,?C0051
+                    1206     ;                             temp_task_sequence = j;
+                    1207                             ; SOURCE LINE # 147
+0107 A3             1208             INC     DPTR
+0108 E0             1209             MOVX    A,@DPTR
+0109 900000   F     1210             MOV     DPTR,#temp_task_sequence?147
+010C F0             1211             MOVX    @DPTR,A
+                    1212     ;                             break;
+                    1213                             ; SOURCE LINE # 148
+010D 800C           1214             SJMP    ?C0049
+                    1215     ;                         }
+                    1216                             ; SOURCE LINE # 149
+010F                1217     ?C0051:
+                    1218     ;                         if (os_task_run[j] == 0xFF)
+                    1219                             ; SOURCE LINE # 150
+010F EF             1220             MOV     A,R7
+0110 F4             1221             CPL     A
+0111 6008           1222             JZ      ?C0049
+                    1223     ;                          break;
+                    1224                             ; SOURCE LINE # 151
+                    1225     ;                     }
+                    1226                             ; SOURCE LINE # 152
+0113 900000   F     1227             MOV     DPTR,#j?151
+0116 E0             1228             MOVX    A,@DPTR
+0117 04             1229             INC     A
+0118 F0             1230             MOVX    @DPTR,A
+0119 80D8           1231             SJMP    ?C0048
+011B                1232     ?C0049:
+                    1233     ;                     if (temp_task_sequence > task_sequence) { //¥À¥¶Œ“√«√ª”–øº¬«¡Ω∏ˆœ‡Õ¨”
+                             ≈œ»º∂∂º√ª‘⁄“—‘À––»ŒŒÒ∂”¡–÷–µƒ«Èøˆ£¨’‚÷÷«Èøˆœ¬‘À––µ⁄“ª∏ˆ±ª’“µΩµƒ»ŒŒÒ
+                    1234                             ; SOURCE LINE # 153
+011B 900000   F     1235             MOV     DPTR,#task_sequence?153
+011E E0             1236             MOVX    A,@DPTR
+011F FF             1237             MOV     R7,A
+0120 A3             1238             INC     DPTR
+A51 MACRO ASSEMBLER  RT_OS_ASM                                                            09/11/2019 18:57:20 PAGE    20
+
+0121 E0             1239             MOVX    A,@DPTR
+0122 FE             1240             MOV     R6,A
+0123 D3             1241             SETB    C
+0124 9F             1242             SUBB    A,R7
+0125 4005           1243             JC      ?C0038
+                    1244     ;                         highest_prio_id = i;
+                    1245                             ; SOURCE LINE # 154
+                    1246     ;                         task_sequence = temp_task_sequence;
+                    1247                             ; SOURCE LINE # 155
+0127 120000   F     1248             LCALL   L?0097
+012A EE             1249             MOV     A,R6
+012B F0             1250             MOVX    @DPTR,A
+                    1251     ;                     }
+                    1252                             ; SOURCE LINE # 156
+                    1253     ;                 }
+                    1254                             ; SOURCE LINE # 157
+                    1255     ;             }
+                    1256                             ; SOURCE LINE # 158
+                    1257     ;         }
+                    1258                             ; SOURCE LINE # 159
+012C                1259     ?C0038:
+012C 900000   F     1260             MOV     DPTR,#i?150
+012F E0             1261             MOVX    A,@DPTR
+0130 04             1262             INC     A
+0131 F0             1263             MOVX    @DPTR,A
+0132 020000   F     1264             LJMP    ?C0036
+0135                1265     ?C0037:
+                    1266     ;         os_task_running_ID = highest_prio_id;
+                    1267                             ; SOURCE LINE # 160
+0135 900000   F     1268             MOV     DPTR,#highest_prio_id?152
+0138 E0             1269             MOVX    A,@DPTR
+0139 900000   F     1270             MOV     DPTR,#os_task_running_ID
+013C F0             1271             MOVX    @DPTR,A
+                    1272     ;         //∞—µ±«∞»ŒŒÒ≤Â»Î“—‘À––»ŒŒÒ∂”¡–÷–
+                    1273     ;         {
+                    1274                             ; SOURCE LINE # 162
+                    1275     ;             u8 temp_id = os_task_running_ID, temp_temp_id;
+                    1276                             ; SOURCE LINE # 163
+013D 900000   F     1277             MOV     DPTR,#temp_id?148
+0140 F0             1278             MOVX    @DPTR,A
+                    1279     ;             if (task_sequence == 0xFF) { //≤ª‘⁄»ŒŒÒ∂”¡–÷–£¨÷±Ω”Õ∑≤Â
+                    1280                             ; SOURCE LINE # 164
+0141 900000   F     1281             MOV     DPTR,#task_sequence?153
+0144 E0             1282             MOVX    A,@DPTR
+0145 F9             1283             MOV     R1,A
+0146 F4             1284             CPL     A
+0147 703E           1285             JNZ     ?C0054
+                    1286     ;                 for (j=0; j<TASK_SIZE; j++) {
+                    1287                             ; SOURCE LINE # 165
+0149 900000   F     1288             MOV     DPTR,#j?151
+014C F0             1289             MOVX    @DPTR,A
+014D                1290     ?C0055:
+014D 900000   F     1291             MOV     DPTR,#j?151
+0150 120000   F     1292             LCALL   L?0079
+0153 5057           1293             JNC     ?C0059
+                    1294     ;                     if (os_task_run[j] == 0xFF) {
+                    1295                             ; SOURCE LINE # 166
+0155 120000   F     1296             LCALL   L?0072
+0158 E0             1297             MOVX    A,@DPTR
+0159 FD             1298             MOV     R5,A
+015A F4             1299             CPL     A
+015B 700C           1300             JNZ     ?C0058
+                    1301     ;                         os_task_run[j] = temp_id;
+                    1302                             ; SOURCE LINE # 167
+015D 900000   F     1303             MOV     DPTR,#temp_id?148
+0160 E0             1304             MOVX    A,@DPTR
+A51 MACRO ASSEMBLER  RT_OS_ASM                                                            09/11/2019 18:57:20 PAGE    21
+
+0161 FC             1305             MOV     R4,A
+0162 120000   F     1306             LCALL   L?0073
+0165 EC             1307             MOV     A,R4
+0166 F0             1308             MOVX    @DPTR,A
+                    1309     ;                         break;
+                    1310                             ; SOURCE LINE # 168
+0167 8043           1311             SJMP    ?C0059
+                    1312     ;                     }
+                    1313                             ; SOURCE LINE # 169
+0169                1314     ?C0058:
+                    1315     ;                     temp_temp_id = os_task_run[j];
+                    1316                             ; SOURCE LINE # 170
+0169 900000   F     1317             MOV     DPTR,#j?151
+016C 120000   F     1318             LCALL   L?0083
+016F 900000   F     1319             MOV     DPTR,#temp_temp_id?149
+0172 ED             1320             MOV     A,R5
+0173 F0             1321             MOVX    @DPTR,A
+                    1322     ;                     os_task_run[j] = temp_id;
+                    1323                             ; SOURCE LINE # 171
+0174 900000   F     1324             MOV     DPTR,#temp_id?148
+0177 E0             1325             MOVX    A,@DPTR
+0178 FC             1326             MOV     R4,A
+0179 120000   F     1327             LCALL   L?0073
+017C EC             1328             MOV     A,R4
+017D F0             1329             MOVX    @DPTR,A
+                    1330     ;                     temp_id = temp_temp_id;
+                    1331                             ; SOURCE LINE # 172
+017E ED             1332             MOV     A,R5
+                    1333     ;                 }
+                    1334                             ; SOURCE LINE # 173
+017F 120000   F     1335             LCALL   L?0092
+0182 E0             1336             MOVX    A,@DPTR
+0183 04             1337             INC     A
+0184 F0             1338             MOVX    @DPTR,A
+0185 80C6           1339             SJMP    ?C0055
+                    1340     ;             } else { //“—‘⁄»ŒŒÒ∂”¡–÷–£¨‘⁄À˘‘⁄Œª÷√«∞“∆
+                    1341                             ; SOURCE LINE # 174
+0187                1342     ?C0054:
+                    1343     ;                 for (j = task_sequence; j>0; j--) {
+                    1344                             ; SOURCE LINE # 175
+0187 900000   F     1345             MOV     DPTR,#j?151
+018A E9             1346             MOV     A,R1
+018B F0             1347             MOVX    @DPTR,A
+018C                1348     ?C0060:
+018C 900000   F     1349             MOV     DPTR,#j?151
+018F 120000   F     1350             LCALL   L?0091
+0192 4010           1351             JC      ?C0061
+                    1352     ;                     os_task_run[j] = os_task_run[j-1];
+                    1353                             ; SOURCE LINE # 176
+0194 120000   F     1354             LCALL   L?0089
+0197 120000   F     1355             LCALL   L?0073
+019A ED             1356             MOV     A,R5
+019B F0             1357             MOVX    @DPTR,A
+                    1358     ;                 }
+                    1359                             ; SOURCE LINE # 177
+019C 900000   F     1360             MOV     DPTR,#j?151
+019F E0             1361             MOVX    A,@DPTR
+01A0 14             1362             DEC     A
+01A1 F0             1363             MOVX    @DPTR,A
+01A2 80E8           1364             SJMP    ?C0060
+01A4                1365     ?C0061:
+                    1366     ;                 os_task_run[0] = os_task_running_ID;
+                    1367                             ; SOURCE LINE # 178
+01A4 900000   F     1368             MOV     DPTR,#os_task_running_ID
+01A7 E0             1369             MOVX    A,@DPTR
+01A8 900000   F     1370             MOV     DPTR,#os_task_run
+A51 MACRO ASSEMBLER  RT_OS_ASM                                                            09/11/2019 18:57:20 PAGE    22
+
+01AB F0             1371             MOVX    @DPTR,A
+                    1372     ;             }
+                    1373                             ; SOURCE LINE # 179
+01AC                1374     ?C0059:
+                    1375     ;         }
+                    1376                             ; SOURCE LINE # 180
+                    1377     ;         if (os_tcb[os_task_running_ID].OSTCBTimeQuantaCtr == 0) //∏¯µ±«∞‘À––µƒ ±º‰∆¨∏≥÷µ
+                    1378                             ; SOURCE LINE # 181
+01AC 900000   F     1379             MOV     DPTR,#os_task_running_ID
+01AF E0             1380             MOVX    A,@DPTR
+01B0 120000   F     1381             LCALL   L?0075
+01B3 E0             1382             MOVX    A,@DPTR
+01B4 7005           1383             JNZ     ?C0063
+                    1384     ;             os_tcb[os_task_running_ID].OSTCBTimeQuantaCtr = os_tcb[os_task_running_ID].OS
+                             TCBTimeQuanta;
+                    1385                             ; SOURCE LINE # 182
+01B6 120000   F     1386             LCALL   L?0074
+01B9 EE             1387             MOV     A,R6
+01BA F0             1388             MOVX    @DPTR,A
+01BB                1389     ?C0063:
+                    1390     ;         os_tcb[os_task_running_ID].OSTCBStatus = OS_STAT_RUNNING;
+                    1391                             ; SOURCE LINE # 183
+                    1392     ;         SP = os_tcb[os_task_running_ID].OSTCBStkPtr;
+                    1393                             ; SOURCE LINE # 184
+01BB 120000   F     1394             LCALL   L?0076
+01BE E0             1395             MOVX    A,@DPTR
+01BF F581           1396             MOV     SP,A
+                    1397     ;     } 
+                    1398                             ; SOURCE LINE # 185
+01C1 800A           1399             SJMP    ?C0065
+01C3                1400     ?C0035:
+                    1401     ;     else { // ±º‰∆¨Œ¥µΩ£¨Ω¯––◊‘ºı
+                    1402                             ; SOURCE LINE # 186
+                    1403     ;         os_tcb[os_task_running_ID].OSTCBTimeQuantaCtr--;
+                    1404                             ; SOURCE LINE # 187
+01C3 900000   F     1405             MOV     DPTR,#os_task_running_ID
+01C6 E0             1406             MOVX    A,@DPTR
+01C7 120000   F     1407             LCALL   L?0075
+01CA E0             1408             MOVX    A,@DPTR
+01CB 14             1409             DEC     A
+01CC F0             1410             MOVX    @DPTR,A
+                    1411     ;     }
+                    1412                             ; SOURCE LINE # 188
+                    1413     ; }
+                    1414                             ; SOURCE LINE # 189
+01CD                1415     ?C0065:
+01CD D007           1416             POP     AR7
+01CF D006           1417             POP     AR6
+01D1 D005           1418             POP     AR5
+01D3 D004           1419             POP     AR4
+01D5 D003           1420             POP     AR3
+01D7 D002           1421             POP     AR2
+01D9 D001           1422             POP     AR1
+01DB D000           1423             POP     AR0
+01DD D0D0           1424             POP     PSW
+01DF D082           1425             POP     DPL
+01E1 D083           1426             POP     DPH
+01E3 D0F0           1427             POP     B
+01E5 D0E0           1428             POP     ACC
+01E7 32             1429             RETI    
+                    1430     ; END OF timer0_int
+                    1431     
+                    1432             END
+A51 MACRO ASSEMBLER  RT_OS_ASM                                                            09/11/2019 18:57:20 PAGE    23
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E                   T Y P E  V A L U E   ATTRIBUTES
+
+?C0001 . . . . . . . . .  C ADDR   0034H   R   SEG=?PR?OS_TASK_SW?RT_OS_ASM
+?C0002 . . . . . . . . .  C ADDR   00E9H   R   SEG=?PR?OS_TASK_SW?RT_OS_ASM
+?C0003 . . . . . . . . .  C ADDR   00E0H   R   SEG=?PR?OS_TASK_SW?RT_OS_ASM
+?C0005 . . . . . . . . .  C ADDR   008DH   R   SEG=?PR?OS_TASK_SW?RT_OS_ASM
+?C0006 . . . . . . . . .  C ADDR   0067H   R   SEG=?PR?OS_TASK_SW?RT_OS_ASM
+?C0009 . . . . . . . . .  C ADDR   0084H   R   SEG=?PR?OS_TASK_SW?RT_OS_ASM
+?C0013 . . . . . . . . .  C ADDR   00ADH   R   SEG=?PR?OS_TASK_SW?RT_OS_ASM
+?C0014 . . . . . . . . .  C ADDR   00CFH   R   SEG=?PR?OS_TASK_SW?RT_OS_ASM
+?C0016 . . . . . . . . .  C ADDR   00C6H   R   SEG=?PR?OS_TASK_SW?RT_OS_ASM
+?C0019 . . . . . . . . .  C ADDR   0139H   R   SEG=?PR?OS_TASK_SW?RT_OS_ASM
+?C0020 . . . . . . . . .  C ADDR   0101H   R   SEG=?PR?OS_TASK_SW?RT_OS_ASM
+?C0023 . . . . . . . . .  C ADDR   011AH   R   SEG=?PR?OS_TASK_SW?RT_OS_ASM
+?C0024 . . . . . . . . .  C ADDR   015EH   R   SEG=?PR?OS_TASK_SW?RT_OS_ASM
+?C0025 . . . . . . . . .  C ADDR   013EH   R   SEG=?PR?OS_TASK_SW?RT_OS_ASM
+?C0026 . . . . . . . . .  C ADDR   0156H   R   SEG=?PR?OS_TASK_SW?RT_OS_ASM
+?C0028 . . . . . . . . .  C ADDR   016DH   R   SEG=?PR?OS_TASK_SW?RT_OS_ASM
+?C0030 . . . . . . . . .  C ADDR   0022H   R   SEG=?PR?TIMER0_INT?RT_OS_ASM
+?C0031 . . . . . . . . .  C ADDR   0050H   R   SEG=?PR?TIMER0_INT?RT_OS_ASM
+?C0032 . . . . . . . . .  C ADDR   004DH   R   SEG=?PR?TIMER0_INT?RT_OS_ASM
+?C0035 . . . . . . . . .  C ADDR   01C3H   R   SEG=?PR?TIMER0_INT?RT_OS_ASM
+?C0036 . . . . . . . . .  C ADDR   0075H   R   SEG=?PR?TIMER0_INT?RT_OS_ASM
+?C0037 . . . . . . . . .  C ADDR   0135H   R   SEG=?PR?TIMER0_INT?RT_OS_ASM
+?C0038 . . . . . . . . .  C ADDR   012CH   R   SEG=?PR?TIMER0_INT?RT_OS_ASM
+?C0040 . . . . . . . . .  C ADDR   00D4H   R   SEG=?PR?TIMER0_INT?RT_OS_ASM
+?C0041 . . . . . . . . .  C ADDR   00ABH   R   SEG=?PR?TIMER0_INT?RT_OS_ASM
+?C0044 . . . . . . . . .  C ADDR   00C8H   R   SEG=?PR?TIMER0_INT?RT_OS_ASM
+?C0048 . . . . . . . . .  C ADDR   00F3H   R   SEG=?PR?TIMER0_INT?RT_OS_ASM
+?C0049 . . . . . . . . .  C ADDR   011BH   R   SEG=?PR?TIMER0_INT?RT_OS_ASM
+?C0051 . . . . . . . . .  C ADDR   010FH   R   SEG=?PR?TIMER0_INT?RT_OS_ASM
+?C0054 . . . . . . . . .  C ADDR   0187H   R   SEG=?PR?TIMER0_INT?RT_OS_ASM
+?C0055 . . . . . . . . .  C ADDR   014DH   R   SEG=?PR?TIMER0_INT?RT_OS_ASM
+?C0058 . . . . . . . . .  C ADDR   0169H   R   SEG=?PR?TIMER0_INT?RT_OS_ASM
+?C0059 . . . . . . . . .  C ADDR   01ACH   R   SEG=?PR?TIMER0_INT?RT_OS_ASM
+?C0060 . . . . . . . . .  C ADDR   018CH   R   SEG=?PR?TIMER0_INT?RT_OS_ASM
+?C0061 . . . . . . . . .  C ADDR   01A4H   R   SEG=?PR?TIMER0_INT?RT_OS_ASM
+?C0063 . . . . . . . . .  C ADDR   01BBH   R   SEG=?PR?TIMER0_INT?RT_OS_ASM
+?C0065 . . . . . . . . .  C ADDR   01CDH   R   SEG=?PR?TIMER0_INT?RT_OS_ASM
+?C0066 . . . . . . . . .  C ADDR   0042H   R   SEG=?PR?OS_TASK_SW?RT_OS_ASM
+?C0067 . . . . . . . . .  C ADDR   0093H   R   SEG=?PR?OS_TASK_SW?RT_OS_ASM
+?C0068 . . . . . . . . .  C ADDR   0086H   R   SEG=?PR?TIMER0_INT?RT_OS_ASM
+?C0069 . . . . . . . . .  C ADDR   00DDH   R   SEG=?PR?TIMER0_INT?RT_OS_ASM
+?C?IILDX . . . . . . . .  C ADDR   -----       EXT
+?OS_TASK_SW?BYTE . . . .  X ADDR   0000H   R   SEG=?XD?OS_TASK_SW?RT_OS_ASM
+?PR?OS_TASK_SW?RT_OS_ASM  C SEG    0190H       REL=UNIT
+?PR?RT_OS_ASM. . . . . .  C SEG    012FH       REL=UNIT
+?PR?TIMER0_INT?RT_OS_ASM  C SEG    01E8H       REL=UNIT
+?TIMER0_INT?BYTE . . . .  X ADDR   0000H   R   SEG=?XD?TIMER0_INT?RT_OS_ASM
+?XD?OS_TASK_SW?RT_OS_ASM  X SEG    0006H       REL=UNIT
+?XD?TIMER0_INT?RT_OS_ASM  X SEG    0006H       REL=UNIT
+AC . . . . . . . . . . .  B ADDR   00D0H.6 A   
+ACC. . . . . . . . . . .  D ADDR   00E0H   A   
+ACC0 . . . . . . . . . .  B ADDR   00E0H.0 A   
+ACC1 . . . . . . . . . .  B ADDR   00E0H.1 A   
+ACC2 . . . . . . . . . .  B ADDR   00E0H.2 A   
+ACC3 . . . . . . . . . .  B ADDR   00E0H.3 A   
+ACC4 . . . . . . . . . .  B ADDR   00E0H.4 A   
+ACC5 . . . . . . . . . .  B ADDR   00E0H.5 A   
+ACC6 . . . . . . . . . .  B ADDR   00E0H.6 A   
+ACC7 . . . . . . . . . .  B ADDR   00E0H.7 A   
+ADC_CONTR. . . . . . . .  D ADDR   00BCH   A   
+A51 MACRO ASSEMBLER  RT_OS_ASM                                                            09/11/2019 18:57:20 PAGE    24
+
+ADC_RES. . . . . . . . .  D ADDR   00BDH   A   
+ADC_RESL . . . . . . . .  D ADDR   00BEH   A   
+AR0. . . . . . . . . . .  D ADDR   0000H   A   
+AR1. . . . . . . . . . .  D ADDR   0001H   A   
+AR2. . . . . . . . . . .  D ADDR   0002H   A   
+AR3. . . . . . . . . . .  D ADDR   0003H   A   
+AR4. . . . . . . . . . .  D ADDR   0004H   A   
+AR5. . . . . . . . . . .  D ADDR   0005H   A   
+AR6. . . . . . . . . . .  D ADDR   0006H   A   
+AR7. . . . . . . . . . .  D ADDR   0007H   A   
+AUXR . . . . . . . . . .  D ADDR   008EH   A   
+AUXR1. . . . . . . . . .  D ADDR   00A2H   A   
+AUXR2. . . . . . . . . .  D ADDR   008FH   A   
+B. . . . . . . . . . . .  D ADDR   00F0H   A   
+B0 . . . . . . . . . . .  B ADDR   00F0H.0 A   
+B1 . . . . . . . . . . .  B ADDR   00F0H.1 A   
+B2 . . . . . . . . . . .  B ADDR   00F0H.2 A   
+B3 . . . . . . . . . . .  B ADDR   00F0H.3 A   
+B4 . . . . . . . . . . .  B ADDR   00F0H.4 A   
+B5 . . . . . . . . . . .  B ADDR   00F0H.5 A   
+B6 . . . . . . . . . . .  B ADDR   00F0H.6 A   
+B7 . . . . . . . . . . .  B ADDR   00F0H.7 A   
+BUS_SPEED. . . . . . . .  D ADDR   00A1H   A   
+CCAP0H . . . . . . . . .  D ADDR   00FAH   A   
+CCAP0L . . . . . . . . .  D ADDR   00EAH   A   
+CCAP1H . . . . . . . . .  D ADDR   00FBH   A   
+CCAP1L . . . . . . . . .  D ADDR   00EBH   A   
+CCAP2H . . . . . . . . .  D ADDR   00FCH   A   
+CCAP2L . . . . . . . . .  D ADDR   00ECH   A   
+CCAPM0 . . . . . . . . .  D ADDR   00DAH   A   
+CCAPM1 . . . . . . . . .  D ADDR   00DBH   A   
+CCAPM2 . . . . . . . . .  D ADDR   00DCH   A   
+CCF0 . . . . . . . . . .  B ADDR   00D8H.0 A   
+CCF1 . . . . . . . . . .  B ADDR   00D8H.1 A   
+CCF2 . . . . . . . . . .  B ADDR   00D8H.2 A   
+CCON . . . . . . . . . .  D ADDR   00D8H   A   
+CCP0 . . . . . . . . . .  B ADDR   0090H.1 A   
+CCP1 . . . . . . . . . .  B ADDR   0090H.0 A   
+CCP2 . . . . . . . . . .  B ADDR   00B0H.7 A   
+CF . . . . . . . . . . .  B ADDR   00D8H.7 A   
+CH . . . . . . . . . . .  D ADDR   00F9H   A   
+CL . . . . . . . . . . .  D ADDR   00E9H   A   
+CLKOUT0. . . . . . . . .  B ADDR   00B0H.5 A   
+CLKOUT1. . . . . . . . .  B ADDR   00B0H.4 A   
+CLK_DIV. . . . . . . . .  D ADDR   0097H   A   
+CMOD . . . . . . . . . .  D ADDR   00D9H   A   
+COM0046. . . . . . . . .  C ADDR   0000H   R   SEG=?PR?RT_OS_ASM
+CR . . . . . . . . . . .  B ADDR   00D8H.6 A   
+CY . . . . . . . . . . .  B ADDR   00D0H.7 A   
+DPH. . . . . . . . . . .  D ADDR   0083H   A   
+DPL. . . . . . . . . . .  D ADDR   0082H   A   
+EA . . . . . . . . . . .  B ADDR   00A8H.7 A   
+EADC . . . . . . . . . .  B ADDR   00A8H.5 A   
+ELVD . . . . . . . . . .  B ADDR   00A8H.6 A   
+ES . . . . . . . . . . .  B ADDR   00A8H.4 A   
+ET0. . . . . . . . . . .  B ADDR   00A8H.1 A   
+ET1. . . . . . . . . . .  B ADDR   00A8H.3 A   
+EX0. . . . . . . . . . .  B ADDR   00A8H.0 A   
+EX1. . . . . . . . . . .  B ADDR   00A8H.2 A   
+F0 . . . . . . . . . . .  B ADDR   00D0H.5 A   
+F1 . . . . . . . . . . .  B ADDR   00D0H.1 A   
+HIGHEST_PRIO_ID?045. . .  X ADDR   0002H   R   SEG=?XD?OS_TASK_SW?RT_OS_ASM
+HIGHEST_PRIO_ID?152. . .  X ADDR   0002H   R   SEG=?XD?TIMER0_INT?RT_OS_ASM
+I?043. . . . . . . . . .  X ADDR   0000H   R   SEG=?XD?OS_TASK_SW?RT_OS_ASM
+I?150. . . . . . . . . .  X ADDR   0000H   R   SEG=?XD?TIMER0_INT?RT_OS_ASM
+IAP_ADDRH. . . . . . . .  D ADDR   00C3H   A   
+A51 MACRO ASSEMBLER  RT_OS_ASM                                                            09/11/2019 18:57:20 PAGE    25
+
+IAP_ADDRL. . . . . . . .  D ADDR   00C4H   A   
+IAP_CMD. . . . . . . . .  D ADDR   00C5H   A   
+IAP_CONTR. . . . . . . .  D ADDR   00C7H   A   
+IAP_DATA . . . . . . . .  D ADDR   00C2H   A   
+IAP_TRIG . . . . . . . .  D ADDR   00C6H   A   
+IE . . . . . . . . . . .  D ADDR   00A8H   A   
+IE0. . . . . . . . . . .  B ADDR   0088H.1 A   
+IE1. . . . . . . . . . .  B ADDR   0088H.3 A   
+IE2. . . . . . . . . . .  D ADDR   00AFH   A   
+INT0 . . . . . . . . . .  B ADDR   00B0H.2 A   
+INT1 . . . . . . . . . .  B ADDR   00B0H.3 A   
+INT_CLKO . . . . . . . .  D ADDR   008FH   A   
+IP . . . . . . . . . . .  D ADDR   00B8H   A   
+IP2. . . . . . . . . . .  D ADDR   00B5H   A   
+IPH. . . . . . . . . . .  D ADDR   00B7H   A   
+IPH2 . . . . . . . . . .  D ADDR   00B6H   A   
+ISP_ADDRH. . . . . . . .  D ADDR   00C3H   A   
+ISP_ADDRL. . . . . . . .  D ADDR   00C4H   A   
+ISP_CMD. . . . . . . . .  D ADDR   00C5H   A   
+ISP_CONTR. . . . . . . .  D ADDR   00C7H   A   
+ISP_DATA . . . . . . . .  D ADDR   00C2H   A   
+ISP_TRIG . . . . . . . .  D ADDR   00C6H   A   
+IT0. . . . . . . . . . .  B ADDR   0088H.0 A   
+IT1. . . . . . . . . . .  B ADDR   0088H.2 A   
+J?044. . . . . . . . . .  X ADDR   0001H   R   SEG=?XD?OS_TASK_SW?RT_OS_ASM
+J?151. . . . . . . . . .  X ADDR   0001H   R   SEG=?XD?TIMER0_INT?RT_OS_ASM
+L?0071 . . . . . . . . .  C ADDR   0000H   R   SEG=?PR?RT_OS_ASM
+L?0072 . . . . . . . . .  C ADDR   0000H   R   SEG=?PR?RT_OS_ASM
+L?0073 . . . . . . . . .  C ADDR   0005H   R   SEG=?PR?RT_OS_ASM
+L?0074 . . . . . . . . .  C ADDR   0010H   R   SEG=?PR?RT_OS_ASM
+L?0075 . . . . . . . . .  C ADDR   0025H   R   SEG=?PR?RT_OS_ASM
+L?0076 . . . . . . . . .  C ADDR   0033H   R   SEG=?PR?RT_OS_ASM
+L?0077 . . . . . . . . .  C ADDR   004BH   R   SEG=?PR?RT_OS_ASM
+L?0078 . . . . . . . . .  C ADDR   0059H   R   SEG=?PR?RT_OS_ASM
+L?0079 . . . . . . . . .  C ADDR   005CH   R   SEG=?PR?RT_OS_ASM
+L?0080 . . . . . . . . .  C ADDR   006DH   R   SEG=?PR?RT_OS_ASM
+L?0081 . . . . . . . . .  C ADDR   006DH   R   SEG=?PR?RT_OS_ASM
+L?0082 . . . . . . . . .  C ADDR   007CH   R   SEG=?PR?RT_OS_ASM
+L?0083 . . . . . . . . .  C ADDR   007FH   R   SEG=?PR?RT_OS_ASM
+L?0084 . . . . . . . . .  C ADDR   0086H   R   SEG=?PR?RT_OS_ASM
+L?0085 . . . . . . . . .  C ADDR   0089H   R   SEG=?PR?RT_OS_ASM
+L?0086 . . . . . . . . .  C ADDR   0092H   R   SEG=?PR?RT_OS_ASM
+L?0087 . . . . . . . . .  C ADDR   00A7H   R   SEG=?PR?RT_OS_ASM
+L?0088 . . . . . . . . .  C ADDR   00BCH   R   SEG=?PR?RT_OS_ASM
+L?0089 . . . . . . . . .  C ADDR   00CEH   R   SEG=?PR?RT_OS_ASM
+L?0090 . . . . . . . . .  C ADDR   00E0H   R   SEG=?PR?RT_OS_ASM
+L?0091 . . . . . . . . .  C ADDR   00F1H   R   SEG=?PR?RT_OS_ASM
+L?0092 . . . . . . . . .  C ADDR   0102H   R   SEG=?PR?RT_OS_ASM
+L?0093 . . . . . . . . .  C ADDR   010AH   R   SEG=?PR?RT_OS_ASM
+L?0094 . . . . . . . . .  C ADDR   0114H   R   SEG=?PR?RT_OS_ASM
+L?0095 . . . . . . . . .  C ADDR   011EH   R   SEG=?PR?RT_OS_ASM
+L?0096 . . . . . . . . .  C ADDR   011EH   R   SEG=?PR?RT_OS_ASM
+L?0097 . . . . . . . . .  C ADDR   0125H   R   SEG=?PR?RT_OS_ASM
+OS_TASK_RUN. . . . . . .  X ADDR   -----       EXT
+OS_TASK_RUNNING_ID . . .  X ADDR   -----       EXT
+OS_TASK_SW . . . . . . .  C ADDR   0000H   R   SEG=?PR?OS_TASK_SW?RT_OS_ASM
+OS_TCB . . . . . . . . .  X ADDR   -----       EXT
+OV . . . . . . . . . . .  B ADDR   00D0H.2 A   
+P. . . . . . . . . . . .  B ADDR   00D0H.0 A   
+P0 . . . . . . . . . . .  D ADDR   0080H   A   
+P00. . . . . . . . . . .  B ADDR   0080H.0 A   
+P01. . . . . . . . . . .  B ADDR   0080H.1 A   
+P02. . . . . . . . . . .  B ADDR   0080H.2 A   
+P03. . . . . . . . . . .  B ADDR   0080H.3 A   
+P04. . . . . . . . . . .  B ADDR   0080H.4 A   
+P05. . . . . . . . . . .  B ADDR   0080H.5 A   
+A51 MACRO ASSEMBLER  RT_OS_ASM                                                            09/11/2019 18:57:20 PAGE    26
+
+P06. . . . . . . . . . .  B ADDR   0080H.6 A   
+P07. . . . . . . . . . .  B ADDR   0080H.7 A   
+P0M0 . . . . . . . . . .  D ADDR   0094H   A   
+P0M1 . . . . . . . . . .  D ADDR   0093H   A   
+P1 . . . . . . . . . . .  D ADDR   0090H   A   
+P10. . . . . . . . . . .  B ADDR   0090H.0 A   
+P11. . . . . . . . . . .  B ADDR   0090H.1 A   
+P12. . . . . . . . . . .  B ADDR   0090H.2 A   
+P13. . . . . . . . . . .  B ADDR   0090H.3 A   
+P14. . . . . . . . . . .  B ADDR   0090H.4 A   
+P15. . . . . . . . . . .  B ADDR   0090H.5 A   
+P16. . . . . . . . . . .  B ADDR   0090H.6 A   
+P17. . . . . . . . . . .  B ADDR   0090H.7 A   
+P1ASF. . . . . . . . . .  D ADDR   009DH   A   
+P1M0 . . . . . . . . . .  D ADDR   0092H   A   
+P1M1 . . . . . . . . . .  D ADDR   0091H   A   
+P2 . . . . . . . . . . .  D ADDR   00A0H   A   
+P20. . . . . . . . . . .  B ADDR   00A0H.0 A   
+P21. . . . . . . . . . .  B ADDR   00A0H.1 A   
+P22. . . . . . . . . . .  B ADDR   00A0H.2 A   
+P23. . . . . . . . . . .  B ADDR   00A0H.3 A   
+P24. . . . . . . . . . .  B ADDR   00A0H.4 A   
+P25. . . . . . . . . . .  B ADDR   00A0H.5 A   
+P26. . . . . . . . . . .  B ADDR   00A0H.6 A   
+P27. . . . . . . . . . .  B ADDR   00A0H.7 A   
+P2M0 . . . . . . . . . .  D ADDR   0096H   A   
+P2M1 . . . . . . . . . .  D ADDR   0095H   A   
+P3 . . . . . . . . . . .  D ADDR   00B0H   A   
+P30. . . . . . . . . . .  B ADDR   00B0H.0 A   
+P31. . . . . . . . . . .  B ADDR   00B0H.1 A   
+P32. . . . . . . . . . .  B ADDR   00B0H.2 A   
+P33. . . . . . . . . . .  B ADDR   00B0H.3 A   
+P34. . . . . . . . . . .  B ADDR   00B0H.4 A   
+P35. . . . . . . . . . .  B ADDR   00B0H.5 A   
+P36. . . . . . . . . . .  B ADDR   00B0H.6 A   
+P37. . . . . . . . . . .  B ADDR   00B0H.7 A   
+P3M0 . . . . . . . . . .  D ADDR   00B2H   A   
+P3M1 . . . . . . . . . .  D ADDR   00B1H   A   
+P4 . . . . . . . . . . .  D ADDR   00C0H   A   
+P40. . . . . . . . . . .  B ADDR   00C0H.0 A   
+P41. . . . . . . . . . .  B ADDR   00C0H.1 A   
+P42. . . . . . . . . . .  B ADDR   00C0H.2 A   
+P43. . . . . . . . . . .  B ADDR   00C0H.3 A   
+P44. . . . . . . . . . .  B ADDR   00C0H.4 A   
+P45. . . . . . . . . . .  B ADDR   00C0H.5 A   
+P46. . . . . . . . . . .  B ADDR   00C0H.6 A   
+P47. . . . . . . . . . .  B ADDR   00C0H.7 A   
+P4M0 . . . . . . . . . .  D ADDR   00B4H   A   
+P4M1 . . . . . . . . . .  D ADDR   00B3H   A   
+P5 . . . . . . . . . . .  D ADDR   00C8H   A   
+P50. . . . . . . . . . .  B ADDR   00C8H.0 A   
+P51. . . . . . . . . . .  B ADDR   00C8H.1 A   
+P52. . . . . . . . . . .  B ADDR   00C8H.2 A   
+P53. . . . . . . . . . .  B ADDR   00C8H.3 A   
+P54. . . . . . . . . . .  B ADDR   00C8H.4 A   
+P55. . . . . . . . . . .  B ADDR   00C8H.5 A   
+P56. . . . . . . . . . .  B ADDR   00C8H.6 A   
+P57. . . . . . . . . . .  B ADDR   00C8H.7 A   
+P5M0 . . . . . . . . . .  D ADDR   00CAH   A   
+P5M1 . . . . . . . . . .  D ADDR   00C9H   A   
+P6 . . . . . . . . . . .  D ADDR   00E8H   A   
+P6M0 . . . . . . . . . .  D ADDR   00CCH   A   
+P6M1 . . . . . . . . . .  D ADDR   00CBH   A   
+P7 . . . . . . . . . . .  D ADDR   00F8H   A   
+P7M0 . . . . . . . . . .  D ADDR   00E2H   A   
+P7M1 . . . . . . . . . .  D ADDR   00E1H   A   
+A51 MACRO ASSEMBLER  RT_OS_ASM                                                            09/11/2019 18:57:20 PAGE    27
+
+PADC . . . . . . . . . .  B ADDR   00B8H.5 A   
+PCA_PWM0 . . . . . . . .  D ADDR   00F2H   A   
+PCA_PWM1 . . . . . . . .  D ADDR   00F3H   A   
+PCA_PWM2 . . . . . . . .  D ADDR   00F4H   A   
+PCON . . . . . . . . . .  D ADDR   0087H   A   
+PCON2. . . . . . . . . .  D ADDR   0097H   A   
+PLVD . . . . . . . . . .  B ADDR   00B8H.6 A   
+PPCA . . . . . . . . . .  B ADDR   00B8H.7 A   
+PS . . . . . . . . . . .  B ADDR   00B8H.4 A   
+PSW. . . . . . . . . . .  D ADDR   00D0H   A   
+PT0. . . . . . . . . . .  B ADDR   00B8H.1 A   
+PT1. . . . . . . . . . .  B ADDR   00B8H.3 A   
+PX0. . . . . . . . . . .  B ADDR   00B8H.0 A   
+PX1. . . . . . . . . . .  B ADDR   00B8H.2 A   
+P_SW1. . . . . . . . . .  D ADDR   00A2H   A   
+P_SW2. . . . . . . . . .  D ADDR   00BAH   A   
+RB8. . . . . . . . . . .  B ADDR   0098H.2 A   
+RD . . . . . . . . . . .  B ADDR   00B0H.7 A   
+REN. . . . . . . . . . .  B ADDR   0098H.4 A   
+RI . . . . . . . . . . .  B ADDR   0098H.0 A   
+RL_T2H . . . . . . . . .  D ADDR   00D6H   A   
+RL_T2L . . . . . . . . .  D ADDR   00D7H   A   
+RL_T3H . . . . . . . . .  D ADDR   00D4H   A   
+RL_T3L . . . . . . . . .  D ADDR   00D5H   A   
+RL_T4H . . . . . . . . .  D ADDR   00D2H   A   
+RL_T4L . . . . . . . . .  D ADDR   00D3H   A   
+RL_TH0 . . . . . . . . .  D ADDR   008CH   A   
+RL_TH1 . . . . . . . . .  D ADDR   008DH   A   
+RL_TL0 . . . . . . . . .  D ADDR   008AH   A   
+RL_TL1 . . . . . . . . .  D ADDR   008BH   A   
+RS0. . . . . . . . . . .  B ADDR   00D0H.3 A   
+RS1. . . . . . . . . . .  B ADDR   00D0H.4 A   
+RT_OS_ASM. . . . . . . .  N NUMB   -----       
+RXD. . . . . . . . . . .  B ADDR   00B0H.0 A   
+RXD2 . . . . . . . . . .  B ADDR   0090H.0 A   
+S2BUF. . . . . . . . . .  D ADDR   009BH   A   
+S2CON. . . . . . . . . .  D ADDR   009AH   A   
+S3BUF. . . . . . . . . .  D ADDR   00ADH   A   
+S3CON. . . . . . . . . .  D ADDR   00ACH   A   
+S4BUF. . . . . . . . . .  D ADDR   0085H   A   
+S4CON. . . . . . . . . .  D ADDR   0084H   A   
+SADDR. . . . . . . . . .  D ADDR   00A9H   A   
+SADEN. . . . . . . . . .  D ADDR   00B9H   A   
+SBUF . . . . . . . . . .  D ADDR   0099H   A   
+SCON . . . . . . . . . .  D ADDR   0098H   A   
+SM0. . . . . . . . . . .  B ADDR   0098H.7 A   
+SM1. . . . . . . . . . .  B ADDR   0098H.6 A   
+SM2. . . . . . . . . . .  B ADDR   0098H.5 A   
+SP . . . . . . . . . . .  D ADDR   0081H   A   
+SPCTL. . . . . . . . . .  D ADDR   00CEH   A   
+SPDAT. . . . . . . . . .  D ADDR   00CFH   A   
+SPI_MISO . . . . . . . .  B ADDR   0090H.4 A   
+SPI_MISO_2 . . . . . . .  B ADDR   00A0H.2 A   
+SPI_MISO_3 . . . . . . .  B ADDR   00C0H.1 A   
+SPI_MOSI . . . . . . . .  B ADDR   0090H.3 A   
+SPI_MOSI_2 . . . . . . .  B ADDR   00A0H.3 A   
+SPI_MOSI_3 . . . . . . .  B ADDR   00C0H.0 A   
+SPI_SCLK . . . . . . . .  B ADDR   0090H.5 A   
+SPI_SCLK_2 . . . . . . .  B ADDR   00A0H.1 A   
+SPI_SCLK_3 . . . . . . .  B ADDR   00C0H.3 A   
+SPI_SS . . . . . . . . .  B ADDR   0090H.2 A   
+SPI_SS_2 . . . . . . . .  B ADDR   00A0H.4 A   
+SPI_SS_3 . . . . . . . .  B ADDR   00C8H.4 A   
+SPSTAT . . . . . . . . .  D ADDR   00CDH   A   
+T0 . . . . . . . . . . .  B ADDR   00B0H.4 A   
+T1 . . . . . . . . . . .  B ADDR   00B0H.5 A   
+A51 MACRO ASSEMBLER  RT_OS_ASM                                                            09/11/2019 18:57:20 PAGE    28
+
+T2H. . . . . . . . . . .  D ADDR   00D6H   A   
+T2L. . . . . . . . . . .  D ADDR   00D7H   A   
+T3H. . . . . . . . . . .  D ADDR   00D4H   A   
+T3L. . . . . . . . . . .  D ADDR   00D5H   A   
+T4H. . . . . . . . . . .  D ADDR   00D2H   A   
+T4L. . . . . . . . . . .  D ADDR   00D3H   A   
+T4T3M. . . . . . . . . .  D ADDR   00D1H   A   
+TASK_SEQUENCE?046. . . .  X ADDR   0003H   R   SEG=?XD?OS_TASK_SW?RT_OS_ASM
+TASK_SEQUENCE?153. . . .  X ADDR   0003H   R   SEG=?XD?TIMER0_INT?RT_OS_ASM
+TB8. . . . . . . . . . .  B ADDR   0098H.3 A   
+TCON . . . . . . . . . .  D ADDR   0088H   A   
+TEMP_ID?041. . . . . . .  X ADDR   0004H   R   SEG=?XD?OS_TASK_SW?RT_OS_ASM
+TEMP_ID?148. . . . . . .  X ADDR   0004H   R   SEG=?XD?TIMER0_INT?RT_OS_ASM
+TEMP_TASK_SEQUENCE?040 .  X ADDR   0004H   R   SEG=?XD?OS_TASK_SW?RT_OS_ASM
+TEMP_TASK_SEQUENCE?147 .  X ADDR   0004H   R   SEG=?XD?TIMER0_INT?RT_OS_ASM
+TEMP_TEMP_ID?042 . . . .  X ADDR   0005H   R   SEG=?XD?OS_TASK_SW?RT_OS_ASM
+TEMP_TEMP_ID?149 . . . .  X ADDR   0005H   R   SEG=?XD?TIMER0_INT?RT_OS_ASM
+TF0. . . . . . . . . . .  B ADDR   0088H.5 A   
+TF1. . . . . . . . . . .  B ADDR   0088H.7 A   
+TH0. . . . . . . . . . .  D ADDR   008CH   A   
+TH1. . . . . . . . . . .  D ADDR   008DH   A   
+TH2. . . . . . . . . . .  D ADDR   00D6H   A   
+TH3. . . . . . . . . . .  D ADDR   00D4H   A   
+TH4. . . . . . . . . . .  D ADDR   00D2H   A   
+TI . . . . . . . . . . .  B ADDR   0098H.1 A   
+TIMER0_INT . . . . . . .  C ADDR   0000H   R   SEG=?PR?TIMER0_INT?RT_OS_ASM
+TL0. . . . . . . . . . .  D ADDR   008AH   A   
+TL1. . . . . . . . . . .  D ADDR   008BH   A   
+TL2. . . . . . . . . . .  D ADDR   00D7H   A   
+TL3. . . . . . . . . . .  D ADDR   00D5H   A   
+TL4. . . . . . . . . . .  D ADDR   00D3H   A   
+TMOD . . . . . . . . . .  D ADDR   0089H   A   
+TR0. . . . . . . . . . .  B ADDR   0088H.4 A   
+TR1. . . . . . . . . . .  B ADDR   0088H.6 A   
+TXD. . . . . . . . . . .  B ADDR   00B0H.1 A   
+TXD2 . . . . . . . . . .  B ADDR   0090H.1 A   
+WAKE_CLKO. . . . . . . .  D ADDR   008FH   A   
+WDT_CONTR. . . . . . . .  D ADDR   00C1H   A   
+WKTCH. . . . . . . . . .  D ADDR   00ABH   A   
+WKTCL. . . . . . . . . .  D ADDR   00AAH   A   
+WR . . . . . . . . . . .  B ADDR   00B0H.6 A   
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  0 WARNING(S), 0 ERROR(S)

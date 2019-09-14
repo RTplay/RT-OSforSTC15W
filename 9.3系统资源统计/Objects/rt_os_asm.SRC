@@ -1,0 +1,2308 @@
+; .\Objects\rt_os_asm.SRC generated from: RT_OS\rt_os_asm.c
+; COMPILER INVOKED BY:
+;        D:\Keil_v5\C51\BIN\C51.EXE RT_OS\rt_os_asm.c LARGE OPTIMIZE(0,SPEED) BROWSE INCDIR(.\bsp;.\RT_OS;.\driver) DEFINE(SYSTEM_DETECT_MODE,DEBUG_ENABLE) DEBUG OBJECTEXTEND CODE PRINT(.\Listings\rt_os_asm.lst) SRC(.\Objects\rt_os_asm.SRC)
+
+$NOMOD51
+
+NAME	RT_OS_ASM
+
+CCF2	BIT	0D8H.2
+ACC7	BIT	0E0H.7
+P0M1	DATA	093H
+P1M0	DATA	092H
+P2M0	DATA	096H
+P1M1	DATA	091H
+P0	DATA	080H
+P3M0	DATA	0B2H
+P2M1	DATA	095H
+P1	DATA	090H
+P4M0	DATA	0B4H
+P3M1	DATA	0B1H
+P2	DATA	0A0H
+P5M0	DATA	0CAH
+P4M1	DATA	0B3H
+P3	DATA	0B0H
+WKTCH	DATA	0ABH
+T0	BIT	0B0H.4
+AC	BIT	0D0H.6
+P6M0	DATA	0CCH
+P5M1	DATA	0C9H
+P4	DATA	0C0H
+CLKOUT0	BIT	0B0H.5
+T1	BIT	0B0H.5
+P7M0	DATA	0E2H
+P6M1	DATA	0CBH
+P5	DATA	0C8H
+ISP_TRIG	DATA	0C6H
+EA	BIT	0A8H.7
+CLKOUT1	BIT	0B0H.4
+SPI_SS_2	BIT	0A0H.4
+P6	DATA	0E8H
+P7M1	DATA	0E1H
+SPI_SS_3	BIT	0C8H.4
+SPI_MISO	BIT	090H.4
+SPI_MOSI	BIT	090H.3
+CCP0	BIT	090H.1
+P7	DATA	0F8H
+WKTCL	DATA	0AAH
+CCP1	BIT	090H.0
+SPCTL	DATA	0CEH
+CF	BIT	0D8H.7
+CCP2	BIT	0B0H.7
+CH	DATA	0F9H
+P_SW1	DATA	0A2H
+P_SW2	DATA	0BAH
+EADC	BIT	0A8H.5
+SPI_SCLK_2	BIT	0A0H.1
+IE	DATA	0A8H
+SPI_SCLK_3	BIT	0C0H.3
+CL	DATA	0E9H
+IAP_CMD	DATA	0C5H
+CCAP0H	DATA	0FAH
+CCAP1H	DATA	0FBH
+CCAP2H	DATA	0FCH
+ADC_RES	DATA	0BDH
+IPH2	DATA	0B6H
+CR	BIT	0D8H.6
+CCAP0L	DATA	0EAH
+RD	BIT	0B0H.7
+CCAP1L	DATA	0EBH
+CCAPM0	DATA	0DAH
+CCAP2L	DATA	0ECH
+CCAPM1	DATA	0DBH
+ES	BIT	0A8H.4
+CCAPM2	DATA	0DCH
+PADC	BIT	0B8H.5
+SPI_MISO_2	BIT	0A0H.2
+SPI_MOSI_2	BIT	0A0H.3
+IP	DATA	0B8H
+SPI_MISO_3	BIT	0C0H.1
+SPI_MOSI_3	BIT	0C0H.0
+RI	BIT	098H.0
+INT0	BIT	0B0H.2
+CY	BIT	0D0H.7
+TI	BIT	098H.1
+INT1	BIT	0B0H.3
+CLK_DIV	DATA	097H
+IAP_ADDRH	DATA	0C3H
+RXD2	BIT	090H.0
+ISP_CMD	DATA	0C5H
+PS	BIT	0B8H.4
+TXD2	BIT	090H.1
+SP	DATA	081H
+CMOD	DATA	0D9H
+CCON	DATA	0D8H
+IAP_ADDRL	DATA	0C4H
+PPCA	BIT	0B8H.7
+OV	BIT	0D0H.2
+WR	BIT	0B0H.6
+ELVD	BIT	0A8H.6
+P00	BIT	080H.0
+P10	BIT	090H.0
+P01	BIT	080H.1
+ADC_CONTR	DATA	0BCH
+SBUF	DATA	099H
+PCON	DATA	087H
+P20	BIT	0A0H.0
+P11	BIT	090H.1
+P02	BIT	080H.2
+ISP_ADDRH	DATA	0C3H
+P30	BIT	0B0H.0
+P21	BIT	0A0H.1
+P12	BIT	090H.2
+P03	BIT	080H.3
+P40	BIT	0C0H.0
+P31	BIT	0B0H.1
+P22	BIT	0A0H.2
+P13	BIT	090H.3
+P04	BIT	080H.4
+SCON	DATA	098H
+WAKE_CLKO	DATA	08FH
+P50	BIT	0C8H.0
+P41	BIT	0C0H.1
+P32	BIT	0B0H.2
+P23	BIT	0A0H.3
+P14	BIT	090H.4
+P05	BIT	080H.5
+TMOD	DATA	089H
+TCON	DATA	088H
+P51	BIT	0C8H.1
+P42	BIT	0C0H.2
+P33	BIT	0B0H.3
+P24	BIT	0A0H.4
+P15	BIT	090H.5
+P06	BIT	080H.6
+ISP_ADDRL	DATA	0C4H
+PLVD	BIT	0B8H.6
+P52	BIT	0C8H.2
+P43	BIT	0C0H.3
+P34	BIT	0B0H.4
+P25	BIT	0A0H.5
+P16	BIT	090H.6
+P07	BIT	080H.7
+P53	BIT	0C8H.3
+P44	BIT	0C0H.4
+P35	BIT	0B0H.5
+P26	BIT	0A0H.6
+P17	BIT	090H.7
+P54	BIT	0C8H.4
+P45	BIT	0C0H.5
+P36	BIT	0B0H.6
+P27	BIT	0A0H.7
+P55	BIT	0C8H.5
+P46	BIT	0C0H.6
+P37	BIT	0B0H.7
+P56	BIT	0C8H.6
+P47	BIT	0C0H.7
+P57	BIT	0C8H.7
+IE0	BIT	088H.1
+BUS_SPEED	DATA	0A1H
+IE1	BIT	088H.3
+IE2	DATA	0AFH
+B	DATA	0F0H
+AUXR	DATA	08EH
+IAP_CONTR	DATA	0C7H
+ACC	DATA	0E0H
+ET0	BIT	0A8H.1
+ET1	BIT	0A8H.3
+TF0	BIT	088H.5
+TF1	BIT	088H.7
+IP2	DATA	0B5H
+RL_TH0	DATA	08CH
+RB8	BIT	098H.2
+RL_TH1	DATA	08DH
+TH0	DATA	08CH
+EX0	BIT	0A8H.0
+IT0	BIT	088H.0
+RL_T2H	DATA	0D6H
+TH1	DATA	08DH
+EX1	BIT	0A8H.2
+TB8	BIT	098H.3
+IT1	BIT	088H.2
+RL_T3H	DATA	0D4H
+TH2	DATA	0D6H
+T2H	DATA	0D6H
+P	BIT	0D0H.0
+RL_T4H	DATA	0D2H
+TH3	DATA	0D4H
+T3H	DATA	0D4H
+RL_TL0	DATA	08AH
+SM0	BIT	098H.7
+TH4	DATA	0D2H
+T4H	DATA	0D2H
+RL_TL1	DATA	08BH
+TL0	DATA	08AH
+SM1	BIT	098H.6
+RL_T2L	DATA	0D7H
+TL1	DATA	08BH
+SM2	BIT	098H.5
+RL_T3L	DATA	0D5H
+TL2	DATA	0D7H
+T2L	DATA	0D7H
+RL_T4L	DATA	0D3H
+TL3	DATA	0D5H
+T3L	DATA	0D5H
+PT0	BIT	0B8H.1
+TL4	DATA	0D3H
+T4L	DATA	0D3H
+PT1	BIT	0B8H.3
+RS0	BIT	0D0H.3
+ISP_CONTR	DATA	0C7H
+TR0	BIT	088H.4
+RS1	BIT	0D0H.4
+IAP_DATA	DATA	0C2H
+TR1	BIT	088H.6
+PX0	BIT	0B8H.0
+WDT_CONTR	DATA	0C1H
+PX1	BIT	0B8H.2
+PCA_PWM0	DATA	0F2H
+PCA_PWM1	DATA	0F3H
+PCA_PWM2	DATA	0F4H
+P1ASF	DATA	09DH
+DPH	DATA	083H
+T4T3M	DATA	0D1H
+ADC_RESL	DATA	0BEH
+DPL	DATA	082H
+SPSTAT	DATA	0CDH
+IPH	DATA	0B7H
+S2BUF	DATA	09BH
+PCON2	DATA	097H
+S3BUF	DATA	0ADH
+REN	BIT	098H.4
+S4BUF	DATA	085H
+S2CON	DATA	09AH
+S3CON	DATA	0ACH
+ISP_DATA	DATA	0C2H
+S4CON	DATA	084H
+SADEN	DATA	0B9H
+RXD	BIT	0B0H.0
+SADDR	DATA	0A9H
+TXD	BIT	0B0H.1
+B0	BIT	0F0H.0
+B1	BIT	0F0H.1
+IAP_TRIG	DATA	0C6H
+AUXR1	DATA	0A2H
+B2	BIT	0F0H.2
+SPI_SS	BIT	090H.2
+AUXR2	DATA	08FH
+B3	BIT	0F0H.3
+B4	BIT	0F0H.4
+F0	BIT	0D0H.5
+B5	BIT	0F0H.5
+F1	BIT	0D0H.1
+INT_CLKO	DATA	08FH
+B6	BIT	0F0H.6
+ACC0	BIT	0E0H.0
+B7	BIT	0F0H.7
+ACC1	BIT	0E0H.1
+ACC2	BIT	0E0H.2
+ACC3	BIT	0E0H.3
+PSW	DATA	0D0H
+ACC4	BIT	0E0H.4
+SPI_SCLK	BIT	090H.5
+CCF0	BIT	0D8H.0
+ACC5	BIT	0E0H.5
+CCF1	BIT	0D8H.1
+ACC6	BIT	0E0H.6
+SPDAT	DATA	0CFH
+P0M0	DATA	094H
+?PR?OS_TASK_SW?RT_OS_ASM                 SEGMENT CODE 
+?XD?OS_TASK_SW?RT_OS_ASM                 SEGMENT XDATA 
+?PR?timer0_int?RT_OS_ASM                 SEGMENT CODE 
+?XD?timer0_int?RT_OS_ASM                 SEGMENT XDATA 
+?C_INITSEG           SEGMENT CODE 
+?XD?RT_OS_ASM        SEGMENT XDATA 
+	EXTRN	XDATA (sys_stat)
+	EXTRN	XDATA (os_task_run)
+	EXTRN	XDATA (os_task_running_ID)
+	EXTRN	CODE (_get_stack_used)
+	EXTRN	XDATA (os_tcb)
+	EXTRN	CODE (?C?OFFXADD)
+	EXTRN	CODE (?C?IILDX)
+	PUBLIC	int_count
+	PUBLIC	timer0_int
+	PUBLIC	OS_TASK_SW
+
+	RSEG  ?XD?timer0_int?RT_OS_ASM
+?timer0_int?BYTE:
+	ORG  2
+          i?147:   DS   1
+	ORG  6
+temp_task_sequence?148:   DS   1
+	ORG  6
+    temp_id?149:   DS   1
+	ORG  7
+temp_temp_id?150:   DS   1
+	ORG  2
+          i?151:   DS   1
+	ORG  3
+          j?152:   DS   1
+	ORG  4
+highest_prio_id?153:   DS   1
+	ORG  5
+task_sequence?154:   DS   1
+	ORG  0
+          i?155:   DS   1
+	ORG  1
+need_schedule?156:   DS   1
+
+	RSEG  ?XD?OS_TASK_SW?RT_OS_ASM
+?OS_TASK_SW?BYTE:
+	ORG  4
+temp_task_sequence?040:   DS   1
+	ORG  4
+    temp_id?041:   DS   1
+	ORG  5
+temp_temp_id?042:   DS   1
+	ORG  0
+          i?043:   DS   1
+	ORG  1
+          j?044:   DS   1
+	ORG  2
+highest_prio_id?045:   DS   1
+	ORG  3
+task_sequence?046:   DS   1
+
+	RSEG  ?XD?RT_OS_ASM
+      int_count:   DS   1
+
+	RSEG  ?C_INITSEG
+	DB	041H
+	DW	int_count
+	DB	000H
+
+; #include "rt_os.h"
+; #include "rt_os_private.h"
+; 
+; //任务调度函数，只能在非中断中使用
+; void OS_TASK_SW(void)
+
+	RSEG  ?PR?OS_TASK_SW?RT_OS_ASM
+OS_TASK_SW:
+	USING	0
+			; SOURCE LINE # 5
+; {
+			; SOURCE LINE # 6
+;     char i = 0, j = 0;
+			; SOURCE LINE # 7
+	MOV  	DPTR,#i?043
+	CLR  	A
+	MOVX 	@DPTR,A
+	MOV  	DPTR,#j?044
+	CLR  	A
+	MOVX 	@DPTR,A
+;     u8 highest_prio_id = 0;
+			; SOURCE LINE # 8
+	MOV  	DPTR,#highest_prio_id?045
+	CLR  	A
+	MOVX 	@DPTR,A
+;     u8 task_sequence = 0;//当前任务的已运行队列中一定是0
+			; SOURCE LINE # 9
+	MOV  	DPTR,#task_sequence?046
+	CLR  	A
+	MOVX 	@DPTR,A
+;     OS_ENTER_CRITICAL();
+			; SOURCE LINE # 10
+	CLR  	EA
+; #pragma asm
+;     PUSH     ACC
+	  PUSH     ACC
+;     PUSH     B
+	  PUSH     B
+;     PUSH     DPH
+	  PUSH     DPH
+;     PUSH     DPL
+	  PUSH     DPL
+;     PUSH     PSW
+	  PUSH     PSW
+;     MOV      PSW,#00H
+	  MOV      PSW,#00H
+;     PUSH     AR0
+	  PUSH     AR0
+;     PUSH     AR1
+	  PUSH     AR1
+;     PUSH     AR2
+	  PUSH     AR2
+;     PUSH     AR3
+	  PUSH     AR3
+;     PUSH     AR4
+	  PUSH     AR4
+;     PUSH     AR5
+	  PUSH     AR5
+;     PUSH     AR6
+	  PUSH     AR6
+;     PUSH     AR7
+	  PUSH     AR7
+; #pragma endasm
+;     os_tcb[os_task_running_ID].OSTCBStkPtr = SP;
+			; SOURCE LINE # 27
+	MOV  	DPTR,#os_task_running_ID
+	MOVX 	A,@DPTR
+	MOV  	R7,A
+	MOV  	A,R7
+	MOV  	B,#0DH
+	MUL  	AB
+	ADD  	A,#LOW (os_tcb)
+	MOV  	DPL,A
+	CLR  	A
+	ADDC 	A,#HIGH (os_tcb)
+	MOV  	DPH,A
+	MOV  	A,SP
+	MOVX 	@DPTR,A
+; //切换任务栈
+;     for (; i<TASK_SIZE; i++) { //找到优先级最高任务，并且是在已运行任务队列的最后，如果已运行任务队列中没有则优先运行
+			; SOURCE LINE # 29
+?C0001:
+	MOV  	DPTR,#i?043
+	MOVX 	A,@DPTR
+	MOV  	R7,A
+	MOV  	A,R7
+	RLC  	A
+	SUBB 	A,ACC
+	MOV  	R6,A
+	CLR  	C
+	MOV  	A,R7
+	SUBB 	A,#08H
+	MOV  	A,R6
+	XRL  	A,#080H
+	SUBB 	A,#080H
+	JC   	$ + 5H
+	LJMP 	?C0002
+;         if (os_tcb[i].OSTCBStatus == OS_STAT_RDY) {
+			; SOURCE LINE # 30
+	MOV  	DPTR,#i?043
+	MOVX 	A,@DPTR
+	MOV  	R7,A
+	MOV  	A,R7
+	RLC  	A
+	SUBB 	A,ACC
+	MOV  	R6,A
+	MOV  	DPTR,#os_tcb+03H
+	MOV  	B,#0DH
+	MOV  	A,R7
+	LCALL	?C?OFFXADD
+	MOV  	A,R6
+	MOV  	B,#0DH
+	MUL  	AB
+	ADD  	A,DPH
+	MOV  	DPH,A
+	MOVX 	A,@DPTR
+	MOV  	R6,A
+	INC  	DPTR
+	MOVX 	A,@DPTR
+	MOV  	R7,A
+	MOV  	A,R7
+	XRL  	A,#02H
+	ORL  	A,R6
+	JZ   	$ + 5H
+	LJMP 	?C0003
+;             if (os_tcb[i].OSTCBPrio > os_tcb[highest_prio_id].OSTCBPrio) {
+			; SOURCE LINE # 31
+	MOV  	DPTR,#i?043
+	MOVX 	A,@DPTR
+	MOV  	R7,A
+	MOV  	A,R7
+	RLC  	A
+	SUBB 	A,ACC
+	MOV  	R6,A
+	MOV  	DPTR,#os_tcb+05H
+	MOV  	B,#0DH
+	MOV  	A,R7
+	LCALL	?C?OFFXADD
+	MOV  	A,R6
+	MOV  	B,#0DH
+	MUL  	AB
+	ADD  	A,DPH
+	MOV  	DPH,A
+	MOVX 	A,@DPTR
+	MOV  	R7,A
+	MOV  	DPTR,#highest_prio_id?045
+	MOVX 	A,@DPTR
+	MOV  	R6,A
+	MOV  	A,R6
+	MOV  	B,#0DH
+	MUL  	AB
+	ADD  	A,#LOW (os_tcb+05H)
+	MOV  	DPL,A
+	CLR  	A
+	ADDC 	A,#HIGH (os_tcb+05H)
+	MOV  	DPH,A
+	MOVX 	A,@DPTR
+	MOV  	R6,A
+	MOV  	A,R7
+	SETB 	C
+	SUBB 	A,R6
+	JNC  	$ + 5H
+	LJMP 	?C0005
+;                 highest_prio_id = i;
+			; SOURCE LINE # 32
+	MOV  	DPTR,#i?043
+	MOVX 	A,@DPTR
+	MOV  	R7,A
+	MOV  	DPTR,#highest_prio_id?045
+	MOV  	A,R7
+	MOVX 	@DPTR,A
+;                 //查找高优先级在已运行队列中的排位
+;                 task_sequence = 0xFF;//先假设这个排在最最最后面
+			; SOURCE LINE # 34
+	MOV  	DPTR,#task_sequence?046
+	MOV  	A,#0FFH
+	MOVX 	@DPTR,A
+;                 for (j=0; j<TASK_SIZE; j++) {
+			; SOURCE LINE # 35
+	MOV  	DPTR,#j?044
+	CLR  	A
+	MOVX 	@DPTR,A
+?C0006:
+	MOV  	DPTR,#j?044
+	MOVX 	A,@DPTR
+	MOV  	R7,A
+	MOV  	A,R7
+	RLC  	A
+	SUBB 	A,ACC
+	MOV  	R6,A
+	CLR  	C
+	MOV  	A,R7
+	SUBB 	A,#08H
+	MOV  	A,R6
+	XRL  	A,#080H
+	SUBB 	A,#080H
+	JC   	$ + 5H
+	LJMP 	?C0003
+;                     if (os_task_run[j] == i) {
+			; SOURCE LINE # 36
+	MOV  	DPTR,#j?044
+	MOVX 	A,@DPTR
+	MOV  	R7,A
+	MOV  	A,R7
+	RLC  	A
+	SUBB 	A,ACC
+	MOV  	R6,A
+	MOV  	A,#LOW (os_task_run)
+	ADD  	A,R7
+	MOV  	DPL,A
+	MOV  	A,#HIGH (os_task_run)
+	ADDC 	A,R6
+	MOV  	DPH,A
+	MOVX 	A,@DPTR
+	MOV  	R7,A
+	MOV  	DPTR,#i?043
+	MOVX 	A,@DPTR
+	MOV  	R6,A
+	MOV  	A,R6
+	CJNE 	A,AR7,?C0009
+;                         task_sequence = j;
+			; SOURCE LINE # 37
+	MOV  	DPTR,#j?044
+	MOVX 	A,@DPTR
+	MOV  	R7,A
+	MOV  	DPTR,#task_sequence?046
+	MOV  	A,R7
+	MOVX 	@DPTR,A
+;                         break;
+			; SOURCE LINE # 38
+	LJMP 	?C0003
+;                     }
+			; SOURCE LINE # 39
+?C0009:
+;                     if (os_task_run[j] == 0xFF)
+			; SOURCE LINE # 40
+	MOV  	DPTR,#j?044
+	MOVX 	A,@DPTR
+	MOV  	R7,A
+	MOV  	A,R7
+	RLC  	A
+	SUBB 	A,ACC
+	MOV  	R6,A
+	MOV  	A,#LOW (os_task_run)
+	ADD  	A,R7
+	MOV  	DPL,A
+	MOV  	A,#HIGH (os_task_run)
+	ADDC 	A,R6
+	MOV  	DPH,A
+	MOVX 	A,@DPTR
+	MOV  	R7,A
+	MOV  	R6,#00H
+	MOV  	A,R7
+	XRL  	A,#0FFH
+	ORL  	A,R6
+	JNZ  	$ + 5H
+	LJMP 	?C0003
+;                          break;
+			; SOURCE LINE # 41
+;                 }
+			; SOURCE LINE # 42
+	MOV  	DPTR,#j?044
+	MOVX 	A,@DPTR
+	INC  	A
+	MOVX 	@DPTR,A
+	SJMP 	?C0006
+;             } else if (os_tcb[i].OSTCBPrio == os_tcb[highest_prio_id].OSTCBPrio) {
+			; SOURCE LINE # 43
+	LJMP 	?C0003
+?C0005:
+	MOV  	DPTR,#i?043
+	MOVX 	A,@DPTR
+	MOV  	R7,A
+	MOV  	A,R7
+	RLC  	A
+	SUBB 	A,ACC
+	MOV  	R6,A
+	MOV  	DPTR,#os_tcb+05H
+	MOV  	B,#0DH
+	MOV  	A,R7
+	LCALL	?C?OFFXADD
+	MOV  	A,R6
+	MOV  	B,#0DH
+	MUL  	AB
+	ADD  	A,DPH
+	MOV  	DPH,A
+	MOVX 	A,@DPTR
+	MOV  	R7,A
+	MOV  	DPTR,#highest_prio_id?045
+	MOVX 	A,@DPTR
+	MOV  	R6,A
+	MOV  	A,R6
+	MOV  	B,#0DH
+	MUL  	AB
+	ADD  	A,#LOW (os_tcb+05H)
+	MOV  	DPL,A
+	CLR  	A
+	ADDC 	A,#HIGH (os_tcb+05H)
+	MOV  	DPH,A
+	MOVX 	A,@DPTR
+	MOV  	R6,A
+	MOV  	A,R7
+	XRL  	A,R6
+	JZ   	$ + 5H
+	LJMP 	?C0003
+;                 //查找新找到的高优先级在已运行队列中的排位
+;                 u8 temp_task_sequence = 0xFF;//同优先级使用的临时任务序列
+			; SOURCE LINE # 45
+	MOV  	DPTR,#temp_task_sequence?040
+	MOV  	A,#0FFH
+	MOVX 	@DPTR,A
+;                 for (j=0; j<TASK_SIZE; j++) { //查找新的同级任务在任务队列中的排位
+			; SOURCE LINE # 46
+	MOV  	DPTR,#j?044
+	CLR  	A
+	MOVX 	@DPTR,A
+?C0013:
+	MOV  	DPTR,#j?044
+	MOVX 	A,@DPTR
+	MOV  	R7,A
+	MOV  	A,R7
+	RLC  	A
+	SUBB 	A,ACC
+	MOV  	R6,A
+	CLR  	C
+	MOV  	A,R7
+	SUBB 	A,#08H
+	MOV  	A,R6
+	XRL  	A,#080H
+	SUBB 	A,#080H
+	JNC  	?C0014
+;                     if (os_task_run[j] == i) {
+			; SOURCE LINE # 47
+	MOV  	DPTR,#j?044
+	MOVX 	A,@DPTR
+	MOV  	R7,A
+	MOV  	A,R7
+	RLC  	A
+	SUBB 	A,ACC
+	MOV  	R6,A
+	MOV  	A,#LOW (os_task_run)
+	ADD  	A,R7
+	MOV  	DPL,A
+	MOV  	A,#HIGH (os_task_run)
+	ADDC 	A,R6
+	MOV  	DPH,A
+	MOVX 	A,@DPTR
+	MOV  	R7,A
+	MOV  	DPTR,#i?043
+	MOVX 	A,@DPTR
+	MOV  	R6,A
+	MOV  	A,R6
+	CJNE 	A,AR7,?C0016
+;                         temp_task_sequence = j;
+			; SOURCE LINE # 48
+	MOV  	DPTR,#j?044
+	MOVX 	A,@DPTR
+	MOV  	R7,A
+	MOV  	DPTR,#temp_task_sequence?040
+	MOV  	A,R7
+	MOVX 	@DPTR,A
+;                         break;
+			; SOURCE LINE # 49
+	SJMP 	?C0014
+;                     }
+			; SOURCE LINE # 50
+?C0016:
+;                     if (os_task_run[j] == 0xFF)
+			; SOURCE LINE # 51
+	MOV  	DPTR,#j?044
+	MOVX 	A,@DPTR
+	MOV  	R7,A
+	MOV  	A,R7
+	RLC  	A
+	SUBB 	A,ACC
+	MOV  	R6,A
+	MOV  	A,#LOW (os_task_run)
+	ADD  	A,R7
+	MOV  	DPL,A
+	MOV  	A,#HIGH (os_task_run)
+	ADDC 	A,R6
+	MOV  	DPH,A
+	MOVX 	A,@DPTR
+	MOV  	R7,A
+	MOV  	R6,#00H
+	MOV  	A,R7
+	XRL  	A,#0FFH
+	ORL  	A,R6
+	JZ   	?C0014
+;                          break;
+			; SOURCE LINE # 52
+;                 }
+			; SOURCE LINE # 53
+	MOV  	DPTR,#j?044
+	MOVX 	A,@DPTR
+	INC  	A
+	MOVX 	@DPTR,A
+	SJMP 	?C0013
+?C0014:
+;                 if (temp_task_sequence > task_sequence) { //此处我们没有考虑两个相同优先级都没在已运行任务队列中的情况，这种情况下运行第一个被找到的任务
+			; SOURCE LINE # 54
+	MOV  	DPTR,#task_sequence?046
+	MOVX 	A,@DPTR
+	MOV  	R7,A
+	MOV  	DPTR,#temp_task_sequence?040
+	MOVX 	A,@DPTR
+	MOV  	R6,A
+	MOV  	A,R6
+	SETB 	C
+	SUBB 	A,R7
+	JC   	?C0003
+;                     highest_prio_id = i;
+			; SOURCE LINE # 55
+	MOV  	DPTR,#i?043
+	MOVX 	A,@DPTR
+	MOV  	R7,A
+	MOV  	DPTR,#highest_prio_id?045
+	MOV  	A,R7
+	MOVX 	@DPTR,A
+;                     task_sequence = temp_task_sequence;
+			; SOURCE LINE # 56
+	MOV  	DPTR,#temp_task_sequence?040
+	MOVX 	A,@DPTR
+	MOV  	R7,A
+	MOV  	DPTR,#task_sequence?046
+	MOV  	A,R7
+	MOVX 	@DPTR,A
+;                 }
+			; SOURCE LINE # 57
+;             }
+			; SOURCE LINE # 58
+;         }
+			; SOURCE LINE # 59
+;     }
+			; SOURCE LINE # 60
+?C0003:
+	MOV  	DPTR,#i?043
+	MOVX 	A,@DPTR
+	INC  	A
+	MOVX 	@DPTR,A
+	LJMP 	?C0001
+?C0002:
+;     os_task_running_ID = highest_prio_id;
+			; SOURCE LINE # 61
+	MOV  	DPTR,#highest_prio_id?045
+	MOVX 	A,@DPTR
+	MOV  	R7,A
+	MOV  	DPTR,#os_task_running_ID
+	MOV  	A,R7
+	MOVX 	@DPTR,A
+;     //把当前任务插入已运行任务队列中
+;     {
+			; SOURCE LINE # 63
+;         u8 temp_id = os_task_running_ID, temp_temp_id;
+			; SOURCE LINE # 64
+	MOV  	DPTR,#os_task_running_ID
+	MOVX 	A,@DPTR
+	MOV  	R7,A
+	MOV  	DPTR,#temp_id?041
+	MOV  	A,R7
+	MOVX 	@DPTR,A
+;         if (task_sequence == 0xFF) { //不在任务队列中，直接头插
+			; SOURCE LINE # 65
+	MOV  	DPTR,#task_sequence?046
+	MOVX 	A,@DPTR
+	MOV  	R7,A
+	MOV  	R6,#00H
+	MOV  	A,R7
+	XRL  	A,#0FFH
+	ORL  	A,R6
+	JZ   	$ + 5H
+	LJMP 	?C0019
+;             for (j=0; j<TASK_SIZE; j++) {
+			; SOURCE LINE # 66
+	MOV  	DPTR,#j?044
+	CLR  	A
+	MOVX 	@DPTR,A
+?C0020:
+	MOV  	DPTR,#j?044
+	MOVX 	A,@DPTR
+	MOV  	R7,A
+	MOV  	A,R7
+	RLC  	A
+	SUBB 	A,ACC
+	MOV  	R6,A
+	CLR  	C
+	MOV  	A,R7
+	SUBB 	A,#08H
+	MOV  	A,R6
+	XRL  	A,#080H
+	SUBB 	A,#080H
+	JC   	$ + 5H
+	LJMP 	?C0024
+;                 if (os_task_run[j] == 0xFF) {
+			; SOURCE LINE # 67
+	MOV  	DPTR,#j?044
+	MOVX 	A,@DPTR
+	MOV  	R7,A
+	MOV  	A,R7
+	RLC  	A
+	SUBB 	A,ACC
+	MOV  	R6,A
+	MOV  	A,#LOW (os_task_run)
+	ADD  	A,R7
+	MOV  	DPL,A
+	MOV  	A,#HIGH (os_task_run)
+	ADDC 	A,R6
+	MOV  	DPH,A
+	MOVX 	A,@DPTR
+	MOV  	R7,A
+	MOV  	R6,#00H
+	MOV  	A,R7
+	XRL  	A,#0FFH
+	ORL  	A,R6
+	JNZ  	?C0023
+;                     os_task_run[j] = temp_id;
+			; SOURCE LINE # 68
+	MOV  	DPTR,#temp_id?041
+	MOVX 	A,@DPTR
+	MOV  	R7,A
+	MOV  	DPTR,#j?044
+	MOVX 	A,@DPTR
+	MOV  	R6,A
+	MOV  	A,R6
+	MOV  	R5,A
+	RLC  	A
+	SUBB 	A,ACC
+	MOV  	R4,A
+	MOV  	A,#LOW (os_task_run)
+	ADD  	A,R5
+	MOV  	DPL,A
+	MOV  	A,#HIGH (os_task_run)
+	ADDC 	A,R4
+	MOV  	DPH,A
+	MOV  	A,R7
+	MOVX 	@DPTR,A
+;                     break;
+			; SOURCE LINE # 69
+	LJMP 	?C0024
+;                 }
+			; SOURCE LINE # 70
+?C0023:
+;                 temp_temp_id = os_task_run[j];
+			; SOURCE LINE # 71
+	MOV  	DPTR,#j?044
+	MOVX 	A,@DPTR
+	MOV  	R7,A
+	MOV  	A,R7
+	RLC  	A
+	SUBB 	A,ACC
+	MOV  	R6,A
+	MOV  	A,#LOW (os_task_run)
+	ADD  	A,R7
+	MOV  	DPL,A
+	MOV  	A,#HIGH (os_task_run)
+	ADDC 	A,R6
+	MOV  	DPH,A
+	MOVX 	A,@DPTR
+	MOV  	R7,A
+	MOV  	DPTR,#temp_temp_id?042
+	MOV  	A,R7
+	MOVX 	@DPTR,A
+;                 os_task_run[j] = temp_id;
+			; SOURCE LINE # 72
+	MOV  	DPTR,#temp_id?041
+	MOVX 	A,@DPTR
+	MOV  	R7,A
+	MOV  	DPTR,#j?044
+	MOVX 	A,@DPTR
+	MOV  	R6,A
+	MOV  	A,R6
+	MOV  	R5,A
+	RLC  	A
+	SUBB 	A,ACC
+	MOV  	R4,A
+	MOV  	A,#LOW (os_task_run)
+	ADD  	A,R5
+	MOV  	DPL,A
+	MOV  	A,#HIGH (os_task_run)
+	ADDC 	A,R4
+	MOV  	DPH,A
+	MOV  	A,R7
+	MOVX 	@DPTR,A
+;                 temp_id = temp_temp_id;
+			; SOURCE LINE # 73
+	MOV  	DPTR,#temp_temp_id?042
+	MOVX 	A,@DPTR
+	MOV  	R7,A
+	MOV  	DPTR,#temp_id?041
+	MOV  	A,R7
+	MOVX 	@DPTR,A
+;             }
+			; SOURCE LINE # 74
+	MOV  	DPTR,#j?044
+	MOVX 	A,@DPTR
+	INC  	A
+	MOVX 	@DPTR,A
+	LJMP 	?C0020
+;         } else { //已在任务队列中，在所在位置前移
+			; SOURCE LINE # 75
+	SJMP 	?C0024
+?C0019:
+;             for (j = task_sequence; j>0; j--) {
+			; SOURCE LINE # 76
+	MOV  	DPTR,#task_sequence?046
+	MOVX 	A,@DPTR
+	MOV  	R7,A
+	MOV  	DPTR,#j?044
+	MOV  	A,R7
+	MOVX 	@DPTR,A
+?C0025:
+	MOV  	DPTR,#j?044
+	MOVX 	A,@DPTR
+	MOV  	R7,A
+	MOV  	A,R7
+	RLC  	A
+	SUBB 	A,ACC
+	MOV  	R6,A
+	SETB 	C
+	MOV  	A,R7
+	SUBB 	A,#00H
+	MOV  	A,R6
+	XRL  	A,#080H
+	SUBB 	A,#080H
+	JC   	?C0026
+;                 os_task_run[j] = os_task_run[j-1];
+			; SOURCE LINE # 77
+	MOV  	DPTR,#j?044
+	MOVX 	A,@DPTR
+	MOV  	R7,A
+	MOV  	A,R7
+	RLC  	A
+	SUBB 	A,ACC
+	MOV  	R6,A
+	MOV  	A,#LOW (os_task_run+0FFFFH)
+	ADD  	A,R7
+	MOV  	DPL,A
+	MOV  	A,#HIGH (os_task_run+0FFFFH)
+	ADDC 	A,R6
+	MOV  	DPH,A
+	MOVX 	A,@DPTR
+	MOV  	R7,A
+	MOV  	DPTR,#j?044
+	MOVX 	A,@DPTR
+	MOV  	R6,A
+	MOV  	A,R6
+	MOV  	R5,A
+	RLC  	A
+	SUBB 	A,ACC
+	MOV  	R4,A
+	MOV  	A,#LOW (os_task_run)
+	ADD  	A,R5
+	MOV  	DPL,A
+	MOV  	A,#HIGH (os_task_run)
+	ADDC 	A,R4
+	MOV  	DPH,A
+	MOV  	A,R7
+	MOVX 	@DPTR,A
+;             }
+			; SOURCE LINE # 78
+	MOV  	DPTR,#j?044
+	MOVX 	A,@DPTR
+	DEC  	A
+	MOVX 	@DPTR,A
+	SJMP 	?C0025
+?C0026:
+;             os_task_run[0] = os_task_running_ID;
+			; SOURCE LINE # 79
+	MOV  	DPTR,#os_task_running_ID
+	MOVX 	A,@DPTR
+	MOV  	R7,A
+	MOV  	DPTR,#os_task_run
+	MOV  	A,R7
+	MOVX 	@DPTR,A
+;         }
+			; SOURCE LINE # 80
+?C0024:
+;     }
+			; SOURCE LINE # 81
+;     if (os_tcb[os_task_running_ID].OSTCBTimeQuantaCtr == 0)//给当前运行的时间片赋值
+			; SOURCE LINE # 82
+	MOV  	DPTR,#os_task_running_ID
+	MOVX 	A,@DPTR
+	MOV  	R7,A
+	MOV  	A,R7
+	MOV  	B,#0DH
+	MUL  	AB
+	ADD  	A,#LOW (os_tcb+07H)
+	MOV  	DPL,A
+	CLR  	A
+	ADDC 	A,#HIGH (os_tcb+07H)
+	MOV  	DPH,A
+	MOVX 	A,@DPTR
+	MOV  	R7,A
+	MOV  	R6,#00H
+	MOV  	A,R7
+	ORL  	A,R6
+	JNZ  	?C0028
+;         os_tcb[os_task_running_ID].OSTCBTimeQuantaCtr = os_tcb[os_task_running_ID].OSTCBTimeQuanta;
+			; SOURCE LINE # 83
+	MOV  	DPTR,#os_task_running_ID
+	MOVX 	A,@DPTR
+	MOV  	R7,A
+	MOV  	A,R7
+	MOV  	B,#0DH
+	MUL  	AB
+	ADD  	A,#LOW (os_tcb+06H)
+	MOV  	DPL,A
+	CLR  	A
+	ADDC 	A,#HIGH (os_tcb+06H)
+	MOV  	DPH,A
+	MOVX 	A,@DPTR
+	MOV  	R7,A
+	MOV  	DPTR,#os_task_running_ID
+	MOVX 	A,@DPTR
+	MOV  	R6,A
+	MOV  	A,R6
+	MOV  	B,#0DH
+	MUL  	AB
+	ADD  	A,#LOW (os_tcb+07H)
+	MOV  	DPL,A
+	CLR  	A
+	ADDC 	A,#HIGH (os_tcb+07H)
+	MOV  	DPH,A
+	MOV  	A,R7
+	MOVX 	@DPTR,A
+?C0028:
+;     os_tcb[os_task_running_ID].OSTCBStatus = OS_STAT_RUNNING;
+			; SOURCE LINE # 84
+	MOV  	DPTR,#os_task_running_ID
+	MOVX 	A,@DPTR
+	MOV  	R7,A
+	MOV  	A,R7
+	MOV  	B,#0DH
+	MUL  	AB
+	ADD  	A,#LOW (os_tcb+03H)
+	MOV  	DPL,A
+	CLR  	A
+	ADDC 	A,#HIGH (os_tcb+03H)
+	MOV  	DPH,A
+	CLR  	A
+	MOVX 	@DPTR,A
+	INC  	DPTR
+	MOV  	A,#01H
+	MOVX 	@DPTR,A
+;     SP = os_tcb[os_task_running_ID].OSTCBStkPtr;
+			; SOURCE LINE # 85
+	MOV  	DPTR,#os_task_running_ID
+	MOVX 	A,@DPTR
+	MOV  	R7,A
+	MOV  	A,R7
+	MOV  	B,#0DH
+	MUL  	AB
+	ADD  	A,#LOW (os_tcb)
+	MOV  	DPL,A
+	CLR  	A
+	ADDC 	A,#HIGH (os_tcb)
+	MOV  	DPH,A
+	MOVX 	A,@DPTR
+	MOV  	R7,A
+	MOV  	SP,R7
+; #pragma asm
+;     POP      AR7
+	  POP      AR7
+;     POP      AR6
+	  POP      AR6
+;     POP      AR5
+	  POP      AR5
+;     POP      AR4
+	  POP      AR4
+;     POP      AR3
+	  POP      AR3
+;     POP      AR2
+	  POP      AR2
+;     POP      AR1
+	  POP      AR1
+;     POP      AR0
+	  POP      AR0
+;     POP      PSW
+	  POP      PSW
+;     POP      DPL
+	  POP      DPL
+;     POP      DPH
+	  POP      DPH
+;     POP      B
+	  POP      B
+;     POP      ACC
+	  POP      ACC
+; #pragma endasm
+;     OS_EXIT_CRITICAL();
+			; SOURCE LINE # 101
+	SETB 	EA
+; }
+			; SOURCE LINE # 102
+	RET  	
+; END OF OS_TASK_SW
+
+CSEG	AT	0000BH
+	LJMP	timer0_int
+
+; 
+; #ifdef SYSTEM_DETECT_MODE
+; u8  int_count = 0;
+; #endif
+; /********************* Timer0中断函数************************/
+; void timer0_int (void) interrupt TIMER0_VECTOR {
+
+	RSEG  ?PR?timer0_int?RT_OS_ASM
+	USING	0
+timer0_int:
+	PUSH 	ACC
+	PUSH 	B
+	PUSH 	DPH
+	PUSH 	DPL
+	PUSH 	PSW
+	MOV  	PSW,#00H
+	PUSH 	AR0
+	PUSH 	AR1
+	PUSH 	AR2
+	PUSH 	AR3
+	PUSH 	AR4
+	PUSH 	AR5
+	PUSH 	AR6
+	PUSH 	AR7
+	USING	0
+			; SOURCE LINE # 108
+;     u8 i;
+;     BOOLEAN need_schedule = FALSE;
+			; SOURCE LINE # 110
+	MOV  	DPTR,#need_schedule?156
+	CLR  	A
+	MOVX 	@DPTR,A
+; #pragma asm
+;     MOV AR1,AR1
+	  MOV AR1,AR1
+; #pragma endasm
+; #ifdef SYSTEM_DETECT_MODE
+;     if (++int_count == 100) {
+			; SOURCE LINE # 115
+	MOV  	DPTR,#int_count
+	MOVX 	A,@DPTR
+	INC  	A
+	MOV  	R7,A
+	MOVX 	@DPTR,A
+	MOV  	R6,#00H
+	MOV  	A,R7
+	XRL  	A,#064H
+	ORL  	A,R6
+	JZ   	$ + 5H
+	LJMP 	?C0030
+;         u8 i = 0;
+			; SOURCE LINE # 116
+	MOV  	DPTR,#i?147
+	CLR  	A
+	MOVX 	@DPTR,A
+;         os_tcb[os_task_running_ID].OSTCBCyclesTot++;
+			; SOURCE LINE # 117
+	MOV  	DPTR,#os_task_running_ID
+	MOVX 	A,@DPTR
+	MOV  	R7,A
+	MOV  	A,R7
+	MOV  	B,#0DH
+	MUL  	AB
+	ADD  	A,#LOW (os_tcb+0BH)
+	MOV  	DPL,A
+	CLR  	A
+	ADDC 	A,#HIGH (os_tcb+0BH)
+	MOV  	DPH,A
+	MOVX 	A,@DPTR
+	INC  	A
+	MOVX 	@DPTR,A
+;         for (; i<TASK_SIZE; i++) {
+			; SOURCE LINE # 118
+?C0031:
+	MOV  	DPTR,#i?147
+	MOVX 	A,@DPTR
+	MOV  	R7,A
+	MOV  	R6,#00H
+	CLR  	C
+	MOV  	A,R7
+	SUBB 	A,#08H
+	MOV  	A,R6
+	XRL  	A,#080H
+	SUBB 	A,#080H
+	JC   	$ + 5H
+	LJMP 	?C0032
+;             sys_stat[i].OSSSStatus = os_tcb[i].OSTCBStatus;
+			; SOURCE LINE # 119
+	MOV  	DPTR,#i?147
+	MOVX 	A,@DPTR
+	MOV  	R7,A
+	MOV  	A,R7
+	MOV  	B,#0DH
+	MUL  	AB
+	ADD  	A,#LOW (os_tcb+03H)
+	MOV  	DPL,A
+	CLR  	A
+	ADDC 	A,#HIGH (os_tcb+03H)
+	MOV  	DPH,A
+	MOVX 	A,@DPTR
+	MOV  	R6,A
+	INC  	DPTR
+	MOVX 	A,@DPTR
+	MOV  	R7,A
+	MOV  	DPTR,#i?147
+	MOVX 	A,@DPTR
+	MOV  	R6,A
+	MOV  	A,R6
+	MOV  	B,#03H
+	MUL  	AB
+	ADD  	A,#LOW (sys_stat)
+	MOV  	DPL,A
+	CLR  	A
+	ADDC 	A,#HIGH (sys_stat)
+	MOV  	DPH,A
+	MOV  	A,R7
+	MOVX 	@DPTR,A
+;             sys_stat[i].OSSSCyclesTot = os_tcb[i].OSTCBCyclesTot;
+			; SOURCE LINE # 120
+	MOV  	DPTR,#i?147
+	MOVX 	A,@DPTR
+	MOV  	R7,A
+	MOV  	A,R7
+	MOV  	B,#0DH
+	MUL  	AB
+	ADD  	A,#LOW (os_tcb+0BH)
+	MOV  	DPL,A
+	CLR  	A
+	ADDC 	A,#HIGH (os_tcb+0BH)
+	MOV  	DPH,A
+	MOVX 	A,@DPTR
+	MOV  	R7,A
+	MOV  	DPTR,#i?147
+	MOVX 	A,@DPTR
+	MOV  	R6,A
+	MOV  	A,R6
+	MOV  	B,#03H
+	MUL  	AB
+	ADD  	A,#LOW (sys_stat+01H)
+	MOV  	DPL,A
+	CLR  	A
+	ADDC 	A,#HIGH (sys_stat+01H)
+	MOV  	DPH,A
+	MOV  	A,R7
+	MOVX 	@DPTR,A
+;             sys_stat[i].OSSSMaxUsedStk = get_stack_used(os_tcb[i].OSTCBStkBottomPtr, os_tcb[i].OSTCBStkSize);
+			; SOURCE LINE # 121
+	MOV  	DPTR,#i?147
+	MOVX 	A,@DPTR
+	MOV  	R7,A
+	MOV  	A,R7
+	MOV  	B,#0DH
+	MUL  	AB
+	ADD  	A,#LOW (os_tcb+08H)
+	MOV  	DPL,A
+	CLR  	A
+	ADDC 	A,#HIGH (os_tcb+08H)
+	MOV  	DPH,A
+	MOVX 	A,@DPTR
+	MOV  	R3,A
+	INC  	DPTR
+	MOVX 	A,@DPTR
+	MOV  	R2,A
+	INC  	DPTR
+	MOVX 	A,@DPTR
+	MOV  	R1,A
+	MOV  	DPTR,#i?147
+	MOVX 	A,@DPTR
+	MOV  	R7,A
+	MOV  	A,R7
+	MOV  	B,#0DH
+	MUL  	AB
+	ADD  	A,#LOW (os_tcb+0CH)
+	MOV  	DPL,A
+	CLR  	A
+	ADDC 	A,#HIGH (os_tcb+0CH)
+	MOV  	DPH,A
+	MOVX 	A,@DPTR
+	MOV  	R5,A
+	LCALL	_get_stack_used
+	MOV  	DPTR,#i?147
+	MOVX 	A,@DPTR
+	MOV  	R6,A
+	MOV  	A,R6
+	MOV  	B,#03H
+	MUL  	AB
+	ADD  	A,#LOW (sys_stat+02H)
+	MOV  	DPL,A
+	CLR  	A
+	ADDC 	A,#HIGH (sys_stat+02H)
+	MOV  	DPH,A
+	MOV  	A,R7
+	MOVX 	@DPTR,A
+;             os_tcb[i].OSTCBCyclesTot = 0;
+			; SOURCE LINE # 122
+	MOV  	DPTR,#i?147
+	MOVX 	A,@DPTR
+	MOV  	R7,A
+	MOV  	A,R7
+	MOV  	B,#0DH
+	MUL  	AB
+	ADD  	A,#LOW (os_tcb+0BH)
+	MOV  	DPL,A
+	CLR  	A
+	ADDC 	A,#HIGH (os_tcb+0BH)
+	MOV  	DPH,A
+	CLR  	A
+	MOVX 	@DPTR,A
+;         }
+			; SOURCE LINE # 123
+	MOV  	DPTR,#i?147
+	MOVX 	A,@DPTR
+	INC  	A
+	MOVX 	@DPTR,A
+	LJMP 	?C0031
+?C0032:
+;         int_count = 0;
+			; SOURCE LINE # 124
+	MOV  	DPTR,#int_count
+	CLR  	A
+	MOVX 	@DPTR,A
+;     }
+			; SOURCE LINE # 125
+	SJMP 	?C0034
+?C0030:
+;     else {
+			; SOURCE LINE # 126
+;         os_tcb[os_task_running_ID].OSTCBCyclesTot++;
+			; SOURCE LINE # 127
+	MOV  	DPTR,#os_task_running_ID
+	MOVX 	A,@DPTR
+	MOV  	R7,A
+	MOV  	A,R7
+	MOV  	B,#0DH
+	MUL  	AB
+	ADD  	A,#LOW (os_tcb+0BH)
+	MOV  	DPL,A
+	CLR  	A
+	ADDC 	A,#HIGH (os_tcb+0BH)
+	MOV  	DPH,A
+	MOVX 	A,@DPTR
+	INC  	A
+	MOVX 	@DPTR,A
+;     }
+			; SOURCE LINE # 128
+?C0034:
+; #endif
+;     for(i=0; i<TASK_SIZE; i++) { //任务时钟
+			; SOURCE LINE # 130
+	MOV  	DPTR,#i?155
+	CLR  	A
+	MOVX 	@DPTR,A
+?C0035:
+	MOV  	DPTR,#i?155
+	MOVX 	A,@DPTR
+	MOV  	R7,A
+	MOV  	R6,#00H
+	CLR  	C
+	MOV  	A,R7
+	SUBB 	A,#08H
+	MOV  	A,R6
+	XRL  	A,#080H
+	SUBB 	A,#080H
+	JNC  	?C0036
+;         if(os_tcb[i].OSTCBDly) {
+			; SOURCE LINE # 131
+	MOV  	DPTR,#i?155
+	MOVX 	A,@DPTR
+	MOV  	R7,A
+	MOV  	A,R7
+	MOV  	B,#0DH
+	MUL  	AB
+	ADD  	A,#LOW (os_tcb+01H)
+	MOV  	DPL,A
+	CLR  	A
+	ADDC 	A,#HIGH (os_tcb+01H)
+	MOV  	DPH,A
+	MOVX 	A,@DPTR
+	MOV  	R6,A
+	INC  	DPTR
+	MOVX 	A,@DPTR
+	MOV  	R7,A
+	MOV  	A,R7
+	ORL  	A,R6
+	JZ   	?C0037
+;             os_tcb[i].OSTCBDly--;
+			; SOURCE LINE # 132
+	MOV  	DPTR,#i?155
+	MOVX 	A,@DPTR
+	MOV  	R7,A
+	MOV  	A,R7
+	MOV  	B,#0DH
+	MUL  	AB
+	ADD  	A,#LOW (os_tcb+01H)
+	MOV  	DPL,A
+	CLR  	A
+	ADDC 	A,#HIGH (os_tcb+01H)
+	MOV  	DPH,A
+	MOV  	A,#0FFH
+	MOV  	B,#0FFH
+	LCALL	?C?IILDX
+;             if(os_tcb[i].OSTCBDly == 0) { //当任务时钟到时,必须是由定时器减时的才行
+			; SOURCE LINE # 133
+	MOV  	DPTR,#i?155
+	MOVX 	A,@DPTR
+	MOV  	R7,A
+	MOV  	A,R7
+	MOV  	B,#0DH
+	MUL  	AB
+	ADD  	A,#LOW (os_tcb+01H)
+	MOV  	DPL,A
+	CLR  	A
+	ADDC 	A,#HIGH (os_tcb+01H)
+	MOV  	DPH,A
+	MOVX 	A,@DPTR
+	MOV  	R6,A
+	INC  	DPTR
+	MOVX 	A,@DPTR
+	MOV  	R7,A
+	MOV  	A,R7
+	ORL  	A,R6
+	JNZ  	?C0037
+;                 //os_rdy_tbl |= (0x01<<i); //使任务在就绪表中置位
+;                 os_tcb[i].OSTCBStatus = OS_STAT_RDY;
+			; SOURCE LINE # 135
+	MOV  	DPTR,#i?155
+	MOVX 	A,@DPTR
+	MOV  	R7,A
+	MOV  	A,R7
+	MOV  	B,#0DH
+	MUL  	AB
+	ADD  	A,#LOW (os_tcb+03H)
+	MOV  	DPL,A
+	CLR  	A
+	ADDC 	A,#HIGH (os_tcb+03H)
+	MOV  	DPH,A
+	CLR  	A
+	MOVX 	@DPTR,A
+	INC  	DPTR
+	MOV  	A,#02H
+	MOVX 	@DPTR,A
+;                 need_schedule = TRUE;//因为时间到，可能高级任务准备就绪，需要调度
+			; SOURCE LINE # 136
+	MOV  	DPTR,#need_schedule?156
+	MOV  	A,#01H
+	MOVX 	@DPTR,A
+;             }
+			; SOURCE LINE # 137
+;         }
+			; SOURCE LINE # 138
+;     }
+			; SOURCE LINE # 139
+?C0037:
+	MOV  	DPTR,#i?155
+	MOVX 	A,@DPTR
+	INC  	A
+	MOVX 	@DPTR,A
+	LJMP 	?C0035
+?C0036:
+;     //时间片轮转计数逻辑
+;     if (os_tcb[os_task_running_ID].OSTCBTimeQuantaCtr == 0) { //当前运行任务时间片耗尽，执行中断下任务调度
+			; SOURCE LINE # 141
+	MOV  	DPTR,#os_task_running_ID
+	MOVX 	A,@DPTR
+	MOV  	R7,A
+	MOV  	A,R7
+	MOV  	B,#0DH
+	MUL  	AB
+	ADD  	A,#LOW (os_tcb+07H)
+	MOV  	DPL,A
+	CLR  	A
+	ADDC 	A,#HIGH (os_tcb+07H)
+	MOV  	DPH,A
+	MOVX 	A,@DPTR
+	MOV  	R7,A
+	MOV  	R6,#00H
+	MOV  	A,R7
+	ORL  	A,R6
+	JNZ  	?C0040
+;         need_schedule = TRUE; //因为时间片耗尽，需要调度
+			; SOURCE LINE # 142
+	MOV  	DPTR,#need_schedule?156
+	MOV  	A,#01H
+	MOVX 	@DPTR,A
+;     } else { //时间片未到，进行自减
+			; SOURCE LINE # 143
+	SJMP 	?C0041
+?C0040:
+;         os_tcb[os_task_running_ID].OSTCBTimeQuantaCtr--;
+			; SOURCE LINE # 144
+	MOV  	DPTR,#os_task_running_ID
+	MOVX 	A,@DPTR
+	MOV  	R7,A
+	MOV  	A,R7
+	MOV  	B,#0DH
+	MUL  	AB
+	ADD  	A,#LOW (os_tcb+07H)
+	MOV  	DPL,A
+	CLR  	A
+	ADDC 	A,#HIGH (os_tcb+07H)
+	MOV  	DPH,A
+	MOVX 	A,@DPTR
+	DEC  	A
+	MOVX 	@DPTR,A
+;     }
+			; SOURCE LINE # 145
+?C0041:
+;     if (need_schedule == TRUE) { //调度任务执行代码
+			; SOURCE LINE # 146
+	MOV  	DPTR,#need_schedule?156
+	MOVX 	A,@DPTR
+	MOV  	R7,A
+	MOV  	R6,#00H
+	MOV  	A,R7
+	XRL  	A,#01H
+	ORL  	A,R6
+	JZ   	$ + 5H
+	LJMP 	?C0071
+;         char i = 0, j = 0;
+			; SOURCE LINE # 147
+	MOV  	DPTR,#i?151
+	CLR  	A
+	MOVX 	@DPTR,A
+	MOV  	DPTR,#j?152
+	CLR  	A
+	MOVX 	@DPTR,A
+;         u8 highest_prio_id = 0;
+			; SOURCE LINE # 148
+	MOV  	DPTR,#highest_prio_id?153
+	CLR  	A
+	MOVX 	@DPTR,A
+;         u8 task_sequence = 0;//当前任务的已运行队列中一定是0
+			; SOURCE LINE # 149
+	MOV  	DPTR,#task_sequence?154
+	CLR  	A
+	MOVX 	@DPTR,A
+;         //SP -= 2;
+;         os_tcb[os_task_running_ID].OSTCBStkPtr = SP;
+			; SOURCE LINE # 151
+	MOV  	DPTR,#os_task_running_ID
+	MOVX 	A,@DPTR
+	MOV  	R7,A
+	MOV  	A,R7
+	MOV  	B,#0DH
+	MUL  	AB
+	ADD  	A,#LOW (os_tcb)
+	MOV  	DPL,A
+	CLR  	A
+	ADDC 	A,#HIGH (os_tcb)
+	MOV  	DPH,A
+	MOV  	A,SP
+	MOVX 	@DPTR,A
+;         os_tcb[os_task_running_ID].OSTCBStatus = OS_STAT_RDY;
+			; SOURCE LINE # 152
+	MOV  	DPTR,#os_task_running_ID
+	MOVX 	A,@DPTR
+	MOV  	R7,A
+	MOV  	A,R7
+	MOV  	B,#0DH
+	MUL  	AB
+	ADD  	A,#LOW (os_tcb+03H)
+	MOV  	DPL,A
+	CLR  	A
+	ADDC 	A,#HIGH (os_tcb+03H)
+	MOV  	DPH,A
+	CLR  	A
+	MOVX 	@DPTR,A
+	INC  	DPTR
+	MOV  	A,#02H
+	MOVX 	@DPTR,A
+;         //切换任务栈
+;         for (; i<TASK_SIZE; i++) { //找到优先级最高任务，并且是在已运行任务队列的最后，如果已运行任务队列中没有则优先运行
+			; SOURCE LINE # 154
+?C0043:
+	MOV  	DPTR,#i?151
+	MOVX 	A,@DPTR
+	MOV  	R7,A
+	MOV  	A,R7
+	RLC  	A
+	SUBB 	A,ACC
+	MOV  	R6,A
+	CLR  	C
+	MOV  	A,R7
+	SUBB 	A,#08H
+	MOV  	A,R6
+	XRL  	A,#080H
+	SUBB 	A,#080H
+	JC   	$ + 5H
+	LJMP 	?C0044
+;             if (os_tcb[i].OSTCBStatus == OS_STAT_RDY) {
+			; SOURCE LINE # 155
+	MOV  	DPTR,#i?151
+	MOVX 	A,@DPTR
+	MOV  	R7,A
+	MOV  	A,R7
+	RLC  	A
+	SUBB 	A,ACC
+	MOV  	R6,A
+	MOV  	DPTR,#os_tcb+03H
+	MOV  	B,#0DH
+	MOV  	A,R7
+	LCALL	?C?OFFXADD
+	MOV  	A,R6
+	MOV  	B,#0DH
+	MUL  	AB
+	ADD  	A,DPH
+	MOV  	DPH,A
+	MOVX 	A,@DPTR
+	MOV  	R6,A
+	INC  	DPTR
+	MOVX 	A,@DPTR
+	MOV  	R7,A
+	MOV  	A,R7
+	XRL  	A,#02H
+	ORL  	A,R6
+	JZ   	$ + 5H
+	LJMP 	?C0045
+;                 if (os_tcb[i].OSTCBPrio > os_tcb[highest_prio_id].OSTCBPrio) {
+			; SOURCE LINE # 156
+	MOV  	DPTR,#i?151
+	MOVX 	A,@DPTR
+	MOV  	R7,A
+	MOV  	A,R7
+	RLC  	A
+	SUBB 	A,ACC
+	MOV  	R6,A
+	MOV  	DPTR,#os_tcb+05H
+	MOV  	B,#0DH
+	MOV  	A,R7
+	LCALL	?C?OFFXADD
+	MOV  	A,R6
+	MOV  	B,#0DH
+	MUL  	AB
+	ADD  	A,DPH
+	MOV  	DPH,A
+	MOVX 	A,@DPTR
+	MOV  	R7,A
+	MOV  	DPTR,#highest_prio_id?153
+	MOVX 	A,@DPTR
+	MOV  	R6,A
+	MOV  	A,R6
+	MOV  	B,#0DH
+	MUL  	AB
+	ADD  	A,#LOW (os_tcb+05H)
+	MOV  	DPL,A
+	CLR  	A
+	ADDC 	A,#HIGH (os_tcb+05H)
+	MOV  	DPH,A
+	MOVX 	A,@DPTR
+	MOV  	R6,A
+	MOV  	A,R7
+	SETB 	C
+	SUBB 	A,R6
+	JNC  	$ + 5H
+	LJMP 	?C0047
+;                     highest_prio_id = i;
+			; SOURCE LINE # 157
+	MOV  	DPTR,#i?151
+	MOVX 	A,@DPTR
+	MOV  	R7,A
+	MOV  	DPTR,#highest_prio_id?153
+	MOV  	A,R7
+	MOVX 	@DPTR,A
+;                     //查找高优先级在已运行队列中的排位
+;                     task_sequence = 0xFF;//先假设这个排在最最最后面
+			; SOURCE LINE # 159
+	MOV  	DPTR,#task_sequence?154
+	MOV  	A,#0FFH
+	MOVX 	@DPTR,A
+;                     for (j=0; j<TASK_SIZE; j++) {
+			; SOURCE LINE # 160
+	MOV  	DPTR,#j?152
+	CLR  	A
+	MOVX 	@DPTR,A
+?C0048:
+	MOV  	DPTR,#j?152
+	MOVX 	A,@DPTR
+	MOV  	R7,A
+	MOV  	A,R7
+	RLC  	A
+	SUBB 	A,ACC
+	MOV  	R6,A
+	CLR  	C
+	MOV  	A,R7
+	SUBB 	A,#08H
+	MOV  	A,R6
+	XRL  	A,#080H
+	SUBB 	A,#080H
+	JC   	$ + 5H
+	LJMP 	?C0045
+;                         if (os_task_run[j] == i) {
+			; SOURCE LINE # 161
+	MOV  	DPTR,#j?152
+	MOVX 	A,@DPTR
+	MOV  	R7,A
+	MOV  	A,R7
+	RLC  	A
+	SUBB 	A,ACC
+	MOV  	R6,A
+	MOV  	A,#LOW (os_task_run)
+	ADD  	A,R7
+	MOV  	DPL,A
+	MOV  	A,#HIGH (os_task_run)
+	ADDC 	A,R6
+	MOV  	DPH,A
+	MOVX 	A,@DPTR
+	MOV  	R7,A
+	MOV  	DPTR,#i?151
+	MOVX 	A,@DPTR
+	MOV  	R6,A
+	MOV  	A,R6
+	CJNE 	A,AR7,?C0051
+;                             task_sequence = j;
+			; SOURCE LINE # 162
+	MOV  	DPTR,#j?152
+	MOVX 	A,@DPTR
+	MOV  	R7,A
+	MOV  	DPTR,#task_sequence?154
+	MOV  	A,R7
+	MOVX 	@DPTR,A
+;                             break;
+			; SOURCE LINE # 163
+	LJMP 	?C0045
+;                         }
+			; SOURCE LINE # 164
+?C0051:
+;                         if (os_task_run[j] == 0xFF)
+			; SOURCE LINE # 165
+	MOV  	DPTR,#j?152
+	MOVX 	A,@DPTR
+	MOV  	R7,A
+	MOV  	A,R7
+	RLC  	A
+	SUBB 	A,ACC
+	MOV  	R6,A
+	MOV  	A,#LOW (os_task_run)
+	ADD  	A,R7
+	MOV  	DPL,A
+	MOV  	A,#HIGH (os_task_run)
+	ADDC 	A,R6
+	MOV  	DPH,A
+	MOVX 	A,@DPTR
+	MOV  	R7,A
+	MOV  	R6,#00H
+	MOV  	A,R7
+	XRL  	A,#0FFH
+	ORL  	A,R6
+	JNZ  	$ + 5H
+	LJMP 	?C0045
+;                          break;
+			; SOURCE LINE # 166
+;                     }
+			; SOURCE LINE # 167
+	MOV  	DPTR,#j?152
+	MOVX 	A,@DPTR
+	INC  	A
+	MOVX 	@DPTR,A
+	SJMP 	?C0048
+;                 } else if (os_tcb[i].OSTCBPrio == os_tcb[highest_prio_id].OSTCBPrio) {
+			; SOURCE LINE # 168
+	LJMP 	?C0045
+?C0047:
+	MOV  	DPTR,#i?151
+	MOVX 	A,@DPTR
+	MOV  	R7,A
+	MOV  	A,R7
+	RLC  	A
+	SUBB 	A,ACC
+	MOV  	R6,A
+	MOV  	DPTR,#os_tcb+05H
+	MOV  	B,#0DH
+	MOV  	A,R7
+	LCALL	?C?OFFXADD
+	MOV  	A,R6
+	MOV  	B,#0DH
+	MUL  	AB
+	ADD  	A,DPH
+	MOV  	DPH,A
+	MOVX 	A,@DPTR
+	MOV  	R7,A
+	MOV  	DPTR,#highest_prio_id?153
+	MOVX 	A,@DPTR
+	MOV  	R6,A
+	MOV  	A,R6
+	MOV  	B,#0DH
+	MUL  	AB
+	ADD  	A,#LOW (os_tcb+05H)
+	MOV  	DPL,A
+	CLR  	A
+	ADDC 	A,#HIGH (os_tcb+05H)
+	MOV  	DPH,A
+	MOVX 	A,@DPTR
+	MOV  	R6,A
+	MOV  	A,R7
+	XRL  	A,R6
+	JZ   	$ + 5H
+	LJMP 	?C0045
+;                     //查找新找到的高优先级在已运行队列中的排位
+;                     u8 temp_task_sequence = 0xFF;//同优先级使用的临时任务序列
+			; SOURCE LINE # 170
+	MOV  	DPTR,#temp_task_sequence?148
+	MOV  	A,#0FFH
+	MOVX 	@DPTR,A
+;                     for (j=0; j<TASK_SIZE; j++) { //查找新的同级任务在任务队列中的排位
+			; SOURCE LINE # 171
+	MOV  	DPTR,#j?152
+	CLR  	A
+	MOVX 	@DPTR,A
+?C0055:
+	MOV  	DPTR,#j?152
+	MOVX 	A,@DPTR
+	MOV  	R7,A
+	MOV  	A,R7
+	RLC  	A
+	SUBB 	A,ACC
+	MOV  	R6,A
+	CLR  	C
+	MOV  	A,R7
+	SUBB 	A,#08H
+	MOV  	A,R6
+	XRL  	A,#080H
+	SUBB 	A,#080H
+	JNC  	?C0056
+;                         if (os_task_run[j] == i) {
+			; SOURCE LINE # 172
+	MOV  	DPTR,#j?152
+	MOVX 	A,@DPTR
+	MOV  	R7,A
+	MOV  	A,R7
+	RLC  	A
+	SUBB 	A,ACC
+	MOV  	R6,A
+	MOV  	A,#LOW (os_task_run)
+	ADD  	A,R7
+	MOV  	DPL,A
+	MOV  	A,#HIGH (os_task_run)
+	ADDC 	A,R6
+	MOV  	DPH,A
+	MOVX 	A,@DPTR
+	MOV  	R7,A
+	MOV  	DPTR,#i?151
+	MOVX 	A,@DPTR
+	MOV  	R6,A
+	MOV  	A,R6
+	CJNE 	A,AR7,?C0058
+;                             temp_task_sequence = j;
+			; SOURCE LINE # 173
+	MOV  	DPTR,#j?152
+	MOVX 	A,@DPTR
+	MOV  	R7,A
+	MOV  	DPTR,#temp_task_sequence?148
+	MOV  	A,R7
+	MOVX 	@DPTR,A
+;                             break;
+			; SOURCE LINE # 174
+	SJMP 	?C0056
+;                         }
+			; SOURCE LINE # 175
+?C0058:
+;                         if (os_task_run[j] == 0xFF)
+			; SOURCE LINE # 176
+	MOV  	DPTR,#j?152
+	MOVX 	A,@DPTR
+	MOV  	R7,A
+	MOV  	A,R7
+	RLC  	A
+	SUBB 	A,ACC
+	MOV  	R6,A
+	MOV  	A,#LOW (os_task_run)
+	ADD  	A,R7
+	MOV  	DPL,A
+	MOV  	A,#HIGH (os_task_run)
+	ADDC 	A,R6
+	MOV  	DPH,A
+	MOVX 	A,@DPTR
+	MOV  	R7,A
+	MOV  	R6,#00H
+	MOV  	A,R7
+	XRL  	A,#0FFH
+	ORL  	A,R6
+	JZ   	?C0056
+;                          break;
+			; SOURCE LINE # 177
+;                     }
+			; SOURCE LINE # 178
+	MOV  	DPTR,#j?152
+	MOVX 	A,@DPTR
+	INC  	A
+	MOVX 	@DPTR,A
+	SJMP 	?C0055
+?C0056:
+;                     if (temp_task_sequence > task_sequence) { //此处我们没有考虑两个相同优先级都没在已运行任务队列中的情况，这种情况下运行第一个被找到的任务
+			; SOURCE LINE # 179
+	MOV  	DPTR,#task_sequence?154
+	MOVX 	A,@DPTR
+	MOV  	R7,A
+	MOV  	DPTR,#temp_task_sequence?148
+	MOVX 	A,@DPTR
+	MOV  	R6,A
+	MOV  	A,R6
+	SETB 	C
+	SUBB 	A,R7
+	JC   	?C0045
+;                         highest_prio_id = i;
+			; SOURCE LINE # 180
+	MOV  	DPTR,#i?151
+	MOVX 	A,@DPTR
+	MOV  	R7,A
+	MOV  	DPTR,#highest_prio_id?153
+	MOV  	A,R7
+	MOVX 	@DPTR,A
+;                         task_sequence = temp_task_sequence;
+			; SOURCE LINE # 181
+	MOV  	DPTR,#temp_task_sequence?148
+	MOVX 	A,@DPTR
+	MOV  	R7,A
+	MOV  	DPTR,#task_sequence?154
+	MOV  	A,R7
+	MOVX 	@DPTR,A
+;                     }
+			; SOURCE LINE # 182
+;                 }
+			; SOURCE LINE # 183
+;             }
+			; SOURCE LINE # 184
+;         }
+			; SOURCE LINE # 185
+?C0045:
+	MOV  	DPTR,#i?151
+	MOVX 	A,@DPTR
+	INC  	A
+	MOVX 	@DPTR,A
+	LJMP 	?C0043
+?C0044:
+;         os_task_running_ID = highest_prio_id;
+			; SOURCE LINE # 186
+	MOV  	DPTR,#highest_prio_id?153
+	MOVX 	A,@DPTR
+	MOV  	R7,A
+	MOV  	DPTR,#os_task_running_ID
+	MOV  	A,R7
+	MOVX 	@DPTR,A
+;         //把当前任务插入已运行任务队列中
+;         {
+			; SOURCE LINE # 188
+;             u8 temp_id = os_task_running_ID, temp_temp_id;
+			; SOURCE LINE # 189
+	MOV  	DPTR,#os_task_running_ID
+	MOVX 	A,@DPTR
+	MOV  	R7,A
+	MOV  	DPTR,#temp_id?149
+	MOV  	A,R7
+	MOVX 	@DPTR,A
+;             if (task_sequence == 0xFF) { //不在任务队列中，直接头插
+			; SOURCE LINE # 190
+	MOV  	DPTR,#task_sequence?154
+	MOVX 	A,@DPTR
+	MOV  	R7,A
+	MOV  	R6,#00H
+	MOV  	A,R7
+	XRL  	A,#0FFH
+	ORL  	A,R6
+	JZ   	$ + 5H
+	LJMP 	?C0061
+;                 for (j=0; j<TASK_SIZE; j++) {
+			; SOURCE LINE # 191
+	MOV  	DPTR,#j?152
+	CLR  	A
+	MOVX 	@DPTR,A
+?C0062:
+	MOV  	DPTR,#j?152
+	MOVX 	A,@DPTR
+	MOV  	R7,A
+	MOV  	A,R7
+	RLC  	A
+	SUBB 	A,ACC
+	MOV  	R6,A
+	CLR  	C
+	MOV  	A,R7
+	SUBB 	A,#08H
+	MOV  	A,R6
+	XRL  	A,#080H
+	SUBB 	A,#080H
+	JC   	$ + 5H
+	LJMP 	?C0066
+;                     if (os_task_run[j] == 0xFF) {
+			; SOURCE LINE # 192
+	MOV  	DPTR,#j?152
+	MOVX 	A,@DPTR
+	MOV  	R7,A
+	MOV  	A,R7
+	RLC  	A
+	SUBB 	A,ACC
+	MOV  	R6,A
+	MOV  	A,#LOW (os_task_run)
+	ADD  	A,R7
+	MOV  	DPL,A
+	MOV  	A,#HIGH (os_task_run)
+	ADDC 	A,R6
+	MOV  	DPH,A
+	MOVX 	A,@DPTR
+	MOV  	R7,A
+	MOV  	R6,#00H
+	MOV  	A,R7
+	XRL  	A,#0FFH
+	ORL  	A,R6
+	JNZ  	?C0065
+;                         os_task_run[j] = temp_id;
+			; SOURCE LINE # 193
+	MOV  	DPTR,#temp_id?149
+	MOVX 	A,@DPTR
+	MOV  	R7,A
+	MOV  	DPTR,#j?152
+	MOVX 	A,@DPTR
+	MOV  	R6,A
+	MOV  	A,R6
+	MOV  	R5,A
+	RLC  	A
+	SUBB 	A,ACC
+	MOV  	R4,A
+	MOV  	A,#LOW (os_task_run)
+	ADD  	A,R5
+	MOV  	DPL,A
+	MOV  	A,#HIGH (os_task_run)
+	ADDC 	A,R4
+	MOV  	DPH,A
+	MOV  	A,R7
+	MOVX 	@DPTR,A
+;                         break;
+			; SOURCE LINE # 194
+	LJMP 	?C0066
+;                     }
+			; SOURCE LINE # 195
+?C0065:
+;                     temp_temp_id = os_task_run[j];
+			; SOURCE LINE # 196
+	MOV  	DPTR,#j?152
+	MOVX 	A,@DPTR
+	MOV  	R7,A
+	MOV  	A,R7
+	RLC  	A
+	SUBB 	A,ACC
+	MOV  	R6,A
+	MOV  	A,#LOW (os_task_run)
+	ADD  	A,R7
+	MOV  	DPL,A
+	MOV  	A,#HIGH (os_task_run)
+	ADDC 	A,R6
+	MOV  	DPH,A
+	MOVX 	A,@DPTR
+	MOV  	R7,A
+	MOV  	DPTR,#temp_temp_id?150
+	MOV  	A,R7
+	MOVX 	@DPTR,A
+;                     os_task_run[j] = temp_id;
+			; SOURCE LINE # 197
+	MOV  	DPTR,#temp_id?149
+	MOVX 	A,@DPTR
+	MOV  	R7,A
+	MOV  	DPTR,#j?152
+	MOVX 	A,@DPTR
+	MOV  	R6,A
+	MOV  	A,R6
+	MOV  	R5,A
+	RLC  	A
+	SUBB 	A,ACC
+	MOV  	R4,A
+	MOV  	A,#LOW (os_task_run)
+	ADD  	A,R5
+	MOV  	DPL,A
+	MOV  	A,#HIGH (os_task_run)
+	ADDC 	A,R4
+	MOV  	DPH,A
+	MOV  	A,R7
+	MOVX 	@DPTR,A
+;                     temp_id = temp_temp_id;
+			; SOURCE LINE # 198
+	MOV  	DPTR,#temp_temp_id?150
+	MOVX 	A,@DPTR
+	MOV  	R7,A
+	MOV  	DPTR,#temp_id?149
+	MOV  	A,R7
+	MOVX 	@DPTR,A
+;                 }
+			; SOURCE LINE # 199
+	MOV  	DPTR,#j?152
+	MOVX 	A,@DPTR
+	INC  	A
+	MOVX 	@DPTR,A
+	LJMP 	?C0062
+;             } else { //已在任务队列中，在所在位置前移
+			; SOURCE LINE # 200
+	SJMP 	?C0066
+?C0061:
+;                 for (j = task_sequence; j>0; j--) {
+			; SOURCE LINE # 201
+	MOV  	DPTR,#task_sequence?154
+	MOVX 	A,@DPTR
+	MOV  	R7,A
+	MOV  	DPTR,#j?152
+	MOV  	A,R7
+	MOVX 	@DPTR,A
+?C0067:
+	MOV  	DPTR,#j?152
+	MOVX 	A,@DPTR
+	MOV  	R7,A
+	MOV  	A,R7
+	RLC  	A
+	SUBB 	A,ACC
+	MOV  	R6,A
+	SETB 	C
+	MOV  	A,R7
+	SUBB 	A,#00H
+	MOV  	A,R6
+	XRL  	A,#080H
+	SUBB 	A,#080H
+	JC   	?C0068
+;                     os_task_run[j] = os_task_run[j-1];
+			; SOURCE LINE # 202
+	MOV  	DPTR,#j?152
+	MOVX 	A,@DPTR
+	MOV  	R7,A
+	MOV  	A,R7
+	RLC  	A
+	SUBB 	A,ACC
+	MOV  	R6,A
+	MOV  	A,#LOW (os_task_run+0FFFFH)
+	ADD  	A,R7
+	MOV  	DPL,A
+	MOV  	A,#HIGH (os_task_run+0FFFFH)
+	ADDC 	A,R6
+	MOV  	DPH,A
+	MOVX 	A,@DPTR
+	MOV  	R7,A
+	MOV  	DPTR,#j?152
+	MOVX 	A,@DPTR
+	MOV  	R6,A
+	MOV  	A,R6
+	MOV  	R5,A
+	RLC  	A
+	SUBB 	A,ACC
+	MOV  	R4,A
+	MOV  	A,#LOW (os_task_run)
+	ADD  	A,R5
+	MOV  	DPL,A
+	MOV  	A,#HIGH (os_task_run)
+	ADDC 	A,R4
+	MOV  	DPH,A
+	MOV  	A,R7
+	MOVX 	@DPTR,A
+;                 }
+			; SOURCE LINE # 203
+	MOV  	DPTR,#j?152
+	MOVX 	A,@DPTR
+	DEC  	A
+	MOVX 	@DPTR,A
+	SJMP 	?C0067
+?C0068:
+;                 os_task_run[0] = os_task_running_ID;
+			; SOURCE LINE # 204
+	MOV  	DPTR,#os_task_running_ID
+	MOVX 	A,@DPTR
+	MOV  	R7,A
+	MOV  	DPTR,#os_task_run
+	MOV  	A,R7
+	MOVX 	@DPTR,A
+;             }
+			; SOURCE LINE # 205
+?C0066:
+;         }
+			; SOURCE LINE # 206
+;         if (os_tcb[os_task_running_ID].OSTCBTimeQuantaCtr == 0) //给当前运行的时间片赋值
+			; SOURCE LINE # 207
+	MOV  	DPTR,#os_task_running_ID
+	MOVX 	A,@DPTR
+	MOV  	R7,A
+	MOV  	A,R7
+	MOV  	B,#0DH
+	MUL  	AB
+	ADD  	A,#LOW (os_tcb+07H)
+	MOV  	DPL,A
+	CLR  	A
+	ADDC 	A,#HIGH (os_tcb+07H)
+	MOV  	DPH,A
+	MOVX 	A,@DPTR
+	MOV  	R7,A
+	MOV  	R6,#00H
+	MOV  	A,R7
+	ORL  	A,R6
+	JNZ  	?C0070
+;             os_tcb[os_task_running_ID].OSTCBTimeQuantaCtr = os_tcb[os_task_running_ID].OSTCBTimeQuanta;
+			; SOURCE LINE # 208
+	MOV  	DPTR,#os_task_running_ID
+	MOVX 	A,@DPTR
+	MOV  	R7,A
+	MOV  	A,R7
+	MOV  	B,#0DH
+	MUL  	AB
+	ADD  	A,#LOW (os_tcb+06H)
+	MOV  	DPL,A
+	CLR  	A
+	ADDC 	A,#HIGH (os_tcb+06H)
+	MOV  	DPH,A
+	MOVX 	A,@DPTR
+	MOV  	R7,A
+	MOV  	DPTR,#os_task_running_ID
+	MOVX 	A,@DPTR
+	MOV  	R6,A
+	MOV  	A,R6
+	MOV  	B,#0DH
+	MUL  	AB
+	ADD  	A,#LOW (os_tcb+07H)
+	MOV  	DPL,A
+	CLR  	A
+	ADDC 	A,#HIGH (os_tcb+07H)
+	MOV  	DPH,A
+	MOV  	A,R7
+	MOVX 	@DPTR,A
+?C0070:
+;         os_tcb[os_task_running_ID].OSTCBStatus = OS_STAT_RUNNING;
+			; SOURCE LINE # 209
+	MOV  	DPTR,#os_task_running_ID
+	MOVX 	A,@DPTR
+	MOV  	R7,A
+	MOV  	A,R7
+	MOV  	B,#0DH
+	MUL  	AB
+	ADD  	A,#LOW (os_tcb+03H)
+	MOV  	DPL,A
+	CLR  	A
+	ADDC 	A,#HIGH (os_tcb+03H)
+	MOV  	DPH,A
+	CLR  	A
+	MOVX 	@DPTR,A
+	INC  	DPTR
+	MOV  	A,#01H
+	MOVX 	@DPTR,A
+;         SP = os_tcb[os_task_running_ID].OSTCBStkPtr;
+			; SOURCE LINE # 210
+	MOV  	DPTR,#os_task_running_ID
+	MOVX 	A,@DPTR
+	MOV  	R7,A
+	MOV  	A,R7
+	MOV  	B,#0DH
+	MUL  	AB
+	ADD  	A,#LOW (os_tcb)
+	MOV  	DPL,A
+	CLR  	A
+	ADDC 	A,#HIGH (os_tcb)
+	MOV  	DPH,A
+	MOVX 	A,@DPTR
+	MOV  	R7,A
+	MOV  	SP,R7
+;     }
+			; SOURCE LINE # 211
+; }
+			; SOURCE LINE # 212
+?C0071:
+	POP  	AR7
+	POP  	AR6
+	POP  	AR5
+	POP  	AR4
+	POP  	AR3
+	POP  	AR2
+	POP  	AR1
+	POP  	AR0
+	POP  	PSW
+	POP  	DPL
+	POP  	DPH
+	POP  	B
+	POP  	ACC
+	RETI 	
+; END OF timer0_int
+
+	END
