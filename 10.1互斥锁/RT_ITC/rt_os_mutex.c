@@ -11,7 +11,7 @@ typedef struct os_mutex {
 } OS_MUTEX;
 
 #ifdef MUTEX_ENABLE
-OS_MUTEX mutex[OS_MUTEX_SIZE];
+static OS_MUTEX mutex[OS_MUTEX_SIZE];
 
 // 初始化互斥锁
 // OS_ERR_MUTXE_ID_INVALID无效的锁id
@@ -51,6 +51,12 @@ u8 os_mutex_pend(u8 mutex_index, u16 ticks)
         mutex[mutex_index].OSMutexPendTbl |= 0x01<<os_task_running_ID;  //加入互斥锁的任务等待表
         os_tcb[os_task_running_ID].OSTCBStatus = OS_STAT_MUTEX;         //将自己的状态改为互斥锁等待
         os_tcb[os_task_running_ID].OSTCBDly = ticks; //如延时为 0，刚无限等待
+        if (ticks) {
+            os_tcb[os_task_running_ID].OSTCBStatPend = OS_STAT_PEND_TO;
+        }
+        else {
+            os_tcb[os_task_running_ID].OSTCBStatPend = OS_STAT_PEND_OK;
+        }
         if (os_tcb[os_task_running_ID].OSTCBPrio > mutex[mutex_index].OSMutexOwnerPrio) { //如果拥有者的优先级低
             os_tcb[(mutex[mutex_index].OSMutexOwnerTaskID)].OSTCBPrio = os_tcb[os_task_running_ID].OSTCBPrio; //重新提升拥有者优先级，并进行任务调度
         }
@@ -58,7 +64,7 @@ u8 os_mutex_pend(u8 mutex_index, u16 ticks)
         OS_TASK_SW(); //从新调度
 
         // 当再次进入时，根据OSTCBDly值判断是否是超时导致的。
-        if(os_tcb[os_task_running_ID].OSTCBDly == 0) {
+        if((os_tcb[os_task_running_ID].OSTCBDly == 0) && (os_tcb[os_task_running_ID].OSTCBStatPend == OS_STAT_PEND_TO)) {
             mutex[mutex_index].OSMutexPendTbl &= ~(0x01<<os_task_running_ID);  //将自己从任务等待表中清除
             return OS_ERR_TIMEOUT;
         } else { // 如果没有超时，需要将OSTCBDly置0，以免引发不必要的调度
@@ -106,7 +112,7 @@ u8 os_mutex_post(u8 mutex_index)
             mutex[mutex_index].OSMutexOwnerTaskID = 0xFF;
             // 查找等待该互斥锁中任务优先级最高并且任务被执行时间较靠后的任务，设置为就绪态
             for (; i<TASK_SIZE; i++) { //找到优先级最高任务，并且是在已运行任务队列的最后，如果已运行任务队列中没有则优先运行
-                if (mutex[mutex_index].OSMutexPendTbl >> i) {
+                if ((mutex[mutex_index].OSMutexPendTbl >> i) & 0x01) {
                     if (os_tcb[i].OSTCBPrio > os_tcb[highest_prio_id].OSTCBPrio) {
                         highest_prio_id = i;
                         //查找高优先级在已运行队列中的排位

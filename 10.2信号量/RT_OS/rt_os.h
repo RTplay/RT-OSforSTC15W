@@ -19,7 +19,7 @@ extern "C" {
 #define TASK_SIZE 8
 //互斥锁数量，开启MUTEX_ENABLE后有效
 #define OS_MUTEX_SIZE   5
-//互斥锁数量，开启SEM_ENABLE后有效
+//信号量数量，开启SEM_ENABLE后有效
 #define OS_SEM_SIZE   5
 
 

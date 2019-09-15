@@ -51,6 +51,12 @@ u8 os_mutex_pend(u8 mutex_index, u16 ticks)
         mutex[mutex_index].OSMutexPendTbl |= 0x01<<os_task_running_ID;  //加入互斥锁的任务等待表
         os_tcb[os_task_running_ID].OSTCBStatus = OS_STAT_MUTEX;         //将自己的状态改为互斥锁等待
         os_tcb[os_task_running_ID].OSTCBDly = ticks; //如延时为 0，刚无限等待
+        if (ticks) {
+            os_tcb[os_task_running_ID].OSTCBStatPend = OS_STAT_PEND_TO;
+        }
+        else {
+            os_tcb[os_task_running_ID].OSTCBStatPend = OS_STAT_PEND_OK;
+        }
         if (os_tcb[os_task_running_ID].OSTCBPrio > mutex[mutex_index].OSMutexOwnerPrio) { //如果拥有者的优先级低
             os_tcb[(mutex[mutex_index].OSMutexOwnerTaskID)].OSTCBPrio = os_tcb[os_task_running_ID].OSTCBPrio; //重新提升拥有者优先级，并进行任务调度
         }
@@ -58,7 +64,7 @@ u8 os_mutex_pend(u8 mutex_index, u16 ticks)
         OS_TASK_SW(); //从新调度
 
         // 当再次进入时，根据OSTCBDly值判断是否是超时导致的。
-        if(os_tcb[os_task_running_ID].OSTCBDly == 0) {
+        if((os_tcb[os_task_running_ID].OSTCBDly == 0) && (os_tcb[os_task_running_ID].OSTCBStatPend == OS_STAT_PEND_TO)) {
             mutex[mutex_index].OSMutexPendTbl &= ~(0x01<<os_task_running_ID);  //将自己从任务等待表中清除
             return OS_ERR_TIMEOUT;
         } else { // 如果没有超时，需要将OSTCBDly置0，以免引发不必要的调度

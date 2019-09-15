@@ -10,6 +10,16 @@ extern "C" {
 
 #define OS_IDLE_TASKID 0u
 #define OS_IDLE_TASK_PRIO 0u
+
+/*
+*********************************************************************************************************
+*                           TASK PEND STATUS (Status codes for OSTCBStatPend)
+*********************************************************************************************************
+*/
+#define  OS_STAT_PEND_OK                0u  /* Pending status OK, not pending, or pending complete     */
+#define  OS_STAT_PEND_TO                1u  /* Pending timed out                                       */
+#define  OS_STAT_PEND_ABORT             2u  /* Pending aborted                                         */
+
 /*
 *********************************************************************************************************
 *                                          TASK CONTROL BLOCK
@@ -26,6 +36,9 @@ typedef struct os_tcb {
     u8             *OSTCBStkBottomPtr;      /* 堆栈的底部指针                                          */
     u8              OSTCBCyclesTot;         /* 当前任务运行的节拍数                                    */
     u8              OSTCBStkSize;           /* 堆栈的大小                                              */
+#endif
+#if (defined MUTEX_ENABLE) || (defined SEM_ENABLE) || (defined MSGQ_ENABLE)
+    u8              OSTCBStatPend;          /* 任务挂起状态                                            */
 #endif
 } OS_TCB;
 

@@ -1,7 +1,7 @@
 #include "rt_os.h"
 #include "rt_os_private.h"
 
-//互斥锁结构体
+//信号量结构体
 typedef struct os_sem {
     u8              OSSemPendTbl;         /* 等待信号量的任务列表                                      */
     u8              OSSemCnt;             /* 信号量计数                                                */
@@ -36,14 +36,20 @@ u8 os_sem_pend(u8 sem_index, u16 ticks)
         sem[sem_index].OSSemCnt--;     //消费
         OS_EXIT_CRITICAL();
     } else { // 无法获取到信号量
-        sem[sem_index].OSSemPendTbl |= 0x01<<os_task_running_ID;  //加入信号量的任务等待表
+        sem[sem_index].OSSemPendTbl |= 0x01<<os_task_running_ID;      //加入信号量的任务等待表
         os_tcb[os_task_running_ID].OSTCBStatus = OS_STAT_SEM;         //将自己的状态改为信号量等待
-        os_tcb[os_task_running_ID].OSTCBDly = ticks; //如延时为 0，刚无限等待
+        os_tcb[os_task_running_ID].OSTCBDly = ticks;                  //如延时为 0，刚无限等待
+        if (ticks) {
+            os_tcb[os_task_running_ID].OSTCBStatPend = OS_STAT_PEND_TO;
+        }
+        else {
+            os_tcb[os_task_running_ID].OSTCBStatPend = OS_STAT_PEND_OK;
+        }
         OS_EXIT_CRITICAL();
         OS_TASK_SW(); //从新调度
 
         // 当再次进入时，根据OSTCBDly值判断是否是超时导致的。
-        if(os_tcb[os_task_running_ID].OSTCBDly == 0) {
+        if((os_tcb[os_task_running_ID].OSTCBDly == 0) && (os_tcb[os_task_running_ID].OSTCBStatPend == OS_STAT_PEND_TO)) {
             sem[sem_index].OSSemPendTbl &= ~(0x01<<os_task_running_ID);  //将自己从任务等待表中清除
             return OS_ERR_TIMEOUT;
         } else { // 如果没有超时，需要将OSTCBDly置0，以免引发不必要的调度
