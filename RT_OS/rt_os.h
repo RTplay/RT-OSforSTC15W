@@ -114,6 +114,7 @@ typedef void (*idle_user)(void);
 #define OS_ERR_FLAG_GRP_DEPLETED          114u
 #define OS_ERR_FLAG_USED                  115u
 #define OS_ERR_FLAG_UNUSED                116u
+#define OS_ERR_FLAG_CORE                  117u
 
 /*
 *********************************************************************************************************
@@ -142,7 +143,6 @@ typedef void (*idle_user)(void);
 #define  OS_FLAG_WAIT_SET_ANY           3u  /* Wait for ANY of the bits specified to be SET (i.e. 1)   */
 #define  OS_FLAG_WAIT_SET_OR            3u
 
-#define  OS_FLAG_MATCH               0x40u  /* 不关心的位是否需要真的为0逻辑                           */
 #define  OS_FLAG_CONSUME             0x80u  /* Consume the flags if condition(s) satisfied             */
 
 
@@ -208,12 +208,11 @@ typedef  u16   OS_FLAGS;
 #if OS_FLAGS_NBITS == 32u
 typedef  u32   OS_FLAGS;
 #endif
-u8      os_flag_init (u8 flag_index, OS_FLAGS  flags, u8 wait_type);
-u8      os_flag_release (u8 flag_index, u8 opt);
-
-
-
-
+u8          os_flag_init (u8 flag_index, OS_FLAGS  flags, u8 wait_type);
+u8          os_flag_release (u8 flag_index, u8 opt);
+OS_FLAGS    os_flag_accept (u8 flag_index, u8 *err);
+OS_FLAGS    os_flag_pend (u8 flag_index, u16 ticks, u8 *err);
+OS_FLAGS    os_flag_post (u8 flag_index, u8 opt, u8 *err);
 #endif
 
 #ifdef SYSTEM_DETECT_MODE
