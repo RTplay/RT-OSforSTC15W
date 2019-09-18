@@ -322,7 +322,7 @@
             <InterruptVectorAddress>0</InterruptVectorAddress>
             <VariousControls>
               <MiscControls></MiscControls>
-              <Define>SYSTEM_DETECT_MODE,DEBUG_ENABLE,xMUTEX_ENABLE,xSEM_ENABLE,MSGQ_ENABLE</Define>
+              <Define>SYSTEM_DETECT_MODE,DEBUG_ENABLE,xMUTEX_ENABLE,xSEM_ENABLE,MSGQ_ENABLE,FLAG_ENABLE</Define>
               <Undefine></Undefine>
               <IncludePath>.\bsp;.\RT_OS;.\driver</IncludePath>
             </VariousControls>
@@ -777,6 +777,11 @@
               <FileName>rt_os_msgq.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\RT_ITC\rt_os_msgq.c</FilePath>
+            </File>
+            <File>
+              <FileName>rt_os_flag.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\RT_ITC\rt_os_flag.c</FilePath>
             </File>
           </Files>
         </Group>

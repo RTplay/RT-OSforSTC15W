@@ -1,4 +1,4 @@
-A51 MACRO ASSEMBLER  RT_OS_ASM                                                            09/15/2019 22:39:34 PAGE     1
+A51 MACRO ASSEMBLER  RT_OS_ASM                                                            09/17/2019 23:27:16 PAGE     1
 
 
 MACRO ASSEMBLER A51 V8.2.7.0
@@ -11,7 +11,7 @@ LOC  OBJ            LINE     SOURCE
                        2     ; COMPILER INVOKED BY:
                        3     ;        D:\Keil_v5\C51\BIN\C51.EXE RT_OS\rt_os_asm.c LARGE OPTIMIZE(0,SPEED) BROWSE INCDIR
                              (.\bsp;.\RT_OS;.\driver) DEFINE(SYSTEM_DETECT_MODE,DEBUG_ENABLE,xMUTEX_ENABLE,xSEM_ENABLE,M
-                             SGQ_ENABLE) DEBUG OBJECTEXTEND CODE PRINT(.\Listings\rt_os_asm.lst) SRC(.\Objects\rt_os_asm.SRC)
+                             SGQ_ENABLE,FLAG_ENABLE) DEBUG OBJECTEXTEND CODE PRINT(.\Listings\rt_os_asm.lst) SRC(.\Objects\rt_os_asm.SRC)
                        4     
                        5     $nomod51 
                        6     
@@ -65,7 +65,7 @@ LOC  OBJ            LINE     SOURCE
   00BA                54     P_SW2   DATA    0BAH
   00AD                55     EADC    BIT     0A8H.5
   00A1                56     SPI_SCLK_2      BIT     0A0H.1
-A51 MACRO ASSEMBLER  RT_OS_ASM                                                            09/15/2019 22:39:34 PAGE     2
+A51 MACRO ASSEMBLER  RT_OS_ASM                                                            09/17/2019 23:27:16 PAGE     2
 
   00A8                57     IE      DATA    0A8H
   00C3                58     SPI_SCLK_3      BIT     0C0H.3
@@ -133,7 +133,7 @@ LOC  OBJ            LINE     SOURCE
   008F               120     WAKE_CLKO       DATA    08FH
   00C8               121     P50     BIT     0C8H.0
   00C1               122     P41     BIT     0C0H.1
-A51 MACRO ASSEMBLER  RT_OS_ASM                                                            09/15/2019 22:39:34 PAGE     3
+A51 MACRO ASSEMBLER  RT_OS_ASM                                                            09/17/2019 23:27:16 PAGE     3
 
   00B2               123     P32     BIT     0B0H.2
   00A3               124     P23     BIT     0A0H.3
@@ -201,7 +201,7 @@ LOC  OBJ            LINE     SOURCE
   00D2               186     RL_T4H  DATA    0D2H
   00D4               187     TH3     DATA    0D4H
   00D4               188     T3H     DATA    0D4H
-A51 MACRO ASSEMBLER  RT_OS_ASM                                                            09/15/2019 22:39:34 PAGE     4
+A51 MACRO ASSEMBLER  RT_OS_ASM                                                            09/17/2019 23:27:16 PAGE     4
 
   008A               189     RL_TL0  DATA    08AH
   009F               190     SM0     BIT     098H.7
@@ -269,7 +269,7 @@ LOC  OBJ            LINE     SOURCE
   00D1               252     F1      BIT     0D0H.1
   008F               253     INT_CLKO        DATA    08FH
   00F6               254     B6      BIT     0F0H.6
-A51 MACRO ASSEMBLER  RT_OS_ASM                                                            09/15/2019 22:39:34 PAGE     5
+A51 MACRO ASSEMBLER  RT_OS_ASM                                                            09/17/2019 23:27:16 PAGE     5
 
   00E0               255     ACC0    BIT     0E0H.0
   00F7               256     B7      BIT     0F0H.7
@@ -337,7 +337,7 @@ LOC  OBJ            LINE     SOURCE
 0000                 318               i?043:   DS   1
 0001                 319             ORG  1
 0001                 320               j?044:   DS   1
-A51 MACRO ASSEMBLER  RT_OS_ASM                                                            09/15/2019 22:39:34 PAGE     6
+A51 MACRO ASSEMBLER  RT_OS_ASM                                                            09/17/2019 23:27:16 PAGE     6
 
 0002                 321             ORG  2
 0002                 322     highest_prio_id?045:   DS   1
@@ -405,7 +405,7 @@ LOC  OBJ            LINE     SOURCE
                      384     ;     PUSH     AR2
 0027 C002            385               PUSH     AR2
                      386     ;     PUSH     AR3
-A51 MACRO ASSEMBLER  RT_OS_ASM                                                            09/15/2019 22:39:34 PAGE     7
+A51 MACRO ASSEMBLER  RT_OS_ASM                                                            09/17/2019 23:27:16 PAGE     7
 
 0029 C003            387               PUSH     AR3
                      388     ;     PUSH     AR4
@@ -473,7 +473,7 @@ LOC  OBJ            LINE     SOURCE
 007E E0              449             MOVX    A,@DPTR
 007F FE              450             MOV     R6,A
 0080 A3              451             INC     DPTR
-A51 MACRO ASSEMBLER  RT_OS_ASM                                                            09/15/2019 22:39:34 PAGE     8
+A51 MACRO ASSEMBLER  RT_OS_ASM                                                            09/17/2019 23:27:16 PAGE     8
 
 0081 E0              452             MOVX    A,@DPTR
 0082 FF              453             MOV     R7,A
@@ -541,7 +541,7 @@ LOC  OBJ            LINE     SOURCE
 00DC F0              515             MOVX    @DPTR,A
 00DD                 516     ?C0006:
 00DD 900000   F      517             MOV     DPTR,#j?044
-A51 MACRO ASSEMBLER  RT_OS_ASM                                                            09/15/2019 22:39:34 PAGE     9
+A51 MACRO ASSEMBLER  RT_OS_ASM                                                            09/17/2019 23:27:16 PAGE     9
 
 00E0 E0              518             MOVX    A,@DPTR
 00E1 FF              519             MOV     R7,A
@@ -609,7 +609,7 @@ LOC  OBJ            LINE     SOURCE
 0132 3E              581             ADDC    A,R6
 0133 F583            582             MOV     DPH,A
 0135 E0              583             MOVX    A,@DPTR
-A51 MACRO ASSEMBLER  RT_OS_ASM                                                            09/15/2019 22:39:34 PAGE    10
+A51 MACRO ASSEMBLER  RT_OS_ASM                                                            09/17/2019 23:27:16 PAGE    10
 
 0136 FF              584             MOV     R7,A
 0137 7E00            585             MOV     R6,#00H
@@ -677,7 +677,7 @@ LOC  OBJ            LINE     SOURCE
 018E 900000   F      647             MOV     DPTR,#j?044
 0191 E4              648             CLR     A
 0192 F0              649             MOVX    @DPTR,A
-A51 MACRO ASSEMBLER  RT_OS_ASM                                                            09/15/2019 22:39:34 PAGE    11
+A51 MACRO ASSEMBLER  RT_OS_ASM                                                            09/17/2019 23:27:16 PAGE    11
 
 0193                 650     ?C0013:
 0193 900000   F      651             MOV     DPTR,#j?044
@@ -745,7 +745,7 @@ LOC  OBJ            LINE     SOURCE
 01E2 7400     F      713             MOV     A,#HIGH (os_task_run)
 01E4 3E              714             ADDC    A,R6
 01E5 F583            715             MOV     DPH,A
-A51 MACRO ASSEMBLER  RT_OS_ASM                                                            09/15/2019 22:39:34 PAGE    12
+A51 MACRO ASSEMBLER  RT_OS_ASM                                                            09/17/2019 23:27:16 PAGE    12
 
 01E7 E0              716             MOVX    A,@DPTR
 01E8 FF              717             MOV     R7,A
@@ -813,7 +813,7 @@ LOC  OBJ            LINE     SOURCE
 0225 900000   F      778             MOV     DPTR,#highest_prio_id?045
 0228 E0              779             MOVX    A,@DPTR
 0229 FF              780             MOV     R7,A
-A51 MACRO ASSEMBLER  RT_OS_ASM                                                            09/15/2019 22:39:34 PAGE    13
+A51 MACRO ASSEMBLER  RT_OS_ASM                                                            09/17/2019 23:27:16 PAGE    13
 
 022A 900000   F      781             MOV     DPTR,#os_task_running_ID
 022D EF              782             MOV     A,R7
@@ -881,7 +881,7 @@ LOC  OBJ            LINE     SOURCE
 027C 7E00            844             MOV     R6,#00H
 027E EF              845             MOV     A,R7
 027F 64FF            846             XRL     A,#0FFH
-A51 MACRO ASSEMBLER  RT_OS_ASM                                                            09/15/2019 22:39:34 PAGE    14
+A51 MACRO ASSEMBLER  RT_OS_ASM                                                            09/17/2019 23:27:16 PAGE    14
 
 0281 4E              847             ORL     A,R6
 0282 701F            848             JNZ     ?C0023
@@ -949,7 +949,7 @@ LOC  OBJ            LINE     SOURCE
 02D0 2D              910             ADD     A,R5
 02D1 F582            911             MOV     DPL,A
 02D3 7400     F      912             MOV     A,#HIGH (os_task_run)
-A51 MACRO ASSEMBLER  RT_OS_ASM                                                            09/15/2019 22:39:34 PAGE    15
+A51 MACRO ASSEMBLER  RT_OS_ASM                                                            09/17/2019 23:27:16 PAGE    15
 
 02D5 3C              913             ADDC    A,R4
 02D6 F583            914             MOV     DPH,A
@@ -1017,7 +1017,7 @@ LOC  OBJ            LINE     SOURCE
 0324 900000   F      976             MOV     DPTR,#j?044
 0327 E0              977             MOVX    A,@DPTR
 0328 FE              978             MOV     R6,A
-A51 MACRO ASSEMBLER  RT_OS_ASM                                                            09/15/2019 22:39:34 PAGE    16
+A51 MACRO ASSEMBLER  RT_OS_ASM                                                            09/17/2019 23:27:16 PAGE    16
 
 0329 EE              979             MOV     A,R6
 032A FD              980             MOV     R5,A
@@ -1085,7 +1085,7 @@ LOC  OBJ            LINE     SOURCE
 0374 F582           1041             MOV     DPL,A
 0376 E4             1042             CLR     A
 0377 3400     F     1043             ADDC    A,#HIGH (os_tcb+06H)
-A51 MACRO ASSEMBLER  RT_OS_ASM                                                            09/15/2019 22:39:34 PAGE    17
+A51 MACRO ASSEMBLER  RT_OS_ASM                                                            09/17/2019 23:27:16 PAGE    17
 
 0379 F583           1044             MOV     DPH,A
 037B E0             1045             MOVX    A,@DPTR
@@ -1153,7 +1153,7 @@ LOC  OBJ            LINE     SOURCE
 03CC D002           1107               POP      AR2
                     1108     ;     POP      AR1
 03CE D001           1109               POP      AR1
-A51 MACRO ASSEMBLER  RT_OS_ASM                                                            09/15/2019 22:39:34 PAGE    18
+A51 MACRO ASSEMBLER  RT_OS_ASM                                                            09/17/2019 23:27:16 PAGE    18
 
                     1110     ;     POP      AR0
 03D0 D000           1111               POP      AR0
@@ -1221,7 +1221,7 @@ LOC  OBJ            LINE     SOURCE
 0025 900000   F     1173             MOV     DPTR,#int_count
 0028 E0             1174             MOVX    A,@DPTR
 0029 04             1175             INC     A
-A51 MACRO ASSEMBLER  RT_OS_ASM                                                            09/15/2019 22:39:34 PAGE    19
+A51 MACRO ASSEMBLER  RT_OS_ASM                                                            09/17/2019 23:27:16 PAGE    19
 
 002A FF             1176             MOV     R7,A
 002B F0             1177             MOVX    @DPTR,A
@@ -1289,7 +1289,7 @@ LOC  OBJ            LINE     SOURCE
 0082 E0             1239             MOVX    A,@DPTR
 0083 FE             1240             MOV     R6,A
 0084 EE             1241             MOV     A,R6
-A51 MACRO ASSEMBLER  RT_OS_ASM                                                            09/15/2019 22:39:34 PAGE    20
+A51 MACRO ASSEMBLER  RT_OS_ASM                                                            09/17/2019 23:27:16 PAGE    20
 
 0085 75F003         1242             MOV     B,#03H
 0088 A4             1243             MUL     AB
@@ -1357,7 +1357,7 @@ LOC  OBJ            LINE     SOURCE
 00DF 75F00E         1304             MOV     B,#0EH
 00E2 A4             1305             MUL     AB
 00E3 2400     F     1306             ADD     A,#LOW (os_tcb+0CH)
-A51 MACRO ASSEMBLER  RT_OS_ASM                                                            09/15/2019 22:39:34 PAGE    21
+A51 MACRO ASSEMBLER  RT_OS_ASM                                                            09/17/2019 23:27:16 PAGE    21
 
 00E5 F582           1307             MOV     DPL,A
 00E7 E4             1308             CLR     A
@@ -1425,7 +1425,7 @@ LOC  OBJ            LINE     SOURCE
 0137 F582           1370             MOV     DPL,A
 0139 E4             1371             CLR     A
 013A 3400     F     1372             ADDC    A,#HIGH (os_tcb+0BH)
-A51 MACRO ASSEMBLER  RT_OS_ASM                                                            09/15/2019 22:39:34 PAGE    22
+A51 MACRO ASSEMBLER  RT_OS_ASM                                                            09/17/2019 23:27:16 PAGE    22
 
 013C F583           1373             MOV     DPH,A
 013E E0             1374             MOVX    A,@DPTR
@@ -1493,7 +1493,7 @@ LOC  OBJ            LINE     SOURCE
                     1436                             ; SOURCE LINE # 133
 018F 900000   F     1437             MOV     DPTR,#i?155
 0192 E0             1438             MOVX    A,@DPTR
-A51 MACRO ASSEMBLER  RT_OS_ASM                                                            09/15/2019 22:39:34 PAGE    23
+A51 MACRO ASSEMBLER  RT_OS_ASM                                                            09/17/2019 23:27:16 PAGE    23
 
 0193 FF             1439             MOV     R7,A
 0194 EF             1440             MOV     A,R7
@@ -1561,7 +1561,7 @@ LOC  OBJ            LINE     SOURCE
 01DC A4             1501             MUL     AB
 01DD 2400     F     1502             ADD     A,#LOW (os_tcb+07H)
 01DF F582           1503             MOV     DPL,A
-A51 MACRO ASSEMBLER  RT_OS_ASM                                                            09/15/2019 22:39:34 PAGE    24
+A51 MACRO ASSEMBLER  RT_OS_ASM                                                            09/17/2019 23:27:16 PAGE    24
 
 01E1 E4             1504             CLR     A
 01E2 3400     F     1505             ADDC    A,#HIGH (os_tcb+07H)
@@ -1629,7 +1629,7 @@ LOC  OBJ            LINE     SOURCE
 022B 900000   F     1567             MOV     DPTR,#task_sequence?154
 022E E4             1568             CLR     A
 022F F0             1569             MOVX    @DPTR,A
-A51 MACRO ASSEMBLER  RT_OS_ASM                                                            09/15/2019 22:39:34 PAGE    25
+A51 MACRO ASSEMBLER  RT_OS_ASM                                                            09/17/2019 23:27:16 PAGE    25
 
                     1570     ;         //SP -= 2;
                     1571     ;         os_tcb[os_task_running_ID].OSTCBStkPtr = SP;
@@ -1697,7 +1697,7 @@ LOC  OBJ            LINE     SOURCE
 0281 900000   F     1632             MOV     DPTR,#os_tcb+03H
 0284 75F00E         1633             MOV     B,#0EH
 0287 EF             1634             MOV     A,R7
-A51 MACRO ASSEMBLER  RT_OS_ASM                                                            09/15/2019 22:39:34 PAGE    26
+A51 MACRO ASSEMBLER  RT_OS_ASM                                                            09/17/2019 23:27:16 PAGE    26
 
 0288 120000   F     1635             LCALL   ?C?OFFXADD
 028B EE             1636             MOV     A,R6
@@ -1765,7 +1765,7 @@ LOC  OBJ            LINE     SOURCE
                     1698     ;                     task_sequence = 0xFF;//先假设这个排在最最最后面
                     1699                             ; SOURCE LINE # 159
 02E8 900000   F     1700             MOV     DPTR,#task_sequence?154
-A51 MACRO ASSEMBLER  RT_OS_ASM                                                            09/15/2019 22:39:34 PAGE    27
+A51 MACRO ASSEMBLER  RT_OS_ASM                                                            09/17/2019 23:27:16 PAGE    27
 
 02EB 74FF           1701             MOV     A,#0FFH
 02ED F0             1702             MOVX    @DPTR,A
@@ -1833,7 +1833,7 @@ LOC  OBJ            LINE     SOURCE
 033B FF             1764             MOV     R7,A
 033C EF             1765             MOV     A,R7
 033D 33             1766             RLC     A
-A51 MACRO ASSEMBLER  RT_OS_ASM                                                            09/15/2019 22:39:34 PAGE    28
+A51 MACRO ASSEMBLER  RT_OS_ASM                                                            09/17/2019 23:27:16 PAGE    28
 
 033E 95E0           1767             SUBB    A,ACC
 0340 FE             1768             MOV     R6,A
@@ -1901,7 +1901,7 @@ LOC  OBJ            LINE     SOURCE
 039B 020000   F     1830             LJMP    ?C0045
                     1831     ;                     //查找新找到的高优先级在已运行队列中的排位
                     1832     ;                     u8 temp_task_sequence = 0xFF;//同优先级使用的临时任务序列
-A51 MACRO ASSEMBLER  RT_OS_ASM                                                            09/15/2019 22:39:34 PAGE    29
+A51 MACRO ASSEMBLER  RT_OS_ASM                                                            09/17/2019 23:27:16 PAGE    29
 
                     1833                             ; SOURCE LINE # 170
 039E 900000   F     1834             MOV     DPTR,#temp_task_sequence?148
@@ -1969,7 +1969,7 @@ LOC  OBJ            LINE     SOURCE
 03EC E0             1896             MOVX    A,@DPTR
 03ED FF             1897             MOV     R7,A
 03EE EF             1898             MOV     A,R7
-A51 MACRO ASSEMBLER  RT_OS_ASM                                                            09/15/2019 22:39:34 PAGE    30
+A51 MACRO ASSEMBLER  RT_OS_ASM                                                            09/17/2019 23:27:16 PAGE    30
 
 03EF 33             1899             RLC     A
 03F0 95E0           1900             SUBB    A,ACC
@@ -2037,7 +2037,7 @@ LOC  OBJ            LINE     SOURCE
 0432                1961     ?C0045:
 0432 900000   F     1962             MOV     DPTR,#i?151
 0435 E0             1963             MOVX    A,@DPTR
-A51 MACRO ASSEMBLER  RT_OS_ASM                                                            09/15/2019 22:39:34 PAGE    31
+A51 MACRO ASSEMBLER  RT_OS_ASM                                                            09/17/2019 23:27:16 PAGE    31
 
 0436 04             1964             INC     A
 0437 F0             1965             MOVX    @DPTR,A
@@ -2105,7 +2105,7 @@ LOC  OBJ            LINE     SOURCE
 0485 FE             2027             MOV     R6,A
 0486 7400     F     2028             MOV     A,#LOW (os_task_run)
 0488 2F             2029             ADD     A,R7
-A51 MACRO ASSEMBLER  RT_OS_ASM                                                            09/15/2019 22:39:34 PAGE    32
+A51 MACRO ASSEMBLER  RT_OS_ASM                                                            09/17/2019 23:27:16 PAGE    32
 
 0489 F582           2030             MOV     DPL,A
 048B 7400     F     2031             MOV     A,#HIGH (os_task_run)
@@ -2173,7 +2173,7 @@ LOC  OBJ            LINE     SOURCE
 04D9 900000   F     2093             MOV     DPTR,#j?152
 04DC E0             2094             MOVX    A,@DPTR
 04DD FE             2095             MOV     R6,A
-A51 MACRO ASSEMBLER  RT_OS_ASM                                                            09/15/2019 22:39:34 PAGE    33
+A51 MACRO ASSEMBLER  RT_OS_ASM                                                            09/17/2019 23:27:16 PAGE    33
 
 04DE EE             2096             MOV     A,R6
 04DF FD             2097             MOV     R5,A
@@ -2241,7 +2241,7 @@ LOC  OBJ            LINE     SOURCE
 052D FE             2159             MOV     R6,A
 052E 7400     F     2160             MOV     A,#LOW (os_task_run+0FFFFH)
 0530 2F             2161             ADD     A,R7
-A51 MACRO ASSEMBLER  RT_OS_ASM                                                            09/15/2019 22:39:34 PAGE    34
+A51 MACRO ASSEMBLER  RT_OS_ASM                                                            09/17/2019 23:27:16 PAGE    34
 
 0531 F582           2162             MOV     DPL,A
 0533 7400     F     2163             MOV     A,#HIGH (os_task_run+0FFFFH)
@@ -2309,7 +2309,7 @@ LOC  OBJ            LINE     SOURCE
                              TCBTimeQuanta;
                     2225                             ; SOURCE LINE # 208
 057E 900000   F     2226             MOV     DPTR,#os_task_running_ID
-A51 MACRO ASSEMBLER  RT_OS_ASM                                                            09/15/2019 22:39:34 PAGE    35
+A51 MACRO ASSEMBLER  RT_OS_ASM                                                            09/17/2019 23:27:16 PAGE    35
 
 0581 E0             2227             MOVX    A,@DPTR
 0582 FF             2228             MOV     R7,A
@@ -2377,7 +2377,7 @@ LOC  OBJ            LINE     SOURCE
                     2290                             ; SOURCE LINE # 212
 05D8                2291     ?C0071:
 05D8 D007           2292             POP     AR7
-A51 MACRO ASSEMBLER  RT_OS_ASM                                                            09/15/2019 22:39:34 PAGE    36
+A51 MACRO ASSEMBLER  RT_OS_ASM                                                            09/17/2019 23:27:16 PAGE    36
 
 05DA D006           2293             POP     AR6
 05DC D005           2294             POP     AR5
@@ -2395,7 +2395,7 @@ LOC  OBJ            LINE     SOURCE
                     2306     ; END OF timer0_int
                     2307     
                     2308             END
-A51 MACRO ASSEMBLER  RT_OS_ASM                                                            09/15/2019 22:39:34 PAGE    37
+A51 MACRO ASSEMBLER  RT_OS_ASM                                                            09/17/2019 23:27:16 PAGE    37
 
 SYMBOL TABLE LISTING
 ------ ----- -------
@@ -2463,7 +2463,7 @@ ACC2 . . . . . . . . . .  B ADDR   00E0H.2 A
 ACC3 . . . . . . . . . .  B ADDR   00E0H.3 A   
 ACC4 . . . . . . . . . .  B ADDR   00E0H.4 A   
 ACC5 . . . . . . . . . .  B ADDR   00E0H.5 A   
-A51 MACRO ASSEMBLER  RT_OS_ASM                                                            09/15/2019 22:39:34 PAGE    38
+A51 MACRO ASSEMBLER  RT_OS_ASM                                                            09/17/2019 23:27:16 PAGE    38
 
 ACC6 . . . . . . . . . .  B ADDR   00E0H.6 A   
 ACC7 . . . . . . . . . .  B ADDR   00E0H.7 A   
@@ -2531,7 +2531,7 @@ F1 . . . . . . . . . . .  B ADDR   00D0H.1 A
 HIGHEST_PRIO_ID?045. . .  X ADDR   0002H   R   SEG=?XD?OS_TASK_SW?RT_OS_ASM
 HIGHEST_PRIO_ID?153. . .  X ADDR   0004H   R   SEG=?XD?TIMER0_INT?RT_OS_ASM
 I?043. . . . . . . . . .  X ADDR   0000H   R   SEG=?XD?OS_TASK_SW?RT_OS_ASM
-A51 MACRO ASSEMBLER  RT_OS_ASM                                                            09/15/2019 22:39:34 PAGE    39
+A51 MACRO ASSEMBLER  RT_OS_ASM                                                            09/17/2019 23:27:16 PAGE    39
 
 I?147. . . . . . . . . .  X ADDR   0002H   R   SEG=?XD?TIMER0_INT?RT_OS_ASM
 I?151. . . . . . . . . .  X ADDR   0002H   R   SEG=?XD?TIMER0_INT?RT_OS_ASM
@@ -2599,7 +2599,7 @@ P20. . . . . . . . . . .  B ADDR   00A0H.0 A
 P21. . . . . . . . . . .  B ADDR   00A0H.1 A   
 P22. . . . . . . . . . .  B ADDR   00A0H.2 A   
 P23. . . . . . . . . . .  B ADDR   00A0H.3 A   
-A51 MACRO ASSEMBLER  RT_OS_ASM                                                            09/15/2019 22:39:34 PAGE    40
+A51 MACRO ASSEMBLER  RT_OS_ASM                                                            09/17/2019 23:27:16 PAGE    40
 
 P24. . . . . . . . . . .  B ADDR   00A0H.4 A   
 P25. . . . . . . . . . .  B ADDR   00A0H.5 A   
@@ -2667,7 +2667,7 @@ RD . . . . . . . . . . .  B ADDR   00B0H.7 A
 REN. . . . . . . . . . .  B ADDR   0098H.4 A   
 RI . . . . . . . . . . .  B ADDR   0098H.0 A   
 RL_T2H . . . . . . . . .  D ADDR   00D6H   A   
-A51 MACRO ASSEMBLER  RT_OS_ASM                                                            09/15/2019 22:39:34 PAGE    41
+A51 MACRO ASSEMBLER  RT_OS_ASM                                                            09/17/2019 23:27:16 PAGE    41
 
 RL_T2L . . . . . . . . .  D ADDR   00D7H   A   
 RL_T3H . . . . . . . . .  D ADDR   00D4H   A   
@@ -2735,7 +2735,7 @@ TEMP_TEMP_ID?150 . . . .  X ADDR   0007H   R   SEG=?XD?TIMER0_INT?RT_OS_ASM
 TF0. . . . . . . . . . .  B ADDR   0088H.5 A   
 TF1. . . . . . . . . . .  B ADDR   0088H.7 A   
 TH0. . . . . . . . . . .  D ADDR   008CH   A   
-A51 MACRO ASSEMBLER  RT_OS_ASM                                                            09/15/2019 22:39:34 PAGE    42
+A51 MACRO ASSEMBLER  RT_OS_ASM                                                            09/17/2019 23:27:16 PAGE    42
 
 TH1. . . . . . . . . . .  D ADDR   008DH   A   
 TH2. . . . . . . . . . .  D ADDR   00D6H   A   

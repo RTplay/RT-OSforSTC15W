@@ -10,19 +10,23 @@ extern "C" {
 //任务堆栈类型
 #define STACK_TYPE idata u8
 //堆栈使用量魔数
-#define STACK_MAGIC 0xAC
+#define STACK_MAGIC             0xAC
 //系统节拍时间，单位是ms
-#define OS_TICK_RATE_MS 10
+#define OS_TICK_RATE_MS         10
 //默认时间片，10个节拍
-#define OS_DEFAULT_TIME_QUANTA 10
+#define OS_DEFAULT_TIME_QUANTA  10
 //最大任务数量，目前不能大于8
-#define TASK_SIZE 8
+#define TASK_SIZE               8
 //互斥锁数量，开启MUTEX_ENABLE后有效
-#define OS_MUTEX_SIZE   5
+#define OS_MUTEX_SIZE           5
 //信号量数量，开启SEM_ENABLE后有效
-#define OS_SEM_SIZE   5
+#define OS_SEM_SIZE             5
 //消息队列数量，开启MSGQ_ENABLE后有效
-#define OS_MSGQ_SIZE   2
+#define OS_MSGQ_SIZE            2
+//消息队列数量，开启FLAG_ENABLE后有效
+#define OS_FLAG_SIZE            2
+//OS_FLAGS数据类型的位大小（8,16或32）
+#define OS_FLAGS_NBITS          8
 
 
 #define OS_ENTER_CRITICAL()        EA = 0
@@ -66,11 +70,13 @@ typedef void (*idle_user)(void);
 *********************************************************************************************************
 */
 #define OS_ERR_NONE                       0u
+#define OS_ERR_INVALID_OPT                7u
 #define OS_ERR_PDATA_NULL                 9u
 
 #define OS_ERR_TIMEOUT                    10u
 #define OS_ERR_PEND_LOCKED                13u
 #define OS_ERR_PEND_UNLOCK                14u
+#define OS_ERR_PEND_ABORT                 15u
 
 #define OS_ERR_MSGQ_FULL                  30u
 #define OS_ERR_MSGQ_EMPTY                 31u
@@ -95,9 +101,19 @@ typedef void (*idle_user)(void);
 #define OS_ERR_TASK_RESUME_TASKID         66u
 #define OS_ERR_TASK_NOT_SUSPENDED         67u
 
+#define OS_ERR_TASK_WAITING               73u
+
 #define OS_ERR_NOT_MUTEX_OWNER            100u
 #define OS_ERR_MUTXE_ID_INVALID           101u
 #define OS_ERR_NOT_MUTEX                  102u
+
+#define OS_ERR_FLAG_ID_INVALID            110u
+#define OS_ERR_FLAG_WAIT_TYPE             111u
+#define OS_ERR_FLAG_NOT_RDY               112u
+#define OS_ERR_FLAG_INVALID_OPT           113u
+#define OS_ERR_FLAG_GRP_DEPLETED          114u
+#define OS_ERR_FLAG_USED                  115u
+#define OS_ERR_FLAG_UNUSED                116u
 
 /*
 *********************************************************************************************************
@@ -109,6 +125,37 @@ typedef void (*idle_user)(void);
 #define  OS_POST_OPT_FRONT           0x01u  /* Post to highest priority task waiting                   */
 #define  OS_POST_OPT_NO_SCHED        0x02u  /* Do not call the scheduler if this option is selected    */
 
+/*
+*********************************************************************************************************
+*                                         EVENT FLAGS
+*********************************************************************************************************
+*/
+#define  OS_FLAG_WAIT_CLR_ALL           0u  /* Wait for ALL    the bits specified to be CLR (i.e. 0)   */
+#define  OS_FLAG_WAIT_CLR_AND           0u
+
+#define  OS_FLAG_WAIT_CLR_ANY           1u  /* Wait for ANY of the bits specified to be CLR (i.e. 0)   */
+#define  OS_FLAG_WAIT_CLR_OR            1u
+
+#define  OS_FLAG_WAIT_SET_ALL           2u  /* Wait for ALL    the bits specified to be SET (i.e. 1)   */
+#define  OS_FLAG_WAIT_SET_AND           2u
+
+#define  OS_FLAG_WAIT_SET_ANY           3u  /* Wait for ANY of the bits specified to be SET (i.e. 1)   */
+#define  OS_FLAG_WAIT_SET_OR            3u
+
+#define  OS_FLAG_MATCH               0x40u  /* 不关心的位是否需要真的为0逻辑                           */
+#define  OS_FLAG_CONSUME             0x80u  /* Consume the flags if condition(s) satisfied             */
+
+
+#define  OS_FLAG_CLR                    0u
+#define  OS_FLAG_SET                    1u
+
+/*
+*********************************************************************************************************
+*       Possible values for 'opt' argument of OSSemDel(), OSMboxDel(), OSQDel() and OSMutexDel()
+*********************************************************************************************************
+*/
+#define  OS_DEL_NO_PEND                 0u
+#define  OS_DEL_ALWAYS                  1u
 
 u8      os_task_create(void (*task)(void), u8 taskID, u8 task_prio, u8 time_quanta, u8 *pstack, u8 stack_size);
 void    os_init(void);
@@ -147,6 +194,26 @@ u8      os_msgq_post_front(u8 msgq_index, void *pmsg);
 void   *os_msgq_accept(u8 msgq_index, u8 *err);
 u8      os_msgq_query (u8 msgq_index, u8 *err);
 u8      os_msgq_post_opt (u8 msgq_index, void *pmsg, u8 opt);
+#endif
+
+#ifdef FLAG_ENABLE
+#if OS_FLAGS_NBITS == 8u                    /* Determine the size of OS_FLAGS (8, 16 or 32 bits)       */
+typedef  u8    OS_FLAGS;
+#endif
+
+#if OS_FLAGS_NBITS == 16u
+typedef  u16   OS_FLAGS;
+#endif
+
+#if OS_FLAGS_NBITS == 32u
+typedef  u32   OS_FLAGS;
+#endif
+u8      os_flag_init (u8 flag_index, OS_FLAGS  flags, u8 wait_type);
+u8      os_flag_release (u8 flag_index, u8 opt);
+
+
+
+
 #endif
 
 #ifdef SYSTEM_DETECT_MODE
