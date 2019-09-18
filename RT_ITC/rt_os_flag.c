@@ -152,11 +152,22 @@ OS_FLAGS OSFlagAccept (u8 flag_index, u8 *err)
     case OS_FLAG_WAIT_SET_ALL:                         /* See if all required flags are set        */
         if (match == TRUE) {
             if (flag[flag_index].OSFlagInterestedFlags == flag[flag_index].OSFlagFlags) { //全部匹配必须每一位都相同
-                if (consume == OS_TRUE) {                 /* See if we need to consume the flags      */
+                if (consume == TRUE) {                 /* See if we need to consume the flags      */
                     flag[flag_index].OSFlagFlags = 0;     /* 清空标志位  */
                 }
                 *err = OS_ERR_NONE;
                 flags_rdy = flag[flag_index].OSFlagInterestedFlags;
+            } else {
+                *err = OS_ERR_FLAG_NOT_RDY;
+                flags_rdy = 0;
+            }
+        } else {
+            flags_rdy = flag[flag_index].OSFlagInterestedFlags & flag[flag_index].OSFlagFlags;
+            if (flags_rdy == flag[flag_index].OSFlagInterestedFlags) {  //不关心其他位
+                if (consume == TRUE) {                 /* See if we need to consume the flags      */
+                    flag[flag_index].OSFlagFlags &= ~flag[flag_index].OSFlagInterestedFlags;     /* 清空标志位  */
+                }
+                *err = OS_ERR_NONE;
             } else {
                 *err = OS_ERR_FLAG_NOT_RDY;
                 flags_rdy = 0;
@@ -166,19 +177,39 @@ OS_FLAGS OSFlagAccept (u8 flag_index, u8 *err)
         break;
 
     case OS_FLAG_WAIT_SET_ANY:
-        flags_rdy = (OS_FLAGS)(pgrp->OSFlagFlags & flags);     /* Extract only the bits we want   */
-        if (flags_rdy != (OS_FLAGS)0) {               /* See if any flag set                      */
-            if (consume == OS_TRUE) {                 /* See if we need to consume the flags      */
-                pgrp->OSFlagFlags &= (OS_FLAGS)~flags_rdy;     /* Clear ONLY the flags we got     */
+        if (match == TRUE) {                                                  /* 未设置位必须为0 */
+            //判断0位必须为0
+            if ((~flag[flag_index].OSFlagInterestedFlags & flag[flag_index].OSFlagFlags) == flag[flag_index].OSFlagInterestedFlags) {
+                flags_rdy = flag[flag_index].OSFlagInterestedFlags & flag[flag_index].OSFlagFlags;
+                if (flags_rdy != 0) {
+                    if (consume == TRUE) {                 /* See if we need to consume the flags      */
+                        flag[flag_index].OSFlagFlags &= ~flag[flag_index].OSFlagInterestedFlags;     /* 清空标志位  */
+                    }
+                    *err = OS_ERR_NONE;
+                } else {
+                    *err = OS_ERR_FLAG_NOT_RDY;
+                    flags_rdy = 0;
+                }
+            } else {
+                *err = OS_ERR_FLAG_NOT_RDY;
+                flags_rdy = 0;
             }
         } else {
-            *perr = OS_ERR_FLAG_NOT_RDY;
+            flags_rdy = flag[flag_index].OSFlagInterestedFlags & flag[flag_index].OSFlagFlags;
+            if (flags_rdy != 0) {
+                if (consume == TRUE) {                 /* See if we need to consume the flags      */
+                    flag[flag_index].OSFlagFlags &= ~flag[flag_index].OSFlagInterestedFlags;     /* 清空标志位  */
+                }
+                *err = OS_ERR_NONE;
+            } else {
+                *err = OS_ERR_FLAG_NOT_RDY;
+                flags_rdy = 0;
+            }
         }
         OS_EXIT_CRITICAL();
         break;
 
-#if OS_FLAG_WAIT_CLR_EN > 0u
-    case OS_FLAG_WAIT_CLR_ALL:                         /* See if all required flags are cleared    */
+    case OS_FLAG_WAIT_CLR_ALL:                        /* See if all required flags are cleared    */
         flags_rdy = (OS_FLAGS)~pgrp->OSFlagFlags & flags;    /* Extract only the bits we want     */
         if (flags_rdy == flags) {                     /* Must match ALL the bits that we want     */
             if (consume == OS_TRUE) {                 /* See if we need to consume the flags      */
