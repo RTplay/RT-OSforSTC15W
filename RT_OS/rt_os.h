@@ -27,7 +27,8 @@ extern "C" {
 #define OS_FLAG_SIZE            2
 //OS_FLAGS数据类型的位大小（8,16或32）
 #define OS_FLAGS_NBITS          8
-
+//动态内存分配大小，开启MEM_ENABLE后有效
+#define OS_MEM_SIZE             1024
 
 #define OS_ENTER_CRITICAL()        EA = 0
 #define OS_EXIT_CRITICAL()         EA = 1
@@ -102,6 +103,17 @@ typedef void (*idle_user)(void);
 #define OS_ERR_TASK_NOT_SUSPENDED         67u
 
 #define OS_ERR_TASK_WAITING               73u
+
+#define OS_ERR_MEM_INVALID_PART           90u
+#define OS_ERR_MEM_INVALID_BLKS           91u
+#define OS_ERR_MEM_INVALID_SIZE           92u
+#define OS_ERR_MEM_NO_FREE_BLKS           93u
+#define OS_ERR_MEM_FULL                   94u
+#define OS_ERR_MEM_INVALID_PBLK           95u
+#define OS_ERR_MEM_INVALID_PMEM           96u
+#define OS_ERR_MEM_INVALID_PDATA          97u
+#define OS_ERR_MEM_INVALID_ADDR           98u
+#define OS_ERR_MEM_NAME_TOO_LONG          99u
 
 #define OS_ERR_NOT_MUTEX_OWNER            100u
 #define OS_ERR_MUTXE_ID_INVALID           101u
