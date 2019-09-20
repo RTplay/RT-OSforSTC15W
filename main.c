@@ -80,12 +80,24 @@ void app_task_1(void)
 /******************** Ö÷º¯Êý **************************/
 void main(void)
 {
+    u8 *a, *b, *c, *d;
     RestForDownload();
     debug_uart_init();
     //printf("STC15F2K60S2 RT-OS Test Prgramme!\r\n");
     os_init();
-    
-    
+    a = os_malloc(4);
+    *a = 7;
+    b = os_malloc(8);
+    *b = 8;
+    c = os_malloc(4);
+    *c = 8;
+    d = os_malloc(4);
+    os_memset(d, 9, 4);
+    os_free(b);
+    d = os_realloc(d, 6);
+    os_free(a);
+    os_free(c);
+    os_free(d);
     os_task_create(app_task_1, 1, 20, OS_DEFAULT_TIME_QUANTA, app1_stack, APP_STACK_SIZE);
     os_start_task();
     while(1);

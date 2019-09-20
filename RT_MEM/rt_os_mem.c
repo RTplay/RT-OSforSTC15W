@@ -20,7 +20,7 @@ u8 os_mem_init (void)
         mem_size = no_warning - 1;
     else
         mem_size = no_warning;
-    *mem_head = mem_size - 2; //存入可用字节数
+    *mem_head = mem_size; //存入可用字节数
 
     return OS_ERR_NONE;
 }

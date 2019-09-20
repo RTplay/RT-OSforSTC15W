@@ -28,7 +28,7 @@ extern "C" {
 //OS_FLAGS数据类型的位大小（8,16或32）
 #define OS_FLAGS_NBITS          8
 //动态内存分配大小，开启MEM_ENABLE后有效
-#define OS_MEM_SIZE             1024
+#define OS_MEM_SIZE             30
 
 extern u8 OSSchedLockNestingCtr;
 

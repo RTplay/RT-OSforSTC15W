@@ -62,10 +62,10 @@ extern  u8           os_core_start;
 extern  u8           os_task_run[TASK_SIZE];
 extern  OS_SS        sys_stat[TASK_SIZE];
 
-void os_task0_create(void);
-void OS_TASK_SW(void);
-void tick_timer_init(void);
-void tick_timer_start(void);
+void    os_task0_create(void);
+void    OS_TASK_SW(void);
+void    tick_timer_init(void);
+void    tick_timer_start(void);
 
 u8      get_stack_used(u8 *pstack, u8 stack_size);
 u8      os_mem_init (void);

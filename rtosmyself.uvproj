@@ -322,7 +322,7 @@
             <InterruptVectorAddress>0</InterruptVectorAddress>
             <VariousControls>
               <MiscControls></MiscControls>
-              <Define>SYSTEM_DETECT_MODE,DEBUG_ENABLE,xMUTEX_ENABLE,xSEM_ENABLE,xMSGQ_ENABLE,FLAG_ENABLE</Define>
+              <Define>SYSTEM_DETECT_MODE,DEBUG_ENABLE,xMUTEX_ENABLE,xSEM_ENABLE,xMSGQ_ENABLE,xFLAG_ENABLE,MEM_ENABLE</Define>
               <Undefine></Undefine>
               <IncludePath>.\bsp;.\RT_OS;.\driver</IncludePath>
             </VariousControls>
@@ -782,6 +782,16 @@
               <FileName>rt_os_flag.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\RT_ITC\rt_os_flag.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>RT_MEM</GroupName>
+          <Files>
+            <File>
+              <FileName>rt_os_mem.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\RT_MEM\rt_os_mem.c</FilePath>
             </File>
           </Files>
         </Group>
