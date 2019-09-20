@@ -174,8 +174,3 @@ u8 os_sem_set(u8 sem_index, u8 sem_count)
 
 #endif
 
-
-
-
-
-

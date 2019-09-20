@@ -9,13 +9,19 @@ u8 os_core_start = 0;
 xdata u8 os_task_run[TASK_SIZE];
 
 //操作系统初始化
-void os_init(void)
+u8 os_init(void)
 {
     u8 i = 0;
     for (; i<TASK_SIZE; i++)
         os_task_run[i] = 0xFF;
     tick_timer_init();
     os_task0_create();
+#ifdef MEM_ENABLE
+    return os_mem_init();
+#else
+    return OS_ERR_NONE;
+#endif
+    
 }
 
 //开始任务调度,从最低优先级的任务的开始

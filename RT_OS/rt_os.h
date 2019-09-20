@@ -30,8 +30,25 @@ extern "C" {
 //动态内存分配大小，开启MEM_ENABLE后有效
 #define OS_MEM_SIZE             1024
 
-#define OS_ENTER_CRITICAL()        EA = 0
-#define OS_EXIT_CRITICAL()         EA = 1
+u8 OSSchedLockNestingCtr;
+
+#define CPU_ENTER_CRITICAL()   EA = 0
+#define CPU_EXIT_CRITICAL()    EA = 1
+
+#define  OS_ENTER_CRITICAL()                                  \
+    do {                                                      \
+        CPU_ENTER_CRITICAL();                                 \
+        OSSchedLockNestingCtr++;                              \
+    } while (0)
+
+#define  OS_EXI_TCRITICAL()                                   \
+    do {                                                      \
+        OSSchedLockNestingCtr--;                              \
+        if (OSSchedLockNestingCtr == 0) {                     \
+            CPU_EXIT_CRITICAL();                              \
+        }                                                     \
+    } while (0)
+
 #ifndef NULL
     #define NULL 0
 #endif
@@ -170,7 +187,7 @@ typedef void (*idle_user)(void);
 #define  OS_DEL_ALWAYS                  1u
 
 u8      os_task_create(void (*task)(void), u8 taskID, u8 task_prio, u8 time_quanta, u8 *pstack, u8 stack_size);
-void    os_init(void);
+u8      os_init(void);
 void    os_start_task(void);
 u8      os_task_suspend(u8 taskID);
 u8      os_task_resume(u8 taskID);
@@ -227,8 +244,17 @@ OS_FLAGS    os_flag_pend (u8 flag_index, u16 ticks, u8 *err);
 OS_FLAGS    os_flag_post (u8 flag_index, OS_FLAGS flags, u8 opt, u8 *err);
 #endif
 
+#ifdef MEM_ENABLE
+void       *os_malloc (u16 c_size);
+void        os_free (void *free_ptr);
+void       *os_calloc (u16 nmemb, u16 c_size);
+void       *os_realloc (void *ptr, u16 c_size);
+void       *os_memset(void *s, u8 c, u16 n);
+void       *os_memcpy(void *dest, const void *src, u16 n);
+#endif
+
 #ifdef SYSTEM_DETECT_MODE
-OS_SS *get_sys_statistics(void);
+OS_SS      *get_sys_statistics(void);
 #endif
 
 #ifdef __cplusplus

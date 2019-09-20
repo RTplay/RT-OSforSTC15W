@@ -68,6 +68,7 @@ void tick_timer_init(void);
 void tick_timer_start(void);
 
 u8      get_stack_used(u8 *pstack, u8 stack_size);
+u8      os_mem_init (void);
 
 #ifdef __cplusplus
 }

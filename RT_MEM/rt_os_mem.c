@@ -35,7 +35,7 @@ void *os_malloc (u16 c_size)
     if (c_size % 2) {
         c_size += 1;//两字节对齐
     }
-
+    OS_ENTER_CRITICAL();
     while((*mem_ptr & ~MEM_USED) < OS_MEM_SIZE) { // 循环查看最后一组之前的可用数组
         //内存块被使用或者所有的内存不够需要的大小
         if ((*mem_ptr & MEM_USED) || ((*mem_ptr - index - OS_MEM_STRUCT_SIZE) < c_size)) {
@@ -61,6 +61,7 @@ void *os_malloc (u16 c_size)
             ret_ptr = NULL;
         } else {
             if ((OS_MEM_SIZE - index - OS_MEM_STRUCT_SIZE) < c_size) { //剩余内存不够
+                OS_EXI_TCRITICAL();
                 return NULL;
             } else if ((OS_MEM_SIZE - index - OS_MEM_STRUCT_SIZE) == c_size) { //内存大小正好
                 *mem_ptr |= MEM_USED;
@@ -75,6 +76,7 @@ void *os_malloc (u16 c_size)
             }
         }
     }
+    OS_EXI_TCRITICAL();
     return (void *)ret_ptr;
 }
 
@@ -82,15 +84,18 @@ void *os_malloc (u16 c_size)
 void os_free (void *free_ptr)
 {
     u16 *mem_ptr;
+    u8 *mem_head;
     if (free_ptr == NULL) {
         return;
     }
-    u8 *mem_head = (u8 *)free_ptr - OS_MEM_STRUCT_SIZE;
+    OS_ENTER_CRITICAL();
+    mem_head = (u8 *)free_ptr - OS_MEM_STRUCT_SIZE;
     mem_ptr = (u16 *)mem_head;
     *mem_ptr &= ~MEM_USED;
     //遍历内存，合拼空闲内存
     mem_ptr = (u16 *)mem;
     u16 *last_free = NULL;
+
     while((*mem_ptr & ~MEM_USED) < OS_MEM_SIZE) { // 循环查看最后一组之前的数组
         if ((*mem_ptr & MEM_USED) == 0) { //这一块是空闲的
             if (last_free) {
@@ -117,7 +122,71 @@ void os_free (void *free_ptr)
             last_free = NULL;
         }
     }
+    OS_EXI_TCRITICAL();
 }
 
+//calloc功能
+void *os_calloc (u16 nmemb, u16 c_size)
+{
+    OS_ENTER_CRITICAL();
+    void *ret_ptr = os_malloc (nmemb*c_size);
+    if (ret_ptr) {
+        os_memset(ret_ptr, 0, nmemb*c_size);
+    }
+    OS_EXI_TCRITICAL();
+    return ret_ptr;
+}
+
+//realloc
+void *os_realloc (void *ptr, u16 c_size)
+{
+    if (ptr == NULL) {
+        return os_malloc (c_size);
+    }
+    if (c_size == 0) {
+        os_free (ptr);
+        return NULL;
+    }
+    OS_ENTER_CRITICAL();
+    void *head_ptr, *data_ptr;
+    u16 head;
+    data_ptr = ptr;
+    head_ptr = (void *)((u8 *)ptr - OS_MEM_STRUCT_SIZE);
+    head = *(u16 *)head_ptr;
+    os_free (ptr);
+    void *ret = os_malloc(c_size);
+    if (ret) {
+        os_memcpy(ret, data_ptr, c_size);
+    } else {
+        *(u16 *)head_ptr = head;
+    }
+    OS_EXI_TCRITICAL();
+    return ret;
+}
+
+//memset
+void *os_memset(void *s, u8 c, u16 n)
+{
+    if (s == NULL) {
+        return s;
+    }
+    for (u8 i=0; i<n; i++) {
+        *((u8 *)s+i) = c;
+    }
+
+    return s;
+}
+
+//memcpy
+void *os_memcpy(void *dest, const void *src, u16 n)
+{
+    if ((dest == NULL) || (src == NULL)) {
+        return dest;
+    }
+    for (u8 i=0; i<n; i++) {
+        *((u8 *)dest+i) = *((u8 *)src+i);
+    }
+    return dest;
+}
 
 #endif
