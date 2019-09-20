@@ -2,7 +2,7 @@
 #include "rt_os_private.h"
 
 
-//u8 os_rdy_tbl = 0;
+u8 OSSchedLockNestingCtr = 0;
 u8 os_task_running_ID = 0;
 OS_TCB os_tcb[TASK_SIZE] = {0};
 u8 os_core_start = 0;
@@ -21,7 +21,6 @@ u8 os_init(void)
 #else
     return OS_ERR_NONE;
 #endif
-    
 }
 
 //开始任务调度,从最低优先级的任务的开始

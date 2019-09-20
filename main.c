@@ -24,74 +24,10 @@ void RestForDownload(void)//使用复位功能使单片机进入下载模式
 static STACK_TYPE app1_stack[APP_STACK_SIZE]; //建立一个 30 字节的静态区堆栈
 void app_task_1(void)
 {
-    printf("app_task_1 in\r\n");
-    while (1) {
-        u8 ret;
-        OS_FLAGS flag_1;
-        printf("app_task_1 os_flag_pend...\r\n");
-        flag_1 = os_flag_pend(0, 250, &ret);
-        if (ret == OS_ERR_NONE) {
-            printf("app_task_1 os_flag_pend ok\r\n");
-            os_tick_sleep(10);
-        }
-        else if (ret == OS_ERR_TIMEOUT) {
-            printf("app_task_1 os_msgq_pend timeout\r\n");
-        }
-        else if (ret == OS_ERR_PEND_ABORT) {
-            printf("app_task_1 os_msgq_pend abort\r\n");
-        }
-    }
-}
-
-#define EVENT_1 0x01
-#define EVENT_2 0x02
-#define EVENT_3 0x04
-
-static STACK_TYPE app2_stack[APP_STACK_SIZE]; //建立一个 30 字节的静态区堆栈
-void app_task_2(void)
-{
-    printf("app_task_2 in\r\n");
-    while (1) {
-        u8 ret;
-        OS_FLAGS flag_1;
-        printf("app_task_2 os_flag_pend...\r\n");
-        flag_1 = os_flag_pend(0, 250, &ret);
-        if (ret == OS_ERR_NONE) {
-            printf("app_task_2 os_flag_pend ok\r\n");
-            os_tick_sleep(10);
-        }
-        else if (ret == OS_ERR_TIMEOUT) {
-            printf("app_task_2 os_msgq_pend timeout\r\n");
-        }
-        else if (ret == OS_ERR_PEND_ABORT) {
-            printf("app_task_2 os_msgq_pend abort\r\n");
-        }
-    }
-}
-
-static STACK_TYPE app3_stack[APP_STACK_SIZE]; //建立一个 30 字节的静态区堆栈
-void app_task_3(void)
-{
-    printf("app_task_3 in\r\n");
-    while (1) {
-        u8 err, rel_ret;
-        os_tick_sleep(150);
-        printf("app_task_3 os_flag_post EVENT_1\r\n");
-        os_flag_post(0, EVENT_1, OS_FLAG_SET, &err);
-        rel_ret = os_flag_release(0, OS_DEL_NO_PEND);
-        if (rel_ret != OS_ERR_NONE)
-            printf("app_task_3 os_flag_release error\r\n");
-        os_flag_init(0, 0, EVENT_1, OS_FLAG_WAIT_SET_ANY);
-    }
-}
-
-static STACK_TYPE app4_stack[APP_STACK_SIZE]; //建立一个 30 字节的静态区堆栈
-void app_task_4(void)
-{
 #ifdef SYSTEM_DETECT_MODE
     OS_SS *ss = get_sys_statistics();
 #endif
-    printf("app_task_4 in\r\n");
+    printf("app_task_1 in\r\n");
     while (1) {
 #ifdef SYSTEM_DETECT_MODE
         u8 i;
@@ -135,7 +71,7 @@ void app_task_4(void)
             }
         }
 #else
-        debug_print("app_task_4\r\n");
+        debug_print("app_task_1\r\n");
 #endif
         os_tick_sleep(100);
     }
@@ -146,13 +82,11 @@ void main(void)
 {
     RestForDownload();
     debug_uart_init();
-    printf("STC15F2K60S2 RT-OS Test Prgramme!\r\n");
-    os_flag_init(0, 0, EVENT_1, OS_FLAG_WAIT_SET_ANY);
+    //printf("STC15F2K60S2 RT-OS Test Prgramme!\r\n");
     os_init();
+    
+    
     os_task_create(app_task_1, 1, 20, OS_DEFAULT_TIME_QUANTA, app1_stack, APP_STACK_SIZE);
-    os_task_create(app_task_2, 2, 15, OS_DEFAULT_TIME_QUANTA, app2_stack, APP_STACK_SIZE);
-    os_task_create(app_task_3, 3, 10, OS_DEFAULT_TIME_QUANTA, app3_stack, APP_STACK_SIZE);
-    os_task_create(app_task_4, 4,  5, OS_DEFAULT_TIME_QUANTA, app4_stack, APP_STACK_SIZE);
     os_start_task();
     while(1);
 }

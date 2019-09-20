@@ -6,19 +6,20 @@
 #define     OS_MEM_STRUCT_SIZE (2)
 #define     MEM_USED (0x8000)
 
-static datax u8 mem[OS_MEM_SIZE] = {0};
+static xdata u8 mem[OS_MEM_SIZE] = {0};
 static u16 mem_size = 0;
 
 // 初始化内存头部
 u8 os_mem_init (void)
 {
     u16 *mem_head = (u16 *)mem;
-    if (OS_MEM_SIZE <= 2)
+    u16 no_warning = OS_MEM_SIZE;
+    if (no_warning <= 2)
         return OS_ERR_MEM_INVALID_SIZE;
-    if (OS_MEM_SIZE % 2) //2字节对齐，如果未对齐则缩小一字节
-        mem_size = OS_MEM_SIZE - 1;
+    if (no_warning % 2) //2字节对齐，如果未对齐则缩小一字节
+        mem_size = no_warning - 1;
     else
-        mem_size = OS_MEM_SIZE;
+        mem_size = no_warning;
     *mem_head = mem_size - 2; //存入可用字节数
 
     return OS_ERR_NONE;
@@ -61,7 +62,7 @@ void *os_malloc (u16 c_size)
             ret_ptr = NULL;
         } else {
             if ((OS_MEM_SIZE - index - OS_MEM_STRUCT_SIZE) < c_size) { //剩余内存不够
-                OS_EXI_TCRITICAL();
+                OS_EXIT_CRITICAL();
                 return NULL;
             } else if ((OS_MEM_SIZE - index - OS_MEM_STRUCT_SIZE) == c_size) { //内存大小正好
                 *mem_ptr |= MEM_USED;
@@ -76,7 +77,7 @@ void *os_malloc (u16 c_size)
             }
         }
     }
-    OS_EXI_TCRITICAL();
+    OS_EXIT_CRITICAL();
     return (void *)ret_ptr;
 }
 
@@ -85,6 +86,7 @@ void os_free (void *free_ptr)
 {
     u16 *mem_ptr;
     u8 *mem_head;
+    u16 *last_free = NULL;
     if (free_ptr == NULL) {
         return;
     }
@@ -94,8 +96,6 @@ void os_free (void *free_ptr)
     *mem_ptr &= ~MEM_USED;
     //遍历内存，合拼空闲内存
     mem_ptr = (u16 *)mem;
-    u16 *last_free = NULL;
-
     while((*mem_ptr & ~MEM_USED) < OS_MEM_SIZE) { // 循环查看最后一组之前的数组
         if ((*mem_ptr & MEM_USED) == 0) { //这一块是空闲的
             if (last_free) {
@@ -122,24 +122,26 @@ void os_free (void *free_ptr)
             last_free = NULL;
         }
     }
-    OS_EXI_TCRITICAL();
+    OS_EXIT_CRITICAL();
 }
 
 //calloc功能
 void *os_calloc (u16 nmemb, u16 c_size)
 {
-    OS_ENTER_CRITICAL();
     void *ret_ptr = os_malloc (nmemb*c_size);
+    OS_ENTER_CRITICAL();
     if (ret_ptr) {
         os_memset(ret_ptr, 0, nmemb*c_size);
     }
-    OS_EXI_TCRITICAL();
+    OS_EXIT_CRITICAL();
     return ret_ptr;
 }
 
 //realloc
 void *os_realloc (void *ptr, u16 c_size)
 {
+    void *head_ptr, *data_ptr, *ret;
+    u16 head;
     if (ptr == NULL) {
         return os_malloc (c_size);
     }
@@ -148,29 +150,28 @@ void *os_realloc (void *ptr, u16 c_size)
         return NULL;
     }
     OS_ENTER_CRITICAL();
-    void *head_ptr, *data_ptr;
-    u16 head;
     data_ptr = ptr;
     head_ptr = (void *)((u8 *)ptr - OS_MEM_STRUCT_SIZE);
     head = *(u16 *)head_ptr;
     os_free (ptr);
-    void *ret = os_malloc(c_size);
+    ret = os_malloc(c_size);
     if (ret) {
         os_memcpy(ret, data_ptr, c_size);
     } else {
         *(u16 *)head_ptr = head;
     }
-    OS_EXI_TCRITICAL();
+    OS_EXIT_CRITICAL();
     return ret;
 }
 
 //memset
 void *os_memset(void *s, u8 c, u16 n)
 {
+    u8 i;
     if (s == NULL) {
         return s;
     }
-    for (u8 i=0; i<n; i++) {
+    for (i=0; i<n; i++) {
         *((u8 *)s+i) = c;
     }
 
@@ -180,10 +181,11 @@ void *os_memset(void *s, u8 c, u16 n)
 //memcpy
 void *os_memcpy(void *dest, const void *src, u16 n)
 {
+    u8 i;
     if ((dest == NULL) || (src == NULL)) {
         return dest;
     }
-    for (u8 i=0; i<n; i++) {
+    for (i=0; i<n; i++) {
         *((u8 *)dest+i) = *((u8 *)src+i);
     }
     return dest;

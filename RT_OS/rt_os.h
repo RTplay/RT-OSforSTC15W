@@ -30,7 +30,7 @@ extern "C" {
 //动态内存分配大小，开启MEM_ENABLE后有效
 #define OS_MEM_SIZE             1024
 
-u8 OSSchedLockNestingCtr;
+extern u8 OSSchedLockNestingCtr;
 
 #define CPU_ENTER_CRITICAL()   EA = 0
 #define CPU_EXIT_CRITICAL()    EA = 1
@@ -41,7 +41,7 @@ u8 OSSchedLockNestingCtr;
         OSSchedLockNestingCtr++;                              \
     } while (0)
 
-#define  OS_EXI_TCRITICAL()                                   \
+#define  OS_EXIT_CRITICAL()                                   \
     do {                                                      \
         OSSchedLockNestingCtr--;                              \
         if (OSSchedLockNestingCtr == 0) {                     \
