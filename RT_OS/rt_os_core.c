@@ -2,7 +2,7 @@
 #include "rt_os_private.h"
 
 
-u8 OSSchedLockNestingCtr = 0;
+volatile u8 OSSchedLockNestingCtr = 0;
 u8 os_task_running_ID = 0;
 OS_TCB os_tcb[TASK_SIZE] = {0};
 u8 os_core_start = 0;

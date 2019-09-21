@@ -34,7 +34,8 @@ extern u8 OSSchedLockNestingCtr;
 
 #define CPU_ENTER_CRITICAL()   EA = 0
 #define CPU_EXIT_CRITICAL()    EA = 1
-
+//#define OS_ENTER_CRITICAL()   EA = 0
+//#define OS_EXIT_CRITICAL()    EA = 1
 #define  OS_ENTER_CRITICAL()                                  \
     do {                                                      \
         CPU_ENTER_CRITICAL();                                 \

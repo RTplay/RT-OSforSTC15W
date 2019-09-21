@@ -46,3 +46,19 @@ void debug_print_char(u8 dat)
     dat = dat;
 #endif
 }
+
+u8 try_to_get_data(void func(u8 *, u8))
+{
+    u8 ret = 0;
+    if(COM1.RX_TimeOut > 0) {
+        if(--COM1.RX_TimeOut == 0) {
+            if(COM1.RX_Cnt > 0) {
+                ret = COM1.RX_Cnt;
+                if (func)
+                    func(RX1_Buffer, COM1.RX_Cnt);
+            }
+            COM1.RX_Cnt = 0;
+        }
+    }
+    return ret;
+}

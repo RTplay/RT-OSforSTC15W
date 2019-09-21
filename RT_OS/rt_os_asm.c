@@ -7,7 +7,7 @@ void OS_TASK_SW(void)
     char i = 0, j = 0;
     u8 highest_prio_id = 0;
     u8 task_sequence = 0;//当前任务的已运行队列中一定是0
-    OS_ENTER_CRITICAL();
+    CPU_ENTER_CRITICAL();
 #pragma asm
     PUSH     ACC
     PUSH     B
@@ -98,7 +98,7 @@ void OS_TASK_SW(void)
     POP      B
     POP      ACC
 #pragma endasm
-    OS_EXIT_CRITICAL();
+    CPU_EXIT_CRITICAL();
 }
 
 #ifdef SYSTEM_DETECT_MODE

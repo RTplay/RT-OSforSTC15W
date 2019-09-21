@@ -322,9 +322,9 @@
             <InterruptVectorAddress>0</InterruptVectorAddress>
             <VariousControls>
               <MiscControls></MiscControls>
-              <Define>SYSTEM_DETECT_MODE,DEBUG_ENABLE,xMUTEX_ENABLE,xSEM_ENABLE,xMSGQ_ENABLE,xFLAG_ENABLE,MEM_ENABLE</Define>
+              <Define>SYSTEM_DETECT_MODE,DEBUG_ENABLE,xMUTEX_ENABLE,xSEM_ENABLE,xMSGQ_ENABLE,xFLAG_ENABLE,xMEM_ENABLE</Define>
               <Undefine></Undefine>
-              <IncludePath>.\bsp;.\RT_OS;.\driver</IncludePath>
+              <IncludePath>.\bsp;.\RT_OS;.\driver;.\RTWing</IncludePath>
             </VariousControls>
           </C51>
           <Ax51>
@@ -792,6 +792,16 @@
               <FileName>rt_os_mem.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\RT_MEM\rt_os_mem.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>RTWing</GroupName>
+          <Files>
+            <File>
+              <FileName>RTWing.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\RTWing\RTWing.c</FilePath>
             </File>
           </Files>
         </Group>
