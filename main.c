@@ -3,7 +3,7 @@
 #include    "rt_os.h"
 #include	"delay.h"
 #include    "debug_uart.h"
-#include    "RTWing.h"
+//#include    "RTWing.h"
 
 typedef struct msg_type {
     u8 type;
@@ -27,7 +27,7 @@ void app_task_1(void)
 {
     while (1) {
         os_tick_sleep(1);
-        try_to_get_data(RTWingProcess);
+        //try_to_get_data(RTWingProcess);
     }
 }
 
@@ -36,9 +36,9 @@ void main(void)
 {
     RestForDownload();
     debug_uart_init();
-    InitRTWing();
+    //InitRTWing();
     debug_print("STC15F2K60S2 RT-OS Test Prgramme!\r\n");
-    PrintRTWing();
+    //PrintRTWing();
     os_init();
     os_task_create(app_task_1, 1, 20, OS_DEFAULT_TIME_QUANTA, app1_stack, APP_STACK_SIZE);
     os_start_task();
